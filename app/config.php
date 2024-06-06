@@ -1,9 +1,14 @@
-<?php   
-
+<?php
+/**
+ * Created by PhpStorm.
+ * User: HILARIWEB
+ * Date: 28/12/2023
+ * Time: 19:18
+ */
 define('SERVIDOR','localhost');
 define('USUARIO','root');
 define('PASSWORD','');
-define('BD','aulaunida');
+define('BD','dbaulaunida');
 
 define('APP_NAME','Aula Unida');
 define('APP_URL','http://localhost/aulaunida');
@@ -26,5 +31,8 @@ $fecha_actual = date('Y-m-d');
 $dia_actual = date('d');
 $mes_actual = date('m');
 $ano_actual = date('Y');
+
+$estado_de_registro = '1';
+
 
 

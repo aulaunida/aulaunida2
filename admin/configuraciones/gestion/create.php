@@ -1,7 +1,6 @@
 <?php
-include ('../../app/config.php');
-include ('../../admin/layout/parte1.php');
-
+include ('../../../app/config.php');
+include ('../../../admin/layout/parte1.php');
 
 ?>
 
@@ -11,7 +10,7 @@ include ('../../admin/layout/parte1.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Creación de un nuevo rol</h1>
+                <h1>Registro de nueva gestión educativa</h1>
             </div>
             <br>
             <div class="row">
@@ -22,21 +21,31 @@ include ('../../admin/layout/parte1.php');
                             <h3 class="card-title">Llene los datos</h3>
                         </div>
                         <div class="card-body">
-                            <form action="<?=APP_URL;?>/app/controllers/roles/create.php" method="post">
+                            <form action="<?=APP_URL;?>/app/controllers/configuraciones/gestion/create.php" method="post">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Nombre del rol</label>
-                                            <input type="text" name="nombre_rol" class="form-control" required>
+                                            <label for="">Gestión educativa</label>
+                                            <input type="text" name="gestion" class="form-control">
                                         </div>
                                     </div>
                                 </div>
-                                <hr>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="">Estado</label>
+                                            <select name="estado" id="" class="form-control">
+                                                <option value="ACTIVO">ACTIVO</option>
+                                                <option value="INACTIVO">INACTIVO</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-primary">Registrar</button>
-                                            <a href="<?=APP_URL;?>/admin/roles" class="btn btn-secondary">Cancelar</a>
+                                            <a href="<?=APP_URL;?>/admin/configuraciones" class="btn btn-secondary">Cancelar</a>
                                         </div>
                                     </div>
                                 </div>
@@ -54,7 +63,7 @@ include ('../../admin/layout/parte1.php');
 
 <?php
 
-include ('../../admin/layout/parte2.php');
-include ('../../layout/mensajes.php');
+include ('../../../admin/layout/parte2.php');
+include ('../../../layout/mensajes.php');
 
 ?>
