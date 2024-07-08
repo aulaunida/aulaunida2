@@ -11,30 +11,43 @@ include ('../app/config.php');
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$sql = "SELECT * FROM usuarios WHERE email = '$email' AND estado = '1' ";
+$sql = "SELECT * FROM usuarios WHERE email = :email AND estado = '1'";
 $query = $pdo->prepare($sql);
+$query->bindParam(':email', $email);
 $query->execute();
 
 $usuarios = $query->fetchAll(PDO::FETCH_ASSOC);
-//print_r($usuarios);
 
 $contador = 0;
+$password_tabla = '';
 
 foreach ($usuarios as $usuario){
     $password_tabla = $usuario['password'];
-    $contador = $contador +1;
+    $contador++;
 }
 
-if( ($contador>0) && (password_verify($password,$password_tabla)) ){
+if (($contador > 0) && (password_verify($password, $password_tabla))) {
     echo "los datos son correctos";
     session_start();
     $_SESSION['mensaje'] = "Bienvenido a Aula Unida®";
     $_SESSION['icono'] = "success";
+    $_SESSION['timer'] = 4000;  // Duración del mensaje en milisegundos (4 segundos)
+    $_SESSION['timerProgressBar'] = true;
+    $_SESSION['showCloseButton'] = true; // Agregar la cruz de cierre
     $_SESSION['sesion_email'] = $email;
-    header('Location:'.APP_URL."/admin");
-}else{
+
+    header('Location: '.APP_URL."/admin");
+   
+} else {
     echo "los datos son incorrectos";
     session_start();
-    $_SESSION['mensaje'] = "Los datos introducidos son incorrectos, vuelva a intentarlo";
-    header('Location:'.APP_URL."/login");
+    $_SESSION['mensaje'] = "Dirección de email o contraseña incorrectas. Por favor, vuelve a intentarlo";
+    $_SESSION['icono'] = "warning"; // Cambio de icono a error para indicar que los datos son incorrectos
+    $_SESSION['timer'] = 4000;  // Duración del mensaje en milisegundos (4 segundos)
+    $_SESSION['timerProgressBar'] = true;
+    $_SESSION['showCloseButton'] = false; // Agregar la cruz de cierre
+   
+    header('Location: '.APP_URL."/login");
+   
 }
+

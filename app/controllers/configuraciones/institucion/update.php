@@ -54,14 +54,20 @@ $sentencia->bindParam('id_config_institucion',$id_config_institucion);
 if($sentencia->execute()){
     echo 'success';
     session_start();
-    $_SESSION['mensaje'] = "Se actualizó los datos de configuración de la manera correcta en la base de datos";
+    $_SESSION['mensaje'] = "Se actualizaron los datos de configuración de manera correcta en la base de datos";
     $_SESSION['icono'] = "success";
+    $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
+    $_SESSION['timerProgressBar'] = true;
+    $_SESSION['showCloseButton'] = true; // Agregar la cruz de cierre
     header('Location:'.APP_URL."/admin/configuraciones/institucion");
 //header('Location:' .$URL.'/');
 }else{
     //echo 'error al registrar a la base de datos';
     session_start();
-    $_SESSION['mensaje'] = "Error no se pudo registrar en la base datos, comuniquese con el administrador";
-    $_SESSION['icono'] = "error";
+    $_SESSION['mensaje'] = "Error no se pudo registrar en la base datos, comuníquese con el administrador";
+    $_SESSION['icono'] = "warning";
+    $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
+    $_SESSION['timerProgressBar'] = true;
+    $_SESSION['showCloseButton'] = true; // Agregar la cruz de cierre
     ?><script>window.history.back();</script><?php
 }

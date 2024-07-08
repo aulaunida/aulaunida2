@@ -17,13 +17,19 @@ $sentencia->bindParam('id_config_institucion',$id_config_institucion);
 
 if($sentencia->execute()){
     session_start();
-    $_SESSION['mensaje'] = "Se elimino los datos de la institución de la manera correcta en la base de datos";
+    $_SESSION['mensaje'] = "Se eliminaron los datos de la institución de manera correcta en la base de datos";
     $_SESSION['icono'] = "success";
+    $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
+    $_SESSION['timerProgressBar'] = true;
+    $_SESSION['showCloseButton'] = true; // Agregar la cruz de cierre
     header('Location:'.APP_URL."/admin/configuraciones/institucion");
 }else{
     session_start();
-    $_SESSION['mensaje'] = "Error no se pudo eliminar en la base datos, comuniquese con el administrador";
-    $_SESSION['icono'] = "error";
+    $_SESSION['mensaje'] = "Error no se pudo eliminar en la base datos, comuníquese con el administrador";
+    $_SESSION['icono'] = "warning";
+    $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
+    $_SESSION['timerProgressBar'] = true;
+    $_SESSION['showCloseButton'] = true; // Agregar la cruz de cierre
     ?><script>window.history.back();</script><?php
 }
 

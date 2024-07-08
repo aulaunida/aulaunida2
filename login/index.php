@@ -67,6 +67,29 @@ include ('../app/config.php');
         </div>
     </div>
 <!-- /.login-box -->
+<?php
+    session_start();
+    if (isset($_SESSION['mensaje'])) {
+        $mensaje = $_SESSION['mensaje'];
+        ?>
+        <script>
+              Swal.fire({
+                position: "center",
+                icon: "warning",
+                title: "<?=$mensaje;?>",
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                showCloseButton: true
+            });
+        </script>
+    <?php
+      session_destroy();
+      }
+      
+      ?>
+
+
 
 <!-- jQuery -->
 <script src="<?=APP_URL;?>/public/plugins/jquery/jquery.min.js"></script>

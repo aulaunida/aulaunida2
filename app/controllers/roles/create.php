@@ -28,19 +28,28 @@ VALUES (:nombre_rol,:fyh_creacion,:estado) ");
     try{
         if($sentencia->execute()){
             session_start();
-            $_SESSION['mensaje'] = "Se registro el rol de la manera correcta en la base de datos";
+            $_SESSION['mensaje'] = "Se registro el rol de manera correcta en la base de datos";
             $_SESSION['icono'] = "success";
+            $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
+            $_SESSION['timerProgressBar'] = true;
+            $_SESSION['showCloseButton'] = true; // Agregar la cruz de cierre
             header('Location:'.APP_URL."/admin/roles");
         }else{
             session_start();
             $_SESSION['mensaje'] = "Error no se pudo registrar en la base datos, comuniquese con el administrador";
-            $_SESSION['icono'] = "error";
+            $_SESSION['icono'] = "warning";
+            $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
+            $_SESSION['timerProgressBar'] = true;
+            $_SESSION['showCloseButton'] = true; // Agregar la cruz de cierre
             header('Location:'.APP_URL."/admin/roles/create.php");
         }
     }catch (Exception $exception){
         session_start();
-        $_SESSION['mensaje'] = "Esta rol ya existe en la base de datos";
-        $_SESSION['icono'] = "error";
+            $_SESSION['mensaje'] = "Lo sentimos, el rol que estás intentando crear ya existe en nuestra base de datos. Por favor, elige otro nombre o revisa si ya está registrado";
+            $_SESSION['icono'] = "warning"; // Cambio de icono a error para indicar que los datos son incorrectos
+            $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
+            $_SESSION['timerProgressBar'] = true;
+            $_SESSION['showCloseButton'] = true; // Agregar la cruz de cierre
         header('Location:'.APP_URL."/admin/roles/create.php");
     }
 

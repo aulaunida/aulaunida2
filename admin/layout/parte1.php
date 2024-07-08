@@ -12,7 +12,7 @@ if(isset($_SESSION['sesion_email'])){
        $nombre_sesion_usuario = $datos_sesion_usuario['nombres'];
     }
 }else{
-    echo "el usuario no paso por el login";
+    //echo "el usuario no paso por el login";
     header('Location:'.APP_URL."/login");
 }
 ?>
@@ -36,6 +36,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- Sweetaler2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   
 
     <!-- Iconos de bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -48,6 +49,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
+<script>
+        <?php if (isset($_SESSION['mensaje']) && isset($_SESSION['icono']) && isset($_SESSION['timer'])): ?>
+            Swal.fire({
+                icon: '<?php echo $_SESSION['icono']; ?>',
+                title: '<?php echo $_SESSION['mensaje']; ?>',
+                showConfirmButton: false,
+                timer: <?php echo $_SESSION['timer']; ?>,
+                timerProgressBar: <?php echo $_SESSION['timerProgressBar']; ?>,
+                <?php if (isset($_SESSION['showCloseButton']) && $_SESSION['showCloseButton']): ?>showCloseButton: true
+                <?php endif; ?>
+            });
+            <?php
+            unset($_SESSION['mensaje'], $_SESSION['icono'], $_SESSION['timer'], $_SESSION['showCloseButton']);
+            ?>
+        <?php endif; ?>
+    </script>
+</body>
+</html>
 
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -131,10 +150,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <li class="nav-item">
                         <a href="#" class="nav-link active">
                             <i class="nav-icon fas"><i class="bi bi-gear"></i></i>
-                            <p>
-                                Configuraciones
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
+                        <p>
+                            Configuraciones
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">

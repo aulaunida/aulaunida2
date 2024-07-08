@@ -17,13 +17,19 @@ $sentencia->bindParam('id_usuario',$id_usuario);
 
 if($sentencia->execute()){
     session_start();
-    $_SESSION['mensaje'] = "Se elimino el usuarios de la manera correcta en la base de datos";
+    $_SESSION['mensaje'] = "Se elimino el usuario de manera correcta en la base de datos";
     $_SESSION['icono'] = "success";
+    $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
+    $_SESSION['timerProgressBar'] = true;
+    $_SESSION['showCloseButton'] = true; // Agregar la cruz de cierre
     header('Location:'.APP_URL."/admin/usuarios");
 }else{
     session_start();
     $_SESSION['mensaje'] = "Error no se pudo eliminar en la base datos, comuniquese con el administrador";
-    $_SESSION['icono'] = "error";
+    $_SESSION['icono'] = "warning";
+    $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
+    $_SESSION['timerProgressBar'] = true;
+    $_SESSION['showCloseButton'] = true; // Agregar la cruz de cierre
     header('Location:'.APP_URL."/admin/usuarios");
 }
 
