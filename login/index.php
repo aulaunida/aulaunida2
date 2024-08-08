@@ -43,7 +43,7 @@ include ('../app/config.php');
                 <hr>
                 <form action="controller_login.php" method="post">
                     <div class="input-group mb-3">
-                        <input type="email" name="email" class="form-control" placeholder="Correo electrónico">
+                        <input type="email" name="email" class="form-control" placeholder="Correo electrónico" value="admin@admin.com">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -51,7 +51,7 @@ include ('../app/config.php');
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" name="password" class="form-control" placeholder="Contraseña">
+                        <input type="password" name="password" class="form-control" placeholder="Contraseña" value="12345678">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
