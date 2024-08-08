@@ -28,68 +28,84 @@ include ('../app/config.php');
     }
 </style>
 
-<body class="hold-transition login-page background-image">
+<body class="hold-transition login-page">
+
+<video autoplay muted loop class="background-video">
+    <source src="<?= APP_URL; ?>/public/images/loginvideo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<style>
+    .background-video {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+    }
+</style>
+
 <div class="login-box">
-        <center><img src="<?= APP_URL; ?>/public/images/capdevila.png" width="200px" alt="">
-            <br>
-        </center>
-        <div class="login-logo">
-            <h3>Acceso a <b>Aula Unida®</b></h3>
-        </div>
-        <!-- /.login-logo -->
-        <div class="card">
-            <div class="card-body login-card-body">
-                <p class="login-box-msg">Iniciar sesión</p>
+    <center>
+        <img src="<?= APP_URL; ?>/public/images/capdevila.png" width="200px" alt="">
+        <br>
+    </center>
+    <div class="login-logo">
+        <h3>Acceso a <b>Aula Unida®</b></h3>
+    </div>
+    <!-- /.login-logo -->
+    <div class="card">
+        <div class="card-body login-card-body">
+            <p class="login-box-msg">Iniciar sesión</p>
+            <hr>
+            <form action="controller_login.php" method="post">
+                <div class="input-group mb-3">
+                    <input type="email" name="email" class="form-control" placeholder="Correo electrónico" value="admin@admin.com">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" name="password" class="form-control" placeholder="Contraseña" value="12345678">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                </div>
                 <hr>
-                <form action="controller_login.php" method="post">
-                    <div class="input-group mb-3">
-                        <input type="email" name="email" class="form-control" placeholder="Correo electrónico" value="admin@admin.com">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-envelope"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="input-group mb-3">
-                        <input type="password" name="password" class="form-control" placeholder="Contraseña" value="12345678">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-lock"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="input-group mb-3">
-                        <button class="btn btn-primary btn-block" type="submit">Acceder</button>
-                    </div>
-                </form>
-            </div>
+                <div class="input-group mb-3">
+                    <button class="btn btn-primary btn-block" type="submit">Acceder</button>
+                </div>
+            </form>
         </div>
     </div>
+</div>
 <!-- /.login-box -->
+
 <?php
-    session_start();
-    if (isset($_SESSION['mensaje'])) {
-        $mensaje = $_SESSION['mensaje'];
-        ?>
-        <script>
-              Swal.fire({
-                position: "center",
-                icon: "warning",
-                title: "<?=$mensaje;?>",
-                showConfirmButton: false,
-                timer: 4000,
-                timerProgressBar: true,
-                showCloseButton: true
-            });
-        </script>
-    <?php
-      session_destroy();
-      }
-      
-      ?>
-
-
+session_start();
+if (isset($_SESSION['mensaje'])) {
+    $mensaje = $_SESSION['mensaje'];
+?>
+    <script>
+          Swal.fire({
+            position: "center",
+            icon: "warning",
+            title: "<?=$mensaje;?>",
+            showConfirmButton: false,
+            timer: 4000,
+            timerProgressBar: true,
+            showCloseButton: true
+        });
+    </script>
+<?php
+    session_destroy();
+}
+?>
 
 <!-- jQuery -->
 <script src="<?=APP_URL;?>/public/plugins/jquery/jquery.min.js"></script>
