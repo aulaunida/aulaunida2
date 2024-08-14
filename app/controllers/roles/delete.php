@@ -35,7 +35,7 @@ if($contador>0){
 
     if($sentencia->execute()){
             session_start();
-            $_SESSION['mensaje'] = "Se elimino el rol de la manera correcta en la base de datos";
+            $_SESSION['mensaje'] = "Se eliminó el rol de manera correcta en la base de datos";
             $_SESSION['icono'] = "success";
             $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
             $_SESSION['timerProgressBar'] = true;
@@ -43,7 +43,7 @@ if($contador>0){
             header('Location:'.APP_URL."/admin/roles");
         }else{
             session_start();
-            $_SESSION['mensaje'] = "Error no se pudo eliminar el rol, comuniquese con el administrador";
+            $_SESSION['mensaje'] = "Error, no se pudo eliminar el rol. Comuníquese con el administrador";
             $_SESSION['icono'] = "warning";
             $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
             $_SESSION['timerProgressBar'] = true;

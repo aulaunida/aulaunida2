@@ -64,7 +64,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             unset($_SESSION['mensaje'], $_SESSION['icono'], $_SESSION['timer'], $_SESSION['showCloseButton']);
             ?>
         <?php endif; ?>
-    </script>
+    </script>  
 </body>
 </html>
 
@@ -76,7 +76,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="<?=APP_URL;?>/admin" class="nav-link"><b>Instituto Primario 'Arturo Capdevila'</b></a>
+            <a href="<?=APP_URL;?>/admin" class="nav-link">Instituto Primario <b>Arturo Capdevila</b></a>
+
             </li>
         </ul>
 
@@ -146,6 +147,71 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
 
+                         <li class="nav-item">
+                        <a href="#" class="nav-link active">
+                            <i class="nav-icon fas"><i class="bi bi-graph-up-arrow"></i></i>
+                            <p>
+                                Informes
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?=APP_URL;?>/admin/informes/asistencia.php" class="nav-link active">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Asistencia</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?=APP_URL;?>/admin/informes/inasistencia.php" class="nav-link active">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Inasistencia</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?=APP_URL;?>/admin/informes/alumnos_integrados.php" class="nav-link active">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Alumnos integrados</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?=APP_URL;?>/admin/informes/gantt.php" class="nav-link active">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Diagrama de Gantt</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?=APP_URL;?>/admin/informes/spiderchart.php" class="nav-link active">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Gráfico de Radar</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?=APP_URL;?>/admin/informes/scatterplot.php" class="nav-link active">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Gráfico de Dispersión</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?=APP_URL;?>/admin/informes/donut3d.php" class="nav-link active">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Gráfico de Donut 3D</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 
                     <li class="nav-item">
                         <a href="#" class="nav-link active">
@@ -219,22 +285,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </li>
                         </ul>
                     </li>
-
-
-
-
-
-
-
-
                     <li class="nav-item">
-                        <a href="<?=APP_URL;?>/login/logout.php" class="nav-link" style="background-color: #eb2d14;color: white">
-                            <i class="nav-icon fas"><i class="bi bi-door-open"></i></i>
-                            <p>
-                                Cerrar sesión
-                            </p>
-                        </a>
-                    </li>
+                <a href="<?=APP_URL;?>/login/logout.php" class="nav-link" style="background-color: #c52510;color:white">
+                  <i class="nav-icon fas"><i class="bi bi-door-open"></i></i>
+                    <p>
+                      Cerrar sesión
+                    </p>
+                </a>
+            </li> 
 
 
                 </ul>

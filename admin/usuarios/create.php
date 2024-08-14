@@ -19,7 +19,7 @@ include ('../../app/controllers/roles/listado_de_roles.php');
                 <div class="col-md-12">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Llene los datos</h3>
+                        <h3 class="card-title">Complete los siguientes datos</h3>
                         </div>
                         <div class="card-body">
                             <form action="<?=APP_URL;?>/app/controllers/usuarios/create.php" method="post">
@@ -42,14 +42,14 @@ include ('../../app/controllers/roles/listado_de_roles.php');
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="">Nombres del usuarios</label>
+                                        <label for="">Nombre y Apellido</label>
                                             <input type="text" name="nombres" class="form-control" required>
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="">Email</label>
+                                        <label for="">Correo Electrónico</label>
                                             <input type="email" name="email" class="form-control" required>
                                         </div>
                                     </div>
@@ -57,13 +57,13 @@ include ('../../app/controllers/roles/listado_de_roles.php');
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="">Password</label>
+                                        <label for="">Contraseña</label>
                                             <input type="password" name="password" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="">Repetir Password</label>
+                                        <label for="">Repetir contraseña</label>
                                             <input type="password" name="password_repet" class="form-control" required>
                                         </div>
                                     </div>
@@ -72,8 +72,8 @@ include ('../../app/controllers/roles/listado_de_roles.php');
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-primary">Registrar</button>
-                                            <a href="<?=APP_URL;?>/admin/usuarios" class="btn btn-secondary">Cancelar</a>
+                                        <button type="submit" class="btn btn-primary">Registrar</button>
+                                        <a href="<?=APP_URL;?>/admin/usuarios" class="btn btn-danger">Cancelar</a>
                                         </div>
                                     </div>
                                 </div>

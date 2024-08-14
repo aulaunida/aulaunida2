@@ -5,6 +5,11 @@ include ('../../admin/layout/parte1.php');
 include ('../../app/controllers/usuarios/listado_de_usuarios.php');
 
 ?>
+<style>
+.icono-blanco i {
+    color: white; /* Cambia el color del icono a blanco */
+}
+</style>
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -30,9 +35,9 @@ include ('../../app/controllers/usuarios/listado_de_usuarios.php');
                                 <thead>
                                 <tr>
                                     <th><center>Nro</center></th>
-                                    <th><center>Nombres del usuario</center></th>
+                                    <th><center>Nombre del usuario</center></th>
                                     <th><center>Rol</center></th>
-                                    <th><center>Email</center></th>
+                                    <th><center>Correo electrónico</center></th>
                                     <th><center>Fecha de creación</center></th>
                                     <th><center>Estado</center></th>
                                     <th><center>Acciones</center></th>
@@ -54,31 +59,32 @@ include ('../../app/controllers/usuarios/listado_de_usuarios.php');
                                         <td style="text-align: center">
                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                 <a href="show.php?id=<?=$id_usuario;?>" type="button" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
-                                                <a href="edit.php?id=<?=$id_usuario;?>" type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
+                                                <a href="edit.php?id=<?=$id_usuario;?>" type="button" class="btn btn-success btn-sm icono-blanco"><i class="bi bi-pencil-square"></i></a>
                                                 <form action="<?=APP_URL;?>/app/controllers/usuarios/delete.php" onclick="preguntar<?=$id_usuario;?>(event)" method="post" id="miFormulario<?=$id_usuario;?>">
                                                     <input type="text" name="id_usuario" value="<?=$id_usuario;?>" hidden>
                                                     <button type="submit" class="btn btn-danger btn-sm" style="border-radius: 0px 5px 5px 0px"><i class="bi bi-trash"></i></button>
                                                 </form>
                                                 <script>
-                                                    function preguntar<?=$id_usuario;?>(event) {
-                                                        event.preventDefault();
-                                                        Swal.fire({
-                                                            title: 'Eliminar registro',
-                                                            text: '¿Desea eliminar este registro?',
-                                                            icon: 'question',
-                                                            showDenyButton: true,
-                                                            confirmButtonText: 'Eliminar',
-                                                            confirmButtonColor: '#a5161d',
-                                                            denyButtonColor: '#270a0a',
-                                                            denyButtonText: 'Cancelar',
-                                                        }).then((result) => {
-                                                            if (result.isConfirmed) {
-                                                                var form = $('#miFormulario<?=$id_usuario;?>');
-                                                                form.submit();
-                                                            }
-                                                        });
-                                                    }
-                                                </script>
+                            function preguntar<?=$id_usuario;?>(event) {
+                                event.preventDefault();
+                                Swal.fire({
+                                    title: 'Eliminar usuario existente',
+                                    text: '¿Desea eliminar este usuario?',
+                                    icon: 'question',
+                                    showDenyButton: true,
+                                    confirmButtonText: 'Eliminar',
+                                    confirmButtonColor: '#a5161d',
+                                    denyButtonColor: '#270a0a',
+                                    denyButtonText: 'Cancelar',
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        var form = $('#miFormulario<?=$id_usuario;?>');
+                                        form.submit();
+                                        Swal.fire('Eliminado', 'se eliminó el usuario correctamente', 'success');
+                                    }
+                                });
+                            }
+                            </script>
                                             </div>
                                         </td>
                                     </tr>
@@ -87,6 +93,14 @@ include ('../../app/controllers/usuarios/listado_de_usuarios.php');
                                 ?>
                                 </tbody>
                             </table>
+                            <hr>
+                    <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group text-center">
+                        <a href="<?=APP_URL;?>/admin/index.php" class="btn btn-danger">Volver</a>
+                        </div>
+                     </div>
+                     </div>
                         </div>
                     </div>
                 </div>

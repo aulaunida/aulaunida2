@@ -44,7 +44,7 @@ include ('../../app/controllers/roles/datos_del_rol.php');
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <a href="<?=APP_URL;?>/admin/roles" class="btn btn-secondary">Volver</a>
+                                        <a href="<?=APP_URL;?>/admin/roles" class="btn btn-danger"> Volver</a>
                                         </div>
                                     </div>
                                 </div>

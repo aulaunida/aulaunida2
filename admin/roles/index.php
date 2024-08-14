@@ -22,7 +22,7 @@ include('../../app/controllers/roles/listado_de_roles.php');
                         <div class="card-header">
                             <h3 class="card-title">Roles registrados</h3>
                             <div class="card-tools">
-                                <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-square"></i> Crear nuevo rol</a>
+                                <a href="create.php" class="btn btn-primary"><i class="bi bi-terminal-plus"></i> Crear nuevo rol</a>
                             </div>
                         </div>
                         <div class="card-body">
@@ -52,39 +52,50 @@ include('../../app/controllers/roles/listado_de_roles.php');
                                             <td style="text-align: center">
                                                 <div class="btn-group" role="group" aria-label="Basic example">
                                                     <a href="show.php?id=<?= $id_rol; ?>" type="button" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
-                                                    <a href="edit.php?id=<?= $id_rol; ?>" type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
+                                                    <a href="edit.php?id=<?= $id_rol; ?>" type="button" class="btn btn-success btn-sm icono-blanco"><i class="bi bi-pencil-square"></i></a>
                                                     <form action="<?= APP_URL; ?>/app/controllers/roles/delete.php" onclick="preguntar<?= $id_rol; ?>(event)" method="post" id="miFormulario<?= $id_rol; ?>">
                                                         <input type="text" name="id_rol" value="<?= $id_rol; ?>" hidden>
                                                         <button type="submit" class="btn btn-danger btn-sm" style="border-radius: 0px 5px 5px 0px"><i class="bi bi-trash"></i></button>
                                                     </form>
                                                     <script>
                                                         function preguntar<?= $id_rol; ?>(event) {
-                                                            event.preventDefault();
-                                                            Swal.fire({
-                                                                title: 'Eliminar registro',
-                                                                text: '¿Desea eliminar este registro?',
-                                                                icon: 'question',
-                                                                showDenyButton: true,
-                                                                confirmButtonText: 'Eliminar',
-                                                                confirmButtonColor: '#a5161d',
-                                                                denyButtonColor: '#270a0a',
-                                                                denyButtonText: 'Cancelar',
-                                                            }).then((result) => {
-                                                                if (result.isConfirmed) {
-                                                                    var form = $('#miFormulario<?= $id_rol; ?>');
-                                                                    form.submit();
-                                                                }
-                                                            });
-                                                        }
-                                                    </script>
+                                event.preventDefault();
+                                Swal.fire({
+                                    title: 'Eliminar rol existente',
+                                    text: '¿Desea eliminar este rol?',
+                                    icon: 'question',
+                                    showDenyButton: true,
+                                    confirmButtonText: 'Eliminar',
+                                    confirmButtonColor: '#a5161d',
+                                    denyButtonColor: '#270a0a',
+                                    denyButtonText: 'Cancelar',
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        var form = $('#miFormulario<?=$id_rol;?>');
+                                        form.submit();
+                                        Swal.fire('Eliminado', 'se eliminó el rol', 'success');
+                                    }
+                                });
+                            }
+                            </script>
                                                 </div>
                                             </td>
                                         </tr>
                                     <?php
                                     }
                                     ?>
+                                    
                                 </tbody>
+                                
                             </table>
+                            <hr>
+                    <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group text-center">
+                        <a href="<?=APP_URL;?>/admin/index.php" class="btn btn-danger">Volver</a>
+                        </div>
+                     </div>
+                     </div>
                         </div>
                     </div>
                 </div>

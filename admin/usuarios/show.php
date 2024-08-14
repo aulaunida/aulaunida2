@@ -35,14 +35,14 @@ include ('../../app/controllers/usuarios/datos_del_usuario.php');
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="">Nombres del usuarios</label>
+                                            <label for="">Nombre y Apellido</label>
                                             <p><?=$nombres;?></p>
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="">Email</label>
+                                            <label for="">Correo Electrónico</label>
                                             <p><?=$email;?></p>
                                         </div>
                                     </div>
@@ -58,7 +58,7 @@ include ('../../app/controllers/usuarios/datos_del_usuario.php');
                                         <div class="form-group">
                                             <label for="">Estado</label>
                                             <p>
-                                                <?php if($estado=='1') echo "ACTIVO"; else echo "INACTIVO"; ?>
+                                                <?php if($estado=='1') echo "Activo"; else echo "Inactivo"; ?>
                                             </p>
                                         </div>
                                     </div>
@@ -68,7 +68,8 @@ include ('../../app/controllers/usuarios/datos_del_usuario.php');
                                     <div class="col-md-12">
                                         <div class="form-group">
 
-                                            <a href="<?=APP_URL;?>/admin/usuarios" class="btn btn-secondary">Volver</a>
+                                        <a href="<?=APP_URL;?>/admin/usuarios" class="btn btn-danger">Volver</a>
+
                                         </div>
                                     </div>
                                 </div>

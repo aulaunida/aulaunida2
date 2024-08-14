@@ -19,7 +19,7 @@ include ('../../admin/layout/parte1.php');
                 <div class="col-md-6">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Complete los siguientes datos</h3>
+                            <h3 class="card-title">Complete los siguientes datos:</h3>
                         </div>
                         <div class="card-body">
                             <form action="<?=APP_URL;?>/app/controllers/roles/create.php" method="post">
@@ -36,7 +36,7 @@ include ('../../admin/layout/parte1.php');
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-primary">Registrar</button>
-                                            <a href="<?=APP_URL;?>/admin/roles" class="btn btn-secondary">Cancelar</a>
+                                            <a href="<?=APP_URL;?>/admin/roles" class="btn btn-danger"> Cancelar</a>
                                         </div>
                                     </div>
                                 </div>

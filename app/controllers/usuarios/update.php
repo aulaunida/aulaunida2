@@ -17,106 +17,105 @@ $password = $_POST['password'];
 $password_repet = $_POST['password_repet'];
 
 if($password == ""){
-
-        $sentencia = $pdo->prepare("UPDATE usuarios 
+    
+        $sentencia = $pdo->prepare("UPDATE usuarios
         SET nombres=:nombres,
             rol_id=:rol_id,
             email=:email,
             fyh_actualizacion=:fyh_actualizacion
         WHERE id_usuario=:id_usuario ");
-
+        
         $sentencia->bindParam(':nombres',$nombres);
         $sentencia->bindParam(':rol_id',$rol_id);
         $sentencia->bindParam(':email',$email);
         $sentencia->bindParam('fyh_actualizacion',$fechaHora);
         $sentencia->bindParam('id_usuario',$id_usuario);
-
+    
         try{
             if($sentencia->execute()){
-                session_start();
-                $_SESSION['mensaje'] = "Se actualizó el usuarios de manera correcta en la base de datos";
-                $_SESSION['icono'] = "success";
-                $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
-                $_SESSION['timerProgressBar'] = true;
-                $_SESSION['showCloseButton'] = true; // Agregar la cruz de cierre
-                header('Location:'.APP_URL."/admin/usuarios");
+            session_start();
+            $_SESSION['mensaje'] = "Se actualizó el usuario de manera correcta";
+            $_SESSION['icono'] = "success";
+            $_SESSION['timer'] = 3000;  // Duración del mensaje en milisegundos 
+            $_SESSION['timerProgressBar'] = true;
+            $_SESSION['showCloseButton'] = true; // Agregar la cruz de cierre
+            header('Location:'.APP_URL."/admin/usuarios");
             }else {
                 session_start();
-                $_SESSION['mensaje'] = "Error no se pudo actualizar en la base datos, comuniquese con el administrador";
-                $_SESSION['icono'] = "warning";
-                $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
-                $_SESSION['timerProgressBar'] = true;
-                $_SESSION['showCloseButton'] = true; // Agregar la cruz de cierre
-                ?><script>window.history.back();</script><?php
+            $_SESSION['mensaje'] = "Error, no se pudo actualizar el usuario. Comunicarse con el administrador";
+            $_SESSION['icono'] = "error";
+            $_SESSION['timer'] = 3000;  // Duración del mensaje en milisegundos 
+            $_SESSION['timerProgressBar'] = true;
+            $_SESSION['showCloseButton'] = true; // Agregar la cruz de cierre
+            ?><script>window.history.back();</script><?php
             }
         }catch (Exception $exception){
             session_start();
-            $_SESSION['mensaje'] = "El email de este usuario ya existe en la base de datos";
-            $_SESSION['icono'] = "warning";
-            $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
+            $_SESSION['mensaje'] = "El email de este usuario ya existe";
+            $_SESSION['icono'] = "error";
+            $_SESSION['timer'] = 3000;  // Duración del mensaje en milisegundos 
             $_SESSION['timerProgressBar'] = true;
             $_SESSION['showCloseButton'] = true; // Agregar la cruz de cierre
             ?><script>window.history.back();</script><?php
         }
-
-
-}else{
-
-    if($password == $password_repet){
-        //echo "las contraseñas son iguales";
-        $password = password_hash($password, PASSWORD_DEFAULT);
-
-        $sentencia = $pdo->prepare("UPDATE usuarios 
+}else {
+    if ($password == $password_repet) {
+        // echo "Las contraseñas coinciden";
+        $password = password_hash($password, PASSWORD_DEFAULT); //para encriptar contraseña
+    
+        $sentencia = $pdo->prepare("UPDATE usuarios
         SET nombres=:nombres,
             rol_id=:rol_id,
             email=:email,
             password=:password,
             fyh_actualizacion=:fyh_actualizacion
         WHERE id_usuario=:id_usuario ");
-
+        
         $sentencia->bindParam(':nombres',$nombres);
         $sentencia->bindParam(':rol_id',$rol_id);
         $sentencia->bindParam(':email',$email);
         $sentencia->bindParam(':password',$password);
         $sentencia->bindParam('fyh_actualizacion',$fechaHora);
         $sentencia->bindParam('id_usuario',$id_usuario);
-
+    
         try{
-            if($sentencia->execute()){
-                session_start();
-                $_SESSION['mensaje'] = "Se registro el usuarios de la manera correcta en la base de datos";
-                $_SESSION['icono'] = "success";
-                $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
-                $_SESSION['timerProgressBar'] = true;
-                $_SESSION['showCloseButton'] = true; // Agregar la cruz de cierre
-                header('Location:'.APP_URL."/admin/usuarios");
+            if ($sentencia->execute()){
+            session_start();
+            $_SESSION['mensaje'] = "Se registró correctamente el nuevo usuario";
+            $_SESSION['icono'] = "success";
+            $_SESSION['timer'] = 3000;  // Duración del mensaje en milisegundos 
+            $_SESSION['timerProgressBar'] = true;
+            $_SESSION['showCloseButton'] = true; // Agregar la cruz de cierre
+            header('Location:'.APP_URL."/admin/usuarios");
             }else {
                 session_start();
-                $_SESSION['mensaje'] = "Error no se pudo registrar en la base datos, comuniquese con el administrador";
-                $_SESSION['icono'] = "warning";
-                $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
-                $_SESSION['timerProgressBar'] = true;
-                $_SESSION['showCloseButton'] = true; // Agregar la cruz de cierre
-                ?><script>window.history.back();</script><?php
+            $_SESSION['mensaje'] = "Error al registrar nuevo usuario, comunicarse con el administrador";
+            $_SESSION['icono'] = "error";
+            $_SESSION['timer'] = 3000;  // Duración del mensaje en milisegundos 
+            $_SESSION['timerProgressBar'] = true;
+            $_SESSION['showCloseButton'] = true; // Agregar la cruz de cierre
+            ?><script>window.history.back();</script><?php
             }
         }catch (Exception $exception){
             session_start();
-            $_SESSION['mensaje'] = "El email de este usuario ya existe en la base de datos";
-            $_SESSION['icono'] = "warning";
-            $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
+            $_SESSION['mensaje'] = "El correo electrónico de este usuario ya existe";
+            $_SESSION['icono'] = "error";
+            $_SESSION['timer'] = 3000;  // Duración del mensaje en milisegundos 
             $_SESSION['timerProgressBar'] = true;
             $_SESSION['showCloseButton'] = true; // Agregar la cruz de cierre
             ?><script>window.history.back();</script><?php
         }
+       
+    
     }else{
-        echo "las contraseñas no son iguales";
+        echo "Las contraseñas no coinciden";
         session_start();
-        $_SESSION['mensaje'] = "Las contraseñas introducidas no son iguales";
-        $_SESSION['icono'] = "warning";
-        $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
-        $_SESSION['timerProgressBar'] = true;
-        $_SESSION['showCloseButton'] = true; // Agregar la cruz de cierre
-        ?><script>window.history.back();</script><?php
+      $_SESSION['mensaje'] = "Las contraseñas no coinciden, inténtelo nuevamente";
+      $_SESSION['icono'] = "error";
+      $_SESSION['timer'] = 3000;  // Duración del mensaje en milisegundos 
+      $_SESSION['timerProgressBar'] = true;
+      $_SESSION['showCloseButton'] = true; // Agregar la cruz de cierre
+      ?><script>window.history.back();</script><?php
     }
 }
 

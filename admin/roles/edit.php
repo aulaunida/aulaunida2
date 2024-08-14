@@ -21,7 +21,7 @@ include ('../../app/controllers/roles/datos_del_rol.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Editar el rol: <?=$nombre_rol;?></h1>
+                <h1>Editar rol: <?=$nombre_rol;?></h1>
             </div>
             <br>
             <div class="row">
@@ -46,7 +46,7 @@ include ('../../app/controllers/roles/datos_del_rol.php');
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-success">Actualizar</button>
-                                            <a href="<?=APP_URL;?>/admin/roles" class="btn btn-secondary">Cancelar</a>
+                                            <a href="<?=APP_URL;?>/admin/roles" class="btn btn-danger"> Cancelar</a>
                                         </div>
                                     </div>
                                 </div>
