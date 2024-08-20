@@ -19,7 +19,7 @@ include ('../../app/controllers/configuraciones/gestion/listado_de_gestiones.php
             <br>
             <div class="row">
 
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="card card-outline card-success">
                         <div class="card-header">
                             <h3 class="card-title">Complete los siguientes datos:</h3>

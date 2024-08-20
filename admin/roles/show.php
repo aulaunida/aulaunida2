@@ -26,7 +26,7 @@ include ('../../app/controllers/roles/datos_del_rol.php');
             <br>
             <div class="row">
 
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="card card-outline card-info">
                         <div class="card-header">
                             <h3 class="card-title">Datos registrados</h3>

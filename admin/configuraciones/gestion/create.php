@@ -15,7 +15,7 @@ include ('../../../admin/layout/parte1.php');
             <br>
             <div class="row">
 
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Complete los siguientes datos:</h3>
