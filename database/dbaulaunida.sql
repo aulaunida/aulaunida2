@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `configuracion_instituciones` (
 --
 
 INSERT INTO `configuracion_instituciones` (`id_config_institucion`, `nombre_institucion`, `logo`, `direccion`, `telefono`, `celular`, `correo`, `fyh_creacion`, `fyh_actualizacion`, `estado`) VALUES
-(1, 'Instituto Arturo Capdevila', '2024-06-03-20-30-17capdevila.png', 'Av. Arturo Capdevila 709', '3513557204', '3513557205', 'direccion@instituto-capdevila.com.ar', '2023-12-28 20:29:10', '2024-06-03 20:31:42', '1');
+(1, 'Instituto Arturo Capdevila', '2024-06-03-20-30-17capdevila.png', 'Av. Arturo Capdevila 709', '3513557204', '3513557205', 'direccion@instituto-capdevila.com.ar', '2023-12-28', '2024-06-03', '1');
 
 -- --------------------------------------------------------
 
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `gestiones` (
 --
 
 INSERT INTO `gestiones` (`id_gestion`, `gestion`, `fyh_creacion`, `fyh_actualizacion`, `estado`) VALUES
-(1, 'CICLO LECTIVO 2024', '2023-12-28 20:29:10', NULL, '1');
+(1, 'CICLO LECTIVO 2024', '2023-12-28', NULL, '1');
 
 -- --------------------------------------------------------
 
@@ -96,8 +96,8 @@ CREATE TABLE IF NOT EXISTS `niveles` (
 --
 
 INSERT INTO `niveles` (`id_nivel`, `gestion_id`, `nivel`, `turno`, `fyh_creacion`, `fyh_actualizacion`, `estado`) VALUES
-(1, 1, 'PRIMARIA', 'MAÑANA', '2024-04-22 20:29:10', '2024-06-03 20:26:08', '1'),
-(2, 1, 'PRIMARIA', 'TARDE', '2024-06-03 20:26:38', NULL, '1');
+(1, 1, 'PRIMARIA', 'MAÑANA', '2024-04-22', '2024-06-03', '1'),
+(2, 1, 'PRIMARIA', 'TARDE', '2024-06-03', NULL, '1');
 
 -- --------------------------------------------------------
 
@@ -121,9 +121,9 @@ CREATE TABLE IF NOT EXISTS `roles` (
 --
 
 INSERT INTO `roles` (`id_rol`, `nombre_rol`, `fyh_creacion`, `fyh_actualizacion`, `estado`) VALUES
-(1, 'ADMINISTRADOR', '2024-01-03 16:20:20', NULL, '1'),
-(2, 'DIRECTOR', '2024-01-03 16:20:20', NULL, '1'),
-(3, 'DOCENTE', '2024-01-03 16:20:20', NULL, '1');
+(1, 'ADMINISTRADOR', '2024-01-03', NULL, '1'),
+(2, 'DIRECTOR', '2024-01-03', NULL, '1'),
+(3, 'DOCENTE', '2024-01-03', NULL, '1');
 
 -- --------------------------------------------------------
 
@@ -151,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nombres`, `rol_id`, `email`, `password`, `fyh_creacion`, `fyh_actualizacion`, `estado`) VALUES
-(1, 'Leonardo Rodriguez', 1, 'admin@admin.com', '$2y$10$0tYmdHU9uGCIxY1f90W1EuIm54NQ8axowkxL1WzLbqO2LdNa8m3l2', '2024-05-13 20:29:10', NULL, '1');
+(1, 'Leonardo Rodriguez', 1, 'admin@admin.com', '$2y$10$0tYmdHU9uGCIxY1f90W1EuIm54NQ8axowkxL1WzLbqO2LdNa8m3l2', '2024-05-13', NULL, '1');
 
 --
 -- Restricciones para tablas volcadas
