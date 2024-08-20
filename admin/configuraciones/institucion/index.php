@@ -29,7 +29,7 @@ include ('../../../app/controllers/configuraciones/institucion/listado_de_instit
                             <table id="example1" class="table table-striped table-bordered table-hover table-sm">
                                 <thead>
                                 <tr>
-                                    <th><center></center></th>
+                                    <!-- <th><center>Orden</center></th> -->
                                     <th><center>Nombre de la institución</center></th>
                                     <th><center>Logo</center></th>
                                     <th><center>Dirección</center></th>
@@ -37,7 +37,7 @@ include ('../../../app/controllers/configuraciones/institucion/listado_de_instit
                                     <th><center>Celular</center></th>
                                     <th><center>Correo electronico</center></th>
                                     <th><center>Fecha de creación</center></th>
-                                    <th><center>Estado</center></th>
+                                    <!-- <th><center>Estado</center></th> -->
                                     <th><center>Acciones</center></th>
                                 </tr>
                                 </thead>
@@ -48,7 +48,7 @@ include ('../../../app/controllers/configuraciones/institucion/listado_de_instit
                                     $id_config_institucion = $institucione['id_config_institucion'];
                                     $contador_institucion = $contador_institucion +1; ?>
                                     <tr>
-                                        <td style="text-align: center"><?=$contador_institucion;?></td>
+                                        <td style="text-align: center" hidden><?=$contador_institucion;?></td>
                                         <td><?=$institucione['nombre_institucion'];?></td>
                                         <td>
                                             <img src="<?=APP_URL."/public/images/configuracion/".$institucione['logo'];?>" width="100px" alt="">
@@ -58,7 +58,7 @@ include ('../../../app/controllers/configuraciones/institucion/listado_de_instit
                                         <td><?=$institucione['celular'];?></td>
                                         <td><?=$institucione['correo'];?></td>
                                         <td><?=$institucione['fyh_creacion'];?></td>
-                                        <td><?=$institucione['estado'];?></td>
+                                        <td hidden><?=$institucione['estado'];?></td>
                                         <td style="text-align: center">
                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                 <a href="show.php?id=<?=$id_config_institucion;?>" type="button" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
