@@ -25,7 +25,7 @@ try{
 }
 
 date_default_timezone_set("America/Argentina/Cordoba");
-$fechaHora = date('Y-m-d H:i:s');
+$fechaHora = date('Y-m-d');
 
 $fecha_actual = date('Y-m-d');
 $dia_actual = date('d');

@@ -36,8 +36,8 @@ CREATE TABLE IF NOT EXISTS `configuracion_instituciones` (
   `telefono` varchar(100) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `celular` varchar(100) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `correo` varchar(100) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  `fyh_creacion` datetime DEFAULT NULL,
-  `fyh_actualizacion` datetime DEFAULT NULL,
+  `fyh_creacion` date DEFAULT NULL,
+  `fyh_actualizacion` date DEFAULT NULL,
   `estado` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_config_institucion`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
@@ -59,8 +59,8 @@ DROP TABLE IF EXISTS `gestiones`;
 CREATE TABLE IF NOT EXISTS `gestiones` (
   `id_gestion` int NOT NULL AUTO_INCREMENT,
   `gestion` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `fyh_creacion` datetime DEFAULT NULL,
-  `fyh_actualizacion` datetime DEFAULT NULL,
+  `fyh_creacion` date DEFAULT NULL,
+  `fyh_actualizacion` date DEFAULT NULL,
   `estado` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_gestion`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
@@ -84,8 +84,8 @@ CREATE TABLE IF NOT EXISTS `niveles` (
   `gestion_id` int NOT NULL,
   `nivel` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
   `turno` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `fyh_creacion` datetime DEFAULT NULL,
-  `fyh_actualizacion` datetime DEFAULT NULL,
+  `fyh_creacion` date DEFAULT NULL,
+  `fyh_actualizacion` date DEFAULT NULL,
   `estado` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_nivel`),
   KEY `gestion_id` (`gestion_id`)
@@ -109,8 +109,8 @@ DROP TABLE IF EXISTS `roles`;
 CREATE TABLE IF NOT EXISTS `roles` (
   `id_rol` int NOT NULL AUTO_INCREMENT,
   `nombre_rol` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `fyh_creacion` datetime DEFAULT NULL,
-  `fyh_actualizacion` datetime DEFAULT NULL,
+  `fyh_creacion` date DEFAULT NULL,
+  `fyh_actualizacion` date DEFAULT NULL,
   `estado` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_rol`),
   UNIQUE KEY `nombre_rol` (`nombre_rol`)
@@ -138,8 +138,8 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `rol_id` int NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
   `password` text COLLATE utf8mb4_spanish_ci NOT NULL,
-  `fyh_creacion` datetime DEFAULT NULL,
-  `fyh_actualizacion` datetime DEFAULT NULL,
+  `fyh_creacion` date DEFAULT NULL,
+  `fyh_actualizacion` date DEFAULT NULL,
   `estado` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `email` (`email`),

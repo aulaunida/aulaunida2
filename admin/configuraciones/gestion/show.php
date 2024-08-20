@@ -34,7 +34,7 @@ include ('../../../app/controllers/configuraciones/gestion/datos_gestion.php');
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Fecha y hora de creación</label>
+                                            <label for="">Fecha de creación</label>
                                             <p><?=$fyh_creacion;?></p>
                                         </div>
                                     </div>
