@@ -34,7 +34,7 @@ include ('../../app/controllers/usuarios/listado_de_usuarios.php');
                             <table id="example1" class="table table-striped table-bordered table-hover table-sm">
                                 <thead>
                                 <tr>
-                                    <th><center>Nro</center></th>
+                                    <!-- <th><center>Nro</center></th> -->
                                     <th><center>Nombre del usuario</center></th>
                                     <th><center>Rol</center></th>
                                     <th><center>Correo electrónico</center></th>
@@ -50,7 +50,7 @@ include ('../../app/controllers/usuarios/listado_de_usuarios.php');
                                     $id_usuario = $usuario['id_usuario'];
                                     $contador_usuarios = $contador_usuarios +1; ?>
                                     <tr>
-                                        <td style="text-align: center"><?=$contador_usuarios;?></td>
+                                        <td style="text-align: center" hidden><?=$contador_usuarios;?></td>
                                         <td><?=$usuario['nombres'];?></td>
                                         <td><?=$usuario['nombre_rol'];?></td>
                                         <td><?=$usuario['email'];?></td>

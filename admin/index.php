@@ -17,7 +17,7 @@ include ('../app/controllers/niveles/listado_de_niveles.php');
             <br>
             <div class="row">
 
-                <div class="col-lg-12 col-12">
+                <div class="col-lg-4 col-4">
                     <div class="small-box bg-primary">
                         <div class="inner">
                             <?php
@@ -38,7 +38,7 @@ include ('../app/controllers/niveles/listado_de_niveles.php');
                     </div>
                 </div>
 
-                <div class="col-lg-12 col-12">
+                <div class="col-lg-4 col-4">
                     <div class="small-box bg-info">
                         <div class="inner">
                             <?php
@@ -60,7 +60,7 @@ include ('../app/controllers/niveles/listado_de_niveles.php');
                 </div>
 
 
-                <div class="col-lg-12 col-12">
+                <div class="col-lg-4 col-4">
                     <div class="small-box bg-success">
                         <div class="inner">
                             <?php
