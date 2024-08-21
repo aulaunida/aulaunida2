@@ -37,7 +37,7 @@ include ('../../../app/controllers/configuraciones/institucion/listado_de_instit
                                     <th><center>Celular</center></th>
                                     <th><center>Correo electronico</center></th>
                                     <!-- <th><center>Fecha de creación</center></th> -->
-                                    <!-- <th><center>Estado</center></th> -->
+                                    <th><center>Estado</center></th>
                                     <th><center>Acciones</center></th>
                                 </tr>
                                 </thead>
@@ -58,7 +58,7 @@ include ('../../../app/controllers/configuraciones/institucion/listado_de_instit
                                         <td><?=$institucione['celular'];?></td>
                                         <td><?=$institucione['correo'];?></td>
                                         <!-- <td>?=$institucione['fyh_creacion'];?></td> -->
-                                        <!-- <td>?=$institucione['estado'];?></td> -->
+                                        <td><?= $institucione['estado'] == '1' ? "Activo" : "Inactivo"; ?></td>
                                         <td style="text-align: center">
                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                 <a href="show.php?id=<?=$id_config_institucion;?>" type="button" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
