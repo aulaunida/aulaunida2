@@ -29,7 +29,7 @@ include ('../../../app/controllers/configuraciones/gestion/listado_de_gestiones.
                             <table id="example1" class="table table-striped table-bordered table-hover table-sm">
                                 <thead>
                                 <tr>
-                                    <!-- <th><center></center></th> -->
+                                    <th><center></center></th>
                                     <th><center>Descripción de Ciclo Lectivo</center></th>
                                     <th><center>Alta de Ciclo Lectivo</center></th>
                                     <th><center>Estado</center></th>
@@ -43,7 +43,7 @@ include ('../../../app/controllers/configuraciones/gestion/listado_de_gestiones.
                                     $id_gestion = $gestione['id_gestion'];
                                     $contador_gestiones = $contador_gestiones +1; ?>
                                     <tr>
-                                        <td style="text-align: center" hidden><?=$contador_gestiones;?></td>
+                                        <td style="text-align: center"><?=$contador_gestiones;?></td>
                                         <td><?=$gestione['gestion'];?></td>
                                         <td><?=$gestione['fyh_creacion'];?></td>
                                         <td>
