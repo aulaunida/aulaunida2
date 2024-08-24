@@ -46,7 +46,7 @@ include ('../../../app/controllers/configuraciones/gestion/listado_de_gestiones.
                                         <td style="text-align: center"><?=$contador_gestiones;?></td>
                                         <td><?=$gestione['gestion'];?></td>
                                         <td><?=$gestione['fyh_creacion'];?></td>
-                                        <td>
+                                        <td class="text-center">
                                             <?php
                                             if($gestione['estado'] == "1"){ ?>
                                                 <button class="btn btn-success btn-sm" style="border-radius: 20px">ACTIVO</button>

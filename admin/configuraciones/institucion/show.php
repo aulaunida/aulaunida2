@@ -56,10 +56,18 @@ include ('../../../app/controllers/configuraciones/institucion/datos_institucion
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-12">
+                                            <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="">Dirección</label>
                                                     <p><?=$direccion;?></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="">Fecha de creación</label>
+                                                    <p><?=$fyh_creacion;?></p>
                                                 </div>
                                             </div>
                                         </div>

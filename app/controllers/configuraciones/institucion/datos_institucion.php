@@ -18,4 +18,5 @@ foreach ($instituciones as $institucione){
     $celular = $institucione['celular'];
     $correo = $institucione['correo'];
     $logo = $institucione['logo'];
+    $fyh_creacion = $institucione['fyh_creacion'];
 }
