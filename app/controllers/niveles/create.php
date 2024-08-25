@@ -25,7 +25,7 @@ $sentencia->bindParam('estado',$estado_de_registro);
 if($sentencia->execute()){
     echo 'success';
     session_start();
-    $_SESSION['mensaje'] = "Se registro el nivel de manera correcta en la base de datos";
+    $_SESSION['mensaje'] = "Nivel registrado de manera correcta en la base de datos";
     $_SESSION['icono'] = "success";
     $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
     $_SESSION['timerProgressBar'] = true;
@@ -35,7 +35,7 @@ if($sentencia->execute()){
 }else{
     echo 'Error al registrar nivel a la base de datos';
     session_start();
-    $_SESSION['mensaje'] = "Error no se pudo registrar nivel en la base datos, comuníquese con el administrador";
+    $_SESSION['mensaje'] = "Error al registrar nivel en la base datos, comuníquese con el administrador";
     $_SESSION['icono'] = "warning";
     $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
     $_SESSION['timerProgressBar'] = true;

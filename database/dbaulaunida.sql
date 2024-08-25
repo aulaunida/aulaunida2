@@ -70,7 +70,8 @@ CREATE TABLE IF NOT EXISTS `gestiones` (
 --
 
 INSERT INTO `gestiones` (`id_gestion`, `gestion`, `fyh_creacion`, `fyh_actualizacion`, `estado`) VALUES
-(1, 'CICLO LECTIVO 2024', '2023-12-28', NULL, '1');
+(1, 'CICLO LECTIVO 2023', '2023-01-08', NULL, '0'),
+(1, 'CICLO LECTIVO 2024', '2024-01-15', NULL, '1');
 
 -- --------------------------------------------------------
 
@@ -96,8 +97,8 @@ CREATE TABLE IF NOT EXISTS `niveles` (
 --
 
 INSERT INTO `niveles` (`id_nivel`, `gestion_id`, `nivel`, `turno`, `fyh_creacion`, `fyh_actualizacion`, `estado`) VALUES
-(1, 1, 'PRIMARIA', 'MAÑANA', '2024-04-22', '2024-06-03', '1'),
-(2, 1, 'PRIMARIA', 'TARDE', '2024-06-03', NULL, '1');
+(1, 2, 'PRIMARIA', 'MAÑANA', '2024-04-22', '2024-06-03', '1'),
+(2, 2, 'PRIMARIA', 'TARDE', '2024-06-03', NULL, '1');
 
 -- --------------------------------------------------------
 
