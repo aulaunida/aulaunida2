@@ -100,6 +100,28 @@ INSERT INTO `niveles` (`id_nivel`, `gestion_id`, `nivel`, `turno`, `fyh_creacion
 (1, 2, 'PRIMARIA', 'MAÑANA', '2024-04-22', '2024-06-03', '1'),
 (2, 2, 'PRIMARIA', 'TARDE', '2024-06-03', NULL, '1');
 
+
+-- --------------------------------------------------------
+
+CREATE TABLE `grados` (
+  `id_grado` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `nivel_id` int (11) NOT NULL,
+  `curso` varchar(255) NOT NULL,
+  `paralelo` varchar(255) NOT NULL,
+  
+  `fyh_creacion` date NULL,
+  `fyh_actualizacion` date NULL,
+  `estado` varchar(11),
+  
+  FOREIGN KEY (`nivel_id`) REFERENCES `niveles` (`id_nivel`) ON DELETE NO ACTION ON UPDATE CASCADE
+) 
+
+ENGINE=InnoDB;
+
+INSERT INTO `grados` (`nivel_id`, `curso`, `paralelo`,`fyh_creacion`, `fyh_actualizacion`, `estado`) VALUES
+(1,'INICIAL - PRIMERO', 'A', '2024-08-24', '2024-08-24', '1');
+
+
 -- --------------------------------------------------------
 
 --
@@ -163,6 +185,7 @@ INSERT INTO `usuarios` (`id_usuario`, `nombres`, `rol_id`, `email`, `password`, 
 --
 ALTER TABLE `niveles`
   ADD CONSTRAINT `niveles_ibfk_1` FOREIGN KEY (`gestion_id`) REFERENCES `gestiones` (`id_gestion`) ON UPDATE CASCADE;
+
 
 --
 -- Filtros para la tabla `usuarios`
