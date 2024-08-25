@@ -50,7 +50,7 @@ include ('../../app/controllers/usuarios/datos_del_usuario.php');
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="">Fecha y hora de creación</label>
+                                            <label for="">Fecha de creación</label>
                                             <p><?=$fyh_creacion;?></p>
                                         </div>
                                     </div>
