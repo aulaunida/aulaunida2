@@ -110,6 +110,19 @@ INSERT INTO `grados` (`id_grado`, `nivel_id`, `curso`, `paralelo`, `fyh_creacion
 (16, 1, 'PRIMARIA - SEXTO', 'A', '2024-08-25', NULL, '1'),
 (17, 2, 'PRIMARIA - SEXTO', 'B', '2024-08-25', NULL, '1');
 
+
+CREATE TABLE materias (
+  `id_materia` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `nombre_materia` varchar(255) NOT NULL,
+
+  `fyh_creacion` date NULL,
+  `fyh_actualizacion` date NULL,
+  `estado` varchar(11)
+) ENGINE=InnoDB;
+
+INSERT INTO materias (nombre_materia,fyh_creacion,estado)
+VALUES ('MATEMATICA','2024-08-26','1');
+
 -- --------------------------------------------------------
 
 --

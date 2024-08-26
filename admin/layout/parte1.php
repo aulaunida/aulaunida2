@@ -270,6 +270,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                     <li class="nav-item">
                         <a href="#" class="nav-link active">
+                            <i class="nav-icon fas"><i class="bi bi-book-half"></i></i></i></i>
+                            <p>
+                                Materias
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?=APP_URL;?>/admin/materias" class="nav-link active">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Listado de materias</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">
                             <i class="nav-icon fas"><i class="bi bi-bookmarks"></i></i>
                             <p>
                                 Roles de usuario

@@ -2,7 +2,7 @@
 include ('../../app/config.php');
 include ('../../admin/layout/parte1.php');
 
-include ('../../app/controllers/grados/listado_de_grados.php');
+include ('../../app/controllers/materias/listado_de_materias.php');
 
 ?>
 
@@ -12,7 +12,7 @@ include ('../../app/controllers/grados/listado_de_grados.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Listado de grados</h1>
+                <h1>Listado de materias</h1>
             </div>
             <br>
             <div class="row">
@@ -20,9 +20,9 @@ include ('../../app/controllers/grados/listado_de_grados.php');
                 <div class="col-md-12">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Grados registrados</h3>
+                            <h3 class="card-title">Materias registradas</h3>
                             <div class="card-tools">
-                                <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-square"></i> Crear nuevo grado</a>
+                                <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-square"></i> Crear nueva materia</a>
                             </div>
                         </div>
                         <div class="card-body">
@@ -30,35 +30,31 @@ include ('../../app/controllers/grados/listado_de_grados.php');
                                 <thead>
                                 <tr>
                                     <th><center>Nro</center></th>
-                                    <th><center>Nivel</center></th>
-                                    <th><center>Turno</center></th>
-                                    <th><center>Curso</center></th>
-                                    <th><center>División</center></th>
+                                    <th><center>Materia</center></th>
+                                    <th><center>Estado</center></th>
                                     <th><center>Acciones</center></th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php
-                                $contador_grados = 0;
-                                foreach ($grados as $grado){
-                                    $id_grado = $grado['id_grado'];
-                                    $contador_grados = $contador_grados +1; ?>
+                                $contador_materias = 0;
+                                foreach ($materias as $materia){
+                                    $id_materia = $materia['id_materia'];
+                                    $contador_materias = $contador_materias +1; ?>
                                     <tr>
-                                        <td style="text-align: center"><?=$contador_grados;?></td>
-                                        <td style="text-align: center"><?=$grado['nivel'];?></td>
-                                        <td style="text-align: center"><?=$grado['turno'];?></td>
-                                        <td style="text-align: center"><?=$grado['curso'];?></td>
-                                        <td style="text-align: center"><?=$grado['paralelo'];?></td>
+                                        <td style="text-align: center"><?=$contador_materias;?></td>
+                                        <td style="text-align: center"><?=$materia['nombre_materia'];?></td>
+                                        <td style="text-align: center"><?=$materia['estado'];?></td>
                                         <td style="text-align: center">
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <a href="show.php?id=<?=$id_grado;?>" type="button" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
-                                                <a href="edit.php?id=<?=$id_grado;?>" type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
-                                                <!-- <form action="<?=APP_URL;?>/app/controllers/grados/delete.php" onclick="preguntar<?=$id_grado;?>(event)" method="post" id="miFormulario<?=$id_grado;?>">
-                                                    <input type="text" name="id_grado" value="<?=$id_grado;?>" hidden>
+                                                <a href="show.php?id=<?=$id_materia;?>" type="button" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
+                                                <a href="edit.php?id=<?=$id_materia;?>" type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
+                                                <!-- <form action="<?=APP_URL;?>/app/controllers/materias/delete.php" onclick="preguntar<?=$id_materia;?>(event)" method="post" id="miFormulario<?=$id_materia;?>">
+                                                    <input type="text" name="id_materia" value="<?=$id_materia;?>" hidden>
                                                     <button type="submit" class="btn btn-danger btn-sm" style="border-radius: 0px 5px 5px 0px"><i class="bi bi-trash"></i></button>
                                                 </form>
                                                 <script>
-                                                    function preguntar<?=$id_grado;?>(event) {
+                                                    function preguntar<?=$id_materia;?>(event) {
                                                         event.preventDefault();
                                                         Swal.fire({
                                                             title: 'Eliminar registro',
@@ -71,7 +67,7 @@ include ('../../app/controllers/grados/listado_de_grados.php');
                                                             denyButtonText: 'Cancelar',
                                                         }).then((result) => {
                                                             if (result.isConfirmed) {
-                                                                var form = $('#miFormulario<?=$id_grado;?>');
+                                                                var form = $('#miFormulario<?=$id_materia;?>');
                                                                 form.submit();
                                                             }
                                                         });
@@ -109,12 +105,12 @@ include ('../../layout/mensajes.php');
             "pageLength": 25,
             "language": {
                 "emptyTable": "No hay información",
-                "info": "Mostrando _START_ a _END_ de _TOTAL_ Grados",
-                "infoEmpty": "Mostrando 0 a 0 de 0 Grados",
-                "infoFiltered": "(Filtrado de _MAX_ total Grados)",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ Materias",
+                "infoEmpty": "Mostrando 0 a 0 de 0 Materias",
+                "infoFiltered": "(Filtrado de _MAX_ total Materias)",
                 "infoPostFix": "",
                 "thousands": ",",
-                "lengthMenu": "Mostrar _MENU_ Grados",
+                "lengthMenu": "Mostrar _MENU_ Materias",
                 "loadingRecords": "Cargando...",
                 "processing": "Procesando...",
                 "search": "Buscador:",
