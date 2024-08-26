@@ -22,7 +22,7 @@ include ('../../app/controllers/niveles/datos_nivel.php');
                 <div class="col-md-12">
                     <div class="card card-outline card-info">
                         <div class="card-header">
-                            <h3 class="card-title">Datos del nivel</h3>
+                            <h3 class="card-title">Datos registrados</h3>
                         </div>
                         <div class="card-body">
                             <form action="<?=APP_URL;?>/app/controllers/niveles/create.php" method="post">

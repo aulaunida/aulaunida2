@@ -19,9 +19,9 @@ include('../../app/controllers/grados/datos_grados.php');
             <br>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card card-outline card-primary">
+                    <div class="card card-outline card-info">
                         <div class="card-header">
-                            <h3 class="card-title">Complete los siguientes datos:</h3>
+                            <h3 class="card-title">Datos registrados</h3>
                         </div>
                         <div class="card-body">
                             <div class="row">
