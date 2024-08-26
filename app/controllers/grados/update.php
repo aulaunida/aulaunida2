@@ -2,24 +2,28 @@
 
 include ('../../../app/config.php');
 
+$id_grado = $_POST['id_grado'];
 $nivel_id = $_POST['nivel_id'];
 $curso = $_POST['curso'];
 $paralelo = $_POST['paralelo'];
 
-$sentencia = $pdo->prepare('INSERT INTO grados
-(nivel_id,curso,paralelo, fyh_creacion, estado)
-VALUES ( :nivel_id,:curso,:paralelo,:fyh_creacion,:estado)');
+$sentencia = $pdo->prepare('UPDATE grados
+SET nivel_id=:nivel_id,
+    curso=:curso,
+    paralelo=:paralelo, 
+    fyh_actualizacion=:fyh_actualizacion
+WHERE id_grado=:id_grado');
 
 $sentencia->bindParam(':nivel_id',$nivel_id);
 $sentencia->bindParam(':curso',$curso);
 $sentencia->bindParam(':paralelo',$paralelo);
-$sentencia->bindParam('fyh_creacion',$fechaHora);
-$sentencia->bindParam('estado',$estado_de_registro);
+$sentencia->bindParam('fyh_actualizacion',$fechaHora);
+$sentencia->bindParam('id_grado',$id_grado);
 
 if($sentencia->execute()){
     echo 'success';
     session_start();
-    $_SESSION['mensaje'] = "Grado registrado de manera correcta en la base de datos";
+    $_SESSION['mensaje'] = "Grado actualizado de manera correcta en la base de datos";
     $_SESSION['icono'] = "success";
     $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
     $_SESSION['timerProgressBar'] = true;
@@ -29,7 +33,7 @@ if($sentencia->execute()){
 }else{
     echo 'Error al registrar grado a la base de datos';
     session_start();
-    $_SESSION['mensaje'] = "Error al registrar grado en la base datos, comuníquese con el administrador";
+    $_SESSION['mensaje'] = "Error al actualizar grado en la base datos, comuníquese con el administrador";
     $_SESSION['icono'] = "warning";
     $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
     $_SESSION['timerProgressBar'] = true;
