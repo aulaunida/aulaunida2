@@ -44,12 +44,22 @@ include ('../../app/controllers/materias/listado_de_materias.php');
                                     <tr>
                                         <td style="text-align: center"><?=$contador_materias;?></td>
                                         <td style="text-align: center"><?=$materia['nombre_materia'];?></td>
-                                        <td style="text-align: center"><?=$materia['estado'];?></td>
+                                        <td style="text-align: center">
+                                            <?php
+                                            if($materia['estado'] == "1"){ ?>
+                                                <button class="btn btn-success btn-sm" style="border-radius: 20px">ACTIVO</button>
+                                                <?php
+                                            }else{ ?>
+                                                <button class="btn btn-danger btn-sm" style="border-radius: 20px">INACTIVO</button>
+                                                <?php
+                                            }
+                                            ?>
+                                        </td>
                                         <td style="text-align: center">
                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                 <a href="show.php?id=<?=$id_materia;?>" type="button" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
                                                 <a href="edit.php?id=<?=$id_materia;?>" type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
-                                                <!-- <form action="<?=APP_URL;?>/app/controllers/materias/delete.php" onclick="preguntar<?=$id_materia;?>(event)" method="post" id="miFormulario<?=$id_materia;?>">
+                                                <form action="<?=APP_URL;?>/app/controllers/materias/delete.php" onclick="preguntar<?=$id_materia;?>(event)" method="post" id="miFormulario<?=$id_materia;?>">
                                                     <input type="text" name="id_materia" value="<?=$id_materia;?>" hidden>
                                                     <button type="submit" class="btn btn-danger btn-sm" style="border-radius: 0px 5px 5px 0px"><i class="bi bi-trash"></i></button>
                                                 </form>
@@ -72,7 +82,7 @@ include ('../../app/controllers/materias/listado_de_materias.php');
                                                             }
                                                         });
                                                     }
-                                                </script> -->
+                                                </script>
                                             </div>
                                         </td>
                                     </tr>
