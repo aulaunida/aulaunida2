@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 26-08-2024 a las 03:28:39
+-- Tiempo de generación: 27-08-2024 a las 17:52:29
 -- Versión del servidor: 8.3.0
 -- Versión de PHP: 8.2.18
 
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `grados` (
   `estado` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_grado`),
   KEY `nivel_id` (`nivel_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `grados`
@@ -110,18 +110,35 @@ INSERT INTO `grados` (`id_grado`, `nivel_id`, `curso`, `paralelo`, `fyh_creacion
 (16, 1, 'PRIMARIA - SEXTO', 'A', '2024-08-25', NULL, '1'),
 (17, 2, 'PRIMARIA - SEXTO', 'B', '2024-08-25', NULL, '1');
 
+-- --------------------------------------------------------
 
-CREATE TABLE materias (
-  `id_materia` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `nombre_materia` varchar(255) NOT NULL,
+--
+-- Estructura de tabla para la tabla `materias`
+--
 
-  `fyh_creacion` date NULL,
-  `fyh_actualizacion` date NULL,
-  `estado` varchar(11)
-) ENGINE=InnoDB;
+DROP TABLE IF EXISTS `materias`;
+CREATE TABLE IF NOT EXISTS `materias` (
+  `id_materia` int NOT NULL AUTO_INCREMENT,
+  `nombre_materia` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `fyh_creacion` date DEFAULT NULL,
+  `fyh_actualizacion` date DEFAULT NULL,
+  `estado` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`id_materia`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
-INSERT INTO materias (nombre_materia,fyh_creacion,estado)
-VALUES ('MATEMATICA','2024-08-26','1');
+--
+-- Volcado de datos para la tabla `materias`
+--
+
+INSERT INTO `materias` (`id_materia`, `nombre_materia`, `fyh_creacion`, `fyh_actualizacion`, `estado`) VALUES
+(1, 'MATEMÁTICA', '2024-08-26', '2024-08-27', '1'),
+(2, 'LENGUA Y LITERATURA', '2024-08-26', '2024-08-27', '1'),
+(3, 'CIENCIAS SOCIALES', '2024-08-26', NULL, '1'),
+(4, 'CIENCIAS NATURALES Y TECNOLOGÍA', '2024-08-26', NULL, '1'),
+(5, 'EDUCACIÓN FÍSICA', '2024-08-26', NULL, '1'),
+(6, 'EDUCACIÓN TECNOLÓGICA', '2024-08-26', NULL, '1'),
+(7, 'EDUCACIÓN ARTÍSTICA', '2024-08-26', NULL, '1'),
+(8, 'CIUDADANÍA Y PARTICIPACIÓN', '2024-08-26', NULL, '1');
 
 -- --------------------------------------------------------
 
