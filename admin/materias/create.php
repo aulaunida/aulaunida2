@@ -26,7 +26,7 @@ include ('../../admin/layout/parte1.php');
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="">Materia</label>
-                                            <input type="text" name="nombre_materia" class="form-control">
+                                            <input type="text" name="nombre_materia" class="form-control" required>
                                         </div>
                                     </div>
                                 </div>
