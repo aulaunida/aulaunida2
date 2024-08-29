@@ -29,7 +29,7 @@ include ('../../app/controllers/materias/listado_de_materias.php');
                             <table id="example1" class="table table-striped table-bordered table-hover table-sm">
                                 <thead>
                                 <tr>
-                                    <th><center>Nro</center></th>
+                                    <!-- <th><center>Nro</center></th> -->
                                     <th><center>Materia</center></th>
                                     <th><center>Estado</center></th>
                                     <th><center>Acciones</center></th>
@@ -42,7 +42,7 @@ include ('../../app/controllers/materias/listado_de_materias.php');
                                     $id_materia = $materia['id_materia'];
                                     $contador_materias = $contador_materias +1; ?>
                                     <tr>
-                                        <td style="text-align: center"><?=$contador_materias;?></td>
+                                        <!-- <td style="text-align: center"><?=$contador_materias;?></td> -->
                                         <td style="text-align: center"><?=$materia['nombre_materia'];?></td>
                                         <td style="text-align: center">
                                             <?php

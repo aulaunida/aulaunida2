@@ -29,7 +29,7 @@ include ('../../app/controllers/grados/listado_de_grados.php');
                             <table id="example1" class="table table-striped table-bordered table-hover table-sm">
                                 <thead>
                                 <tr>
-                                    <th><center>Nro</center></th>
+                                    <!-- <th><center>Nro</center></th> -->
                                     <th><center>Nivel</center></th>
                                     <th><center>Turno</center></th>
                                     <th><center>Curso</center></th>
@@ -44,7 +44,7 @@ include ('../../app/controllers/grados/listado_de_grados.php');
                                     $id_grado = $grado['id_grado'];
                                     $contador_grados = $contador_grados +1; ?>
                                     <tr>
-                                        <td style="text-align: center"><?=$contador_grados;?></td>
+                                        <!-- <td style="text-align: center"><?=$contador_grados;?></td> -->
                                         <td style="text-align: center"><?=$grado['nivel'];?></td>
                                         <td style="text-align: center"><?=$grado['turno'];?></td>
                                         <td style="text-align: center"><?=$grado['curso'];?></td>

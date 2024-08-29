@@ -14,7 +14,7 @@ include ('../../../app/controllers/configuraciones/institucion/datos_institucion
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Institución: <?=$nombre_institucion;?></h1>
+                <h1>Ver más detalles: <?=$nombre_institucion;?></h1>
             </div>
             <br>
             <div class="row">

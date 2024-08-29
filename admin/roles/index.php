@@ -22,16 +22,16 @@ include('../../app/controllers/roles/listado_de_roles.php');
                         <div class="card-header">
                             <h3 class="card-title">Roles registrados</h3>
                             <div class="card-tools">
-                                <a href="create.php" class="btn btn-primary"><i class="bi bi-terminal-plus"></i> Crear nuevo rol</a>
+                                <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-square"></i> Crear nuevo rol</a>
                             </div>
                         </div>
                         <div class="card-body">
                             <table id="example1" class="table table-striped table-bordered table-hover table-sm">
                                 <thead>
                                     <tr>
-                                        <th>
+                                        <!-- <th>
                                             <center>Nro</center>
-                                        </th>
+                                        </th> -->
                                         <th>
                                             <center>Nombre del rol</center>
                                         </th>
@@ -47,7 +47,7 @@ include('../../app/controllers/roles/listado_de_roles.php');
                                         $id_rol = $role['id_rol'];
                                         $contador_rol = $contador_rol + 1; ?>
                                         <tr>
-                                            <td style="text-align: center"><?= $contador_rol; ?></td>
+                                            <!-- <td style="text-align: center"><?= $contador_rol; ?></td> -->
                                             <td><?= $role['nombre_rol']; ?></td>
                                             <td style="text-align: center">
                                                 <div class="btn-group" role="group" aria-label="Basic example">

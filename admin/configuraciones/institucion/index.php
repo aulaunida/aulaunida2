@@ -12,7 +12,7 @@ include ('../../../app/controllers/configuraciones/institucion/listado_de_instit
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Listado de Instituciones</h1>
+                <h1>Configurar instituciones educativas</h1>
             </div>
             <br>
             <div class="row">
@@ -20,7 +20,7 @@ include ('../../../app/controllers/configuraciones/institucion/listado_de_instit
                 <div class="col-md-12">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Instituciones registrados</h3>
+                            <h3 class="card-title">Instituciones eductativas registradas</h3>
                             <div class="card-tools">
                                 <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-square"></i> Crear nueva institución</a>
                             </div>
@@ -29,13 +29,13 @@ include ('../../../app/controllers/configuraciones/institucion/listado_de_instit
                             <table id="example1" class="table table-striped table-bordered table-hover table-sm">
                                 <thead>
                                 <tr>
-                                    <th><center>Orden</center></th>
-                                    <th><center>Nombre de la institución</center></th>
+                                    <!-- <th><center>Orden</center></th> -->
+                                    <th><center>Nombre de la Institución</center></th>
                                     <th><center>Logo</center></th>
                                     <th><center>Dirección</center></th>
                                     <th><center>Teléfono</center></th>
                                     <th><center>Celular</center></th>
-                                    <th><center>Correo electronico</center></th>
+                                    <th><center>Correo electrónico</center></th>
                                     <!-- <th><center>Fecha de creación</center></th> -->
                                     <th><center>Estado</center></th>
                                     <th><center>Acciones</center></th>
@@ -48,7 +48,7 @@ include ('../../../app/controllers/configuraciones/institucion/listado_de_instit
                                     $id_config_institucion = $institucione['id_config_institucion'];
                                     $contador_institucion = $contador_institucion +1; ?>
                                     <tr>
-                                        <td style="text-align: center"><?=$contador_institucion;?></td>
+                                        <!-- <td style="text-align: center"><?=$contador_institucion;?></td> -->
                                         <td><?=$institucione['nombre_institucion'];?></td>
                                         <td>
                                             <img src="<?=APP_URL."/public/images/configuracion/".$institucione['logo'];?>" width="100px" alt="">
@@ -72,11 +72,11 @@ include ('../../../app/controllers/configuraciones/institucion/listado_de_instit
 
                                         <td style="text-align: center">
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <a href="show.php?id=<?=$id_config_institucion;?>" type="button" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
-                                                <a href="edit.php?id=<?=$id_config_institucion;?>" type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
+                                                <a href="show.php?id=<?=$id_config_institucion;?>" type="button" title="Ver más detalles" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
+                                                <a href="edit.php?id=<?=$id_config_institucion;?>" type="button" title="Editar Institución" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
                                                 <form action="<?=APP_URL;?>/app/controllers/configuraciones/institucion/delete.php" onclick="preguntar<?=$id_config_institucion;?>(event)" method="post" id="miFormulario<?=$id_config_institucion;?>">
                                                     <input type="text" name="id_config_institucion" value="<?=$id_config_institucion;?>" hidden>
-                                                    <button type="submit" class="btn btn-danger btn-sm" style="border-radius: 0px 5px 5px 0px"><i class="bi bi-trash"></i></button>
+                                                    <button type="submit" class="btn btn-danger btn-sm" title="Eliminar Institución" style="border-radius: 0px 5px 5px 0px"><i class="bi bi-trash"></i></button>
                                                 </form>
                                                 <script>
                                                     function preguntar<?=$id_config_institucion;?>(event) {
@@ -127,7 +127,7 @@ include ('../../../layout/mensajes.php');
 <script>
     $(function () {
         $("#example1").DataTable({
-            "pageLength": 5,
+            "pageLength": 25,
             "language": {
                 "emptyTable": "No hay información",
                 "info": "Mostrando _START_ a _END_ de _TOTAL_ Instituciones",
@@ -138,7 +138,7 @@ include ('../../../layout/mensajes.php');
                 "lengthMenu": "Mostrar _MENU_ Instituciones",
                 "loadingRecords": "Cargando...",
                 "processing": "Procesando...",
-                "search": "Buscador:",
+                "search": "Buscar institución:",
                 "zeroRecords": "Sin resultados encontrados",
                 "paginate": {
                     "first": "Primero",
@@ -153,16 +153,19 @@ include ('../../../layout/mensajes.php');
                 text: 'Reportes',
                 orientation: 'landscape',
                 buttons: [{
-                    text: 'Copiar',
+                    text: 'Copiar Texto',
                     extend: 'copy',
                 }, {
+                    text: 'Descargar en PDF',
                     extend: 'pdf'
                 },{
+                    text: 'Descargar en CSV',
                     extend: 'csv'
                 },{
+                    text: 'Descargar en Excel',
                     extend: 'excel'
                 },{
-                    text: 'Imprimir',
+                    text: 'Imprimir Reporte',
                     extend: 'print'
                 }
                 ]

@@ -80,7 +80,7 @@ include ('../../../admin/layout/parte1.php');
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-primary">Registrar</button>
-                                            <a href="<?=APP_URL;?>/admin/configuraciones" class="btn btn-secondary">Cancelar</a>
+                                            <a href="<?=APP_URL;?>/admin/configuraciones/institucion" class="btn btn-secondary">Cancelar</a>
                                         </div>
                                     </div>
                                 </div>

@@ -11,7 +11,7 @@ include ('../../admin/layout/parte1.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Configuraciones del sistema</h1>
+                <h1>Configuración del sistema</h1>
             </div>
             <br>
             <div class="row">
@@ -20,7 +20,7 @@ include ('../../admin/layout/parte1.php');
                     <div class="info-box">
                         <span class="info-box-icon bg-primary"><i class="bi bi-hospital"></i></span>
                         <div class="info-box-content">
-                            <span class="info-box-text"><b>Datos de la Institución</b></span>
+                            <span class="info-box-text"><b>Instituciones educativas</b></span>
                             <a href="institucion" class="btn btn-primary btn-sm">Configurar</a>
                         </div>
                     </div>
