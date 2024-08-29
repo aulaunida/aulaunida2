@@ -225,7 +225,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <li class="nav-item">
                                 <a href="<?=APP_URL;?>/admin/configuraciones" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Configuración</p>
+                                    <p>Configuraciones</p>
                                 </a>
                             </li>
                         </ul>

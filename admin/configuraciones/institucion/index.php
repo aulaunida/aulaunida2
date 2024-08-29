@@ -72,11 +72,11 @@ include ('../../../app/controllers/configuraciones/institucion/listado_de_instit
 
                                         <td style="text-align: center">
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <a href="show.php?id=<?=$id_config_institucion;?>" type="button" title="Ver más detalles" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
-                                                <a href="edit.php?id=<?=$id_config_institucion;?>" type="button" title="Editar Institución" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
+                                                <a href="show.php?id=<?=$id_config_institucion;?>" type="button" title="Ver" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
+                                                <a href="edit.php?id=<?=$id_config_institucion;?>" type="button" title="Editar" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
                                                 <form action="<?=APP_URL;?>/app/controllers/configuraciones/institucion/delete.php" onclick="preguntar<?=$id_config_institucion;?>(event)" method="post" id="miFormulario<?=$id_config_institucion;?>">
                                                     <input type="text" name="id_config_institucion" value="<?=$id_config_institucion;?>" hidden>
-                                                    <button type="submit" class="btn btn-danger btn-sm" title="Eliminar Institución" style="border-radius: 0px 5px 5px 0px"><i class="bi bi-trash"></i></button>
+                                                    <button type="submit" class="btn btn-danger btn-sm" title="Eliminar" style="border-radius: 0px 5px 5px 0px"><i class="bi bi-trash"></i></button>
                                                 </form>
                                                 <script>
                                                     function preguntar<?=$id_config_institucion;?>(event) {

@@ -12,7 +12,7 @@ include ('../../../app/controllers/configuraciones/gestion/listado_de_gestiones.
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Configurar Ciclos Lectivos</h1>
+                <h1>Configurar ciclos lectivos</h1>
             </div>
             <br>
             <div class="row">
@@ -114,7 +114,7 @@ include ('../../../layout/mensajes.php');
 <script>
     $(function () {
         $("#example1").DataTable({
-            "pageLength": 5,
+            "pageLength": 25,
             "language": {
                 "emptyTable": "No hay información",
                 "info": "Mostrando _START_ a _END_ de _TOTAL_ Gestiones",
@@ -125,7 +125,7 @@ include ('../../../layout/mensajes.php');
                 "lengthMenu": "Mostrar _MENU_ Gestiones",
                 "loadingRecords": "Cargando...",
                 "processing": "Procesando...",
-                "search": "Buscador:",
+                "search": "Buscar ciclo lectivo:",
                 "zeroRecords": "Sin resultados encontrados",
                 "paginate": {
                     "first": "Primero",

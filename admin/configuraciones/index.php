@@ -11,7 +11,7 @@ include ('../../admin/layout/parte1.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Configuración del sistema</h1>
+                <h1>Administrador | Configurar sistema</h1>
             </div>
             <br>
             <div class="row">
@@ -30,7 +30,7 @@ include ('../../admin/layout/parte1.php');
                     <div class="info-box">
                         <span class="info-box-icon bg-info"><i class="bi bi-calendar-range"></i></span>
                         <div class="info-box-content">
-                            <span class="info-box-text"><b>Ciclos Lectivos</b></span>
+                            <span class="info-box-text"><b>Ciclos lectivos</b></span>
                             <a href="gestion" class="btn btn-info btn-sm">Configurar</a>
                         </div>
                     </div>
