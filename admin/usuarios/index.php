@@ -17,7 +17,7 @@ include ('../../app/controllers/usuarios/listado_de_usuarios.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Listado de Usuarios</h1>
+                <h1>Usuarios | Ver listado de Usuarios</h1>
             </div>
             <br>
             <div class="row">
@@ -69,11 +69,11 @@ include ('../../app/controllers/usuarios/listado_de_usuarios.php');
                                         </td>
                                         <td style="text-align: center">
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <a href="show.php?id=<?=$id_usuario;?>" type="button" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
-                                                <a href="edit.php?id=<?=$id_usuario;?>" type="button" class="btn btn-success btn-sm icono-blanco"><i class="bi bi-pencil-square"></i></a>
+                                                <a href="show.php?id=<?=$id_usuario;?>" type="button" title="Ver" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
+                                                <a href="edit.php?id=<?=$id_usuario;?>" type="button" title="Editar" class="btn btn-success btn-sm icono-blanco"><i class="bi bi-pencil-square"></i></a>
                                                 <form action="<?=APP_URL;?>/app/controllers/usuarios/delete.php" onclick="preguntar<?=$id_usuario;?>(event)" method="post" id="miFormulario<?=$id_usuario;?>">
                                                     <input type="text" name="id_usuario" value="<?=$id_usuario;?>" hidden>
-                                                    <button type="submit" class="btn btn-danger btn-sm" style="border-radius: 0px 5px 5px 0px"><i class="bi bi-trash"></i></button>
+                                                    <button type="submit" title="Eliminar" class="btn btn-danger btn-sm" style="border-radius: 0px 5px 5px 0px"><i class="bi bi-trash"></i></button>
                                                 </form>
                                                 <script>
                             function preguntar<?=$id_usuario;?>(event) {
@@ -133,18 +133,18 @@ include ('../../layout/mensajes.php');
 <script>
     $(function () {
         $("#example1").DataTable({
-            "pageLength": 5,
+            "pageLength": 25,
             "language": {
                 "emptyTable": "No hay información",
-                "info": "Mostrando _START_ a _END_ de _TOTAL_ Usuarios",
-                "infoEmpty": "Mostrando 0 a 0 de 0 Usuarios",
+                "info": "Mostrando _START_ - _END_ | _TOTAL_ Usuarios",
+                "infoEmpty": "Mostrando 0 - 0 | 0 Usuarios",
                 "infoFiltered": "(Filtrado de _MAX_ total Usuarios)",
                 "infoPostFix": "",
                 "thousands": ",",
                 "lengthMenu": "Mostrar _MENU_ Usuarios",
                 "loadingRecords": "Cargando...",
                 "processing": "Procesando...",
-                "search": "Buscador:",
+                "search": "Buscar usuario:",
                 "zeroRecords": "Sin resultados encontrados",
                 "paginate": {
                     "first": "Primero",
@@ -159,16 +159,19 @@ include ('../../layout/mensajes.php');
                 text: 'Reportes',
                 orientation: 'landscape',
                 buttons: [{
-                    text: 'Copiar',
+                    text: 'Copiar Texto',
                     extend: 'copy',
                 }, {
+                    text: 'Descargar en PDF',
                     extend: 'pdf'
                 },{
+                    text: 'Descargar en CSV',
                     extend: 'csv'
                 },{
+                    text: 'Descargar en Excel',
                     extend: 'excel'
                 },{
-                    text: 'Imprimir',
+                    text: 'Imprimir Reporte',
                     extend: 'print'
                 }
                 ]

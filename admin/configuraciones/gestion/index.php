@@ -59,11 +59,11 @@ include ('../../../app/controllers/configuraciones/gestion/listado_de_gestiones.
                                         </td>
                                         <td style="text-align: center">
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <a href="show.php?id=<?=$id_gestion;?>" type="button" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
-                                                <a href="edit.php?id=<?=$id_gestion;?>" type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
+                                                <a href="show.php?id=<?=$id_gestion;?>" type="button" title="Ver" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
+                                                <a href="edit.php?id=<?=$id_gestion;?>" type="button" title="Editar" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
                                                <!-- <form action="<?=APP_URL;?>/app/controllers/configuraciones/institucion/delete.php" onclick="preguntar<?=$id_gestion;?>(event)" method="post" id="miFormulario<?=$id_gestion;?>">
                                                     <input type="text" name="id_config_institucion" value="<?=$id_gestion;?>" hidden>
-                                                    <button type="submit" class="btn btn-danger btn-sm" style="border-radius: 0px 5px 5px 0px"><i class="bi bi-trash"></i></button>
+                                                    <button type="submit" title="Eliminar" class="btn btn-danger btn-sm" style="border-radius: 0px 5px 5px 0px"><i class="bi bi-trash"></i></button>
                                                 </form>
                                                 <script>
                                                     function preguntar<?=$id_gestion;?>(event) {
@@ -93,6 +93,14 @@ include ('../../../app/controllers/configuraciones/gestion/listado_de_gestiones.
                                 ?>
                                 </tbody>
                             </table>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group text-center">
+                                        <a href="<?= APP_URL; ?>/admin/configuraciones" class="btn btn-danger">Volver</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -117,8 +125,8 @@ include ('../../../layout/mensajes.php');
             "pageLength": 25,
             "language": {
                 "emptyTable": "No hay información",
-                "info": "Mostrando _START_ a _END_ de _TOTAL_ Gestiones",
-                "infoEmpty": "Mostrando 0 a 0 de 0 Gestiones",
+                "info": "Mostrando _START_ - _END_ | _TOTAL_ Gestiones",
+                "infoEmpty": "Mostrando 0 - 0 | 0 Gestiones",
                 "infoFiltered": "(Filtrado de _MAX_ total Gestiones)",
                 "infoPostFix": "",
                 "thousands": ",",
@@ -140,16 +148,19 @@ include ('../../../layout/mensajes.php');
                 text: 'Reportes',
                 orientation: 'landscape',
                 buttons: [{
-                    text: 'Copiar',
+                    text: 'Copiar Texto',
                     extend: 'copy',
                 }, {
+                    text: 'Descargar en PDF',
                     extend: 'pdf'
                 },{
+                    text: 'Descargar en CSV',
                     extend: 'csv'
                 },{
+                    text: 'Descargar en Excel',
                     extend: 'excel'
                 },{
-                    text: 'Imprimir',
+                    text: 'Imprimir Reporte',
                     extend: 'print'
                 }
                 ]

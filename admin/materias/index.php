@@ -12,7 +12,7 @@ include ('../../app/controllers/materias/listado_de_materias.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Listado de materias</h1>
+                <h1>Materias | Ver listado de materias</h1>
             </div>
             <br>
             <div class="row">
@@ -57,11 +57,11 @@ include ('../../app/controllers/materias/listado_de_materias.php');
                                         </td>
                                         <td style="text-align: center">
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <a href="show.php?id=<?=$id_materia;?>" type="button" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
-                                                <a href="edit.php?id=<?=$id_materia;?>" type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
+                                                <a href="show.php?id=<?=$id_materia;?>" type="button" title="Ver" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
+                                                <a href="edit.php?id=<?=$id_materia;?>" type="button" title="Editar" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
                                                 <form action="<?=APP_URL;?>/app/controllers/materias/delete.php" onclick="preguntar<?=$id_materia;?>(event)" method="post" id="miFormulario<?=$id_materia;?>">
                                                     <input type="text" name="id_materia" value="<?=$id_materia;?>" hidden>
-                                                    <button type="submit" class="btn btn-danger btn-sm" style="border-radius: 0px 5px 5px 0px"><i class="bi bi-trash"></i></button>
+                                                    <button type="submit" title="Eliminar" class="btn btn-danger btn-sm" style="border-radius: 0px 5px 5px 0px"><i class="bi bi-trash"></i></button>
                                                 </form>
                                                 <script>
                                                     function preguntar<?=$id_materia;?>(event) {
@@ -91,6 +91,14 @@ include ('../../app/controllers/materias/listado_de_materias.php');
                                 ?>
                                 </tbody>
                             </table>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group text-center">
+                                        <a href="<?= APP_URL; ?>/admin" class="btn btn-danger">Volver</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -115,15 +123,15 @@ include ('../../layout/mensajes.php');
             "pageLength": 25,
             "language": {
                 "emptyTable": "No hay información",
-                "info": "Mostrando _START_ a _END_ de _TOTAL_ Materias",
-                "infoEmpty": "Mostrando 0 a 0 de 0 Materias",
+                "info": "Mostrando _START_ - _END_ | _TOTAL_ Materias",
+                "infoEmpty": "Mostrando 0 - 0 | 0 Materias",
                 "infoFiltered": "(Filtrado de _MAX_ total Materias)",
                 "infoPostFix": "",
                 "thousands": ",",
                 "lengthMenu": "Mostrar _MENU_ Materias",
                 "loadingRecords": "Cargando...",
                 "processing": "Procesando...",
-                "search": "Buscador:",
+                "search": "Buscar materia:",
                 "zeroRecords": "Sin resultados encontrados",
                 "paginate": {
                     "first": "Primero",
@@ -138,16 +146,19 @@ include ('../../layout/mensajes.php');
                 text: 'Reportes',
                 orientation: 'landscape',
                 buttons: [{
-                    text: 'Copiar',
+                    text: 'Copiar Texto',
                     extend: 'copy',
                 }, {
+                    text: 'Descargar en PDF',
                     extend: 'pdf'
                 },{
+                    text: 'Descargar en CSV',
                     extend: 'csv'
                 },{
+                    text: 'Descargar en Excel',
                     extend: 'excel'
                 },{
-                    text: 'Imprimir',
+                    text: 'Imprimir Reporte',
                     extend: 'print'
                 }
                 ]

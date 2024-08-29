@@ -225,7 +225,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <li class="nav-item">
                                 <a href="<?=APP_URL;?>/admin/configuraciones" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Configuraciones</p>
+                                    <p>Ver Configuraciones</p>
                                 </a>
                             </li>
                         </ul>
@@ -244,7 +244,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <li class="nav-item">
                                 <a href="<?=APP_URL;?>/admin/niveles" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Listado de niveles</p>
+                                    <p>Ver listado de niveles</p>
                                 </a>
                             </li>
                         </ul>
@@ -262,7 +262,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <li class="nav-item">
                                 <a href="<?=APP_URL;?>/admin/grados" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Listado de grados</p>
+                                    <p>Ver listado de grados</p>
                                 </a>
                             </li>
                         </ul>
@@ -280,7 +280,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <li class="nav-item">
                                 <a href="<?=APP_URL;?>/admin/materias" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Listado de materias</p>
+                                    <p>Ver listado de materias</p>
                                 </a>
                             </li>
                         </ul>
@@ -316,7 +316,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <li class="nav-item">
                                 <a href="<?=APP_URL;?>/admin/usuarios" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Listado de usuarios</p>
+                                    <p>Ver listado de usuarios</p>
                                 </a>
                             </li>
                         </ul>
@@ -324,7 +324,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <li class="nav-item">
                                 <a href="<?=APP_URL;?>/admin/roles" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Roles de usuario</p>
+                                    <p>Ver roles de usuario</p>
                                 </a>
                             </li>
                         </ul>

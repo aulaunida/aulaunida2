@@ -106,6 +106,14 @@ include ('../../../app/controllers/configuraciones/institucion/listado_de_instit
                                 ?>
                                 </tbody>
                             </table>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group text-center">
+                                        <a href="<?= APP_URL; ?>/admin/configuraciones" class="btn btn-danger">Volver</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -130,8 +138,8 @@ include ('../../../layout/mensajes.php');
             "pageLength": 25,
             "language": {
                 "emptyTable": "No hay información",
-                "info": "Mostrando _START_ a _END_ de _TOTAL_ Instituciones",
-                "infoEmpty": "Mostrando 0 a 0 de 0 Instituciones",
+                "info": "Mostrando _START_ - _END_ | _TOTAL_ Instituciones",
+                "infoEmpty": "Mostrando 0 - 0 | 0 Instituciones",
                 "infoFiltered": "(Filtrado de _MAX_ total Instituciones)",
                 "infoPostFix": "",
                 "thousands": ",",

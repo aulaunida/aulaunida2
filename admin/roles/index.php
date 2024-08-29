@@ -12,7 +12,7 @@ include('../../app/controllers/roles/listado_de_roles.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Listado de roles</h1>
+                <h1>Usuarios | Ver roles de usuario</h1>
             </div>
             <br>
             <div class="row">
@@ -51,51 +51,51 @@ include('../../app/controllers/roles/listado_de_roles.php');
                                             <td><?= $role['nombre_rol']; ?></td>
                                             <td style="text-align: center">
                                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <a href="show.php?id=<?= $id_rol; ?>" type="button" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
-                                                    <a href="edit.php?id=<?= $id_rol; ?>" type="button" class="btn btn-success btn-sm icono-blanco"><i class="bi bi-pencil-square"></i></a>
+                                                    <a href="show.php?id=<?= $id_rol; ?>" type="button" title="Ver" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
+                                                    <a href="edit.php?id=<?= $id_rol; ?>" type="button" title="Editar" class="btn btn-success btn-sm icono-blanco"><i class="bi bi-pencil-square"></i></a>
                                                     <form action="<?= APP_URL; ?>/app/controllers/roles/delete.php" onclick="preguntar<?= $id_rol; ?>(event)" method="post" id="miFormulario<?= $id_rol; ?>">
                                                         <input type="text" name="id_rol" value="<?= $id_rol; ?>" hidden>
-                                                        <button type="submit" class="btn btn-danger btn-sm" style="border-radius: 0px 5px 5px 0px"><i class="bi bi-trash"></i></button>
+                                                        <button type="submit" class="btn btn-danger btn-sm" title="Eliminar" style="border-radius: 0px 5px 5px 0px"><i class="bi bi-trash"></i></button>
                                                     </form>
                                                     <script>
                                                         function preguntar<?= $id_rol; ?>(event) {
-                                event.preventDefault();
-                                Swal.fire({
-                                    title: 'Eliminar rol existente',
-                                    text: '¿Desea eliminar este rol?',
-                                    icon: 'question',
-                                    showDenyButton: true,
-                                    confirmButtonText: 'Eliminar',
-                                    confirmButtonColor: '#a5161d',
-                                    denyButtonColor: '#270a0a',
-                                    denyButtonText: 'Cancelar',
-                                }).then((result) => {
-                                    if (result.isConfirmed) {
-                                        var form = $('#miFormulario<?=$id_rol;?>');
-                                        form.submit();
-                                        Swal.fire('Eliminado', 'se eliminó el rol', 'success');
-                                    }
-                                });
-                            }
-                            </script>
+                                                            event.preventDefault();
+                                                            Swal.fire({
+                                                                title: 'Eliminar rol existente',
+                                                                text: '¿Desea eliminar este rol?',
+                                                                icon: 'question',
+                                                                showDenyButton: true,
+                                                                confirmButtonText: 'Eliminar',
+                                                                confirmButtonColor: '#a5161d',
+                                                                denyButtonColor: '#270a0a',
+                                                                denyButtonText: 'Cancelar',
+                                                            }).then((result) => {
+                                                                if (result.isConfirmed) {
+                                                                    var form = $('#miFormulario<?= $id_rol; ?>');
+                                                                    form.submit();
+                                                                    Swal.fire('Eliminado', 'se eliminó el rol', 'success');
+                                                                }
+                                                            });
+                                                        }
+                                                    </script>
                                                 </div>
                                             </td>
                                         </tr>
                                     <?php
                                     }
                                     ?>
-                                    
+
                                 </tbody>
-                                
+
                             </table>
                             <hr>
-                    <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group text-center">
-                        <a href="<?=APP_URL;?>/admin/index.php" class="btn btn-danger">Volver</a>
-                        </div>
-                     </div>
-                     </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group text-center">
+                                        <a href="<?= APP_URL; ?>/admin/index.php" class="btn btn-danger">Volver</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -117,18 +117,18 @@ include('../../layout/mensajes.php');
 <script>
     $(function() {
         $("#example1").DataTable({
-            "pageLength": 5,
+            "pageLength": 25,
             "language": {
                 "emptyTable": "No hay información",
-                "info": "Mostrando _START_ a _END_ de _TOTAL_ Roles",
-                "infoEmpty": "Mostrando 0 a 0 de 0 Roles",
+                "info": "Mostrando _START_ - _END_ | _TOTAL_ Roles",
+                "infoEmpty": "Mostrando 0 - 0 | 0 Roles",
                 "infoFiltered": "(Filtrado de _MAX_ total Roles)",
                 "infoPostFix": "",
                 "thousands": ",",
                 "lengthMenu": "Mostrar _MENU_ Roles",
                 "loadingRecords": "Cargando...",
                 "processing": "Procesando...",
-                "search": "Buscador:",
+                "search": "Buscar rol:",
                 "zeroRecords": "Sin resultados encontrados",
                 "paginate": {
                     "first": "Primero",
@@ -145,16 +145,19 @@ include('../../layout/mensajes.php');
                     text: 'Reportes',
                     orientation: 'landscape',
                     buttons: [{
-                        text: 'Copiar',
+                        text: 'Copiar Texto',
                         extend: 'copy',
                     }, {
+                        text: 'Descargar en PDF',
                         extend: 'pdf'
                     }, {
+                        text: 'Descargar en CSV',
                         extend: 'csv'
                     }, {
+                        text: 'Descargar en Excel',
                         extend: 'excel'
                     }, {
-                        text: 'Imprimir',
+                        text: 'Imprimir Reporte',
                         extend: 'print'
                     }]
                 },

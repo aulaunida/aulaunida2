@@ -12,7 +12,7 @@ include ('../../app/controllers/niveles/listado_de_niveles.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Listado de niveles</h1>
+                <h1>Niveles | Ver listado de niveles</h1>
             </div>
             <br>
             <div class="row">
@@ -61,11 +61,11 @@ include ('../../app/controllers/niveles/listado_de_niveles.php');
                                         </td>
                                         <td style="text-align: center">
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <a href="show.php?id=<?=$id_nivel;?>" type="button" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
-                                                <a href="edit.php?id=<?=$id_nivel;?>" type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
+                                                <a href="show.php?id=<?=$id_nivel;?>" type="button" title="Ver" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
+                                                <a href="edit.php?id=<?=$id_nivel;?>" type="button" title="Editar" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
                                                 <!-- <form action="<?=APP_URL;?>/app/controllers/niveles/delete.php" onclick="preguntar<?=$id_nivel;?>(event)" method="post" id="miFormulario<?=$id_nivel;?>">
                                                     <input type="text" name="id_nivel" value="<?=$id_nivel;?>" hidden>
-                                                    <button type="submit" class="btn btn-danger btn-sm" style="border-radius: 0px 5px 5px 0px"><i class="bi bi-trash"></i></button>
+                                                    <button type="submit" title="Eliminar" class="btn btn-danger btn-sm" style="border-radius: 0px 5px 5px 0px"><i class="bi bi-trash"></i></button>
                                                 </form>
                                                 <script>
                                                     function preguntar<?=$id_nivel;?>(event) {
@@ -95,6 +95,14 @@ include ('../../app/controllers/niveles/listado_de_niveles.php');
                                 ?>
                                 </tbody>
                             </table>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group text-center">
+                                        <a href="<?= APP_URL; ?>/admin" class="btn btn-danger">Volver</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -116,18 +124,18 @@ include ('../../layout/mensajes.php');
 <script>
     $(function () {
         $("#example1").DataTable({
-            "pageLength": 5,
+            "pageLength": 25,
             "language": {
                 "emptyTable": "No hay información",
-                "info": "Mostrando _START_ a _END_ de _TOTAL_ Niveles",
-                "infoEmpty": "Mostrando 0 a 0 de 0 Niveles",
+                "info": "Mostrando _START_ - _END_ | _TOTAL_ Niveles",
+                "infoEmpty": "Mostrando 0 - 0 | 0 Niveles",
                 "infoFiltered": "(Filtrado de _MAX_ total Niveles)",
                 "infoPostFix": "",
                 "thousands": ",",
                 "lengthMenu": "Mostrar _MENU_ Niveles",
                 "loadingRecords": "Cargando...",
                 "processing": "Procesando...",
-                "search": "Buscador:",
+                "search": "Buscar nivel:",
                 "zeroRecords": "Sin resultados encontrados",
                 "paginate": {
                     "first": "Primero",
@@ -142,16 +150,19 @@ include ('../../layout/mensajes.php');
                 text: 'Reportes',
                 orientation: 'landscape',
                 buttons: [{
-                    text: 'Copiar',
+                    text: 'Copiar Texto',
                     extend: 'copy',
                 }, {
+                    text: 'Descargar en PDF',
                     extend: 'pdf'
                 },{
+                    text: 'Descargar en CSV',
                     extend: 'csv'
                 },{
+                    text: 'Descargar en Excel',
                     extend: 'excel'
                 },{
-                    text: 'Imprimir',
+                    text: 'Imprimir Reporte',
                     extend: 'print'
                 }
                 ]
