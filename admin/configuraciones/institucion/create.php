@@ -34,7 +34,7 @@ include ('../../../admin/layout/parte1.php');
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="">Correo de la institución</label>
-                                                    <input type="email" name="correo" class="form-control">
+                                                    <input type="email" name="correo" class="form-control" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -42,13 +42,13 @@ include ('../../../admin/layout/parte1.php');
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="">Teléfono</label>
-                                                    <input type="number" name="telefono" class="form-control">
+                                                    <input type="number" pattern="\d" minlength="10" maxlength="15" name="telefono" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="">Celular <b>*</b></label>
-                                                    <input type="number" name="celular" class="form-control" required>
+                                                    <input type="number" pattern="\d"  minlength="10" maxlength="15" name="celular" class="form-control" required>
                                                 </div>
                                             </div>
                                         </div>
