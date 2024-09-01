@@ -4,6 +4,7 @@ include ('../../admin/layout/parte1.php');
 
 include ('../../app/controllers/administrativos/listado_de_administrativos.php');
 
+
 ?>
 <style>
 .icono-blanco i {
@@ -33,32 +34,32 @@ include ('../../app/controllers/administrativos/listado_de_administrativos.php')
                         <div class="card-body">
                             <table id="example1" class="table table-striped table-bordered table-hover table-sm">
                                 <thead>
-                                <tr>
-                                    <!-- <th><center>Orden</center></th> -->
+                                <tr> 
                                     <th><center>Nombre del usuario</center></th>
                                     <th><center>Rol</center></th>
+                                    <th><center>DNI</center></th>
+                                    <th><center>Fecha de nacimiento</center></th>
                                     <th><center>Correo electrónico</center></th>
-                                    <!-- <th><center>Fecha de creación</center></th> -->
                                     <th><center>Estado</center></th>
                                     <th><center>Acciones</center></th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php
-                                $contador_usuarios = 0;
-                                foreach ($usuarios as $usuario){
-                                    $id_usuario = $usuario['id_usuario'];
-                                    $contador_usuarios = $contador_usuarios +1; ?>
+                                $contador_administrativos = 0;
+                                foreach ($administrativos as $administrativo){
+                                    $id_administrativo = $administrativo['id_administrativo'];
+                                    $contador_administrativos = $contador_administrativos +1; ?>
                                     <tr>
-                                        <!-- <td style="text-align: center"><?=$contador_usuarios;?></td> -->
-                                        <td style="text-align: center"><?=$usuario['nombres'];?></td>
-                                        <td style="text-align: center"><?=$usuario['nombre_rol'];?></td>
-                                        <td style="text-align: center"><?=$usuario['email'];?></td>
-                                        <!-- <td>?=$usuario['fyh_creacion'];?></td> -->
-                                        <!-- <td>?=$usuario['estado'] == '1' ? "Activo" : "Inactivo"; ?></td> -->
+                                        <!-- <td style="text-align: center"><?=$contador_administrativos;?></td> -->
+                                        <td style="text-align: center"><?=$administrativo['nombres'] .' '. $administrativo['apellidos'];?></td>
+                                        <td style="text-align: center"><?=$administrativo['nombre_rol'];?></td>
+                                        <td style="text-align: center"><?=$administrativo['dni'];?></td>
+                                        <td style="text-align: center"><?=$administrativo['fecha_nacimiento'];?></td>
+                                        <td style="text-align: center"><?=$administrativo['email'];?></td>
                                         <td class="text-center">
                                             <?php
-                                            if($usuario['estado'] == "1"){ ?>
+                                            if($administrativo['estado'] == "1"){ ?>
                                                 <button class="btn btn-success btn-sm" style="border-radius: 20px">ACTIVO</button>
                                             <?php
                                             }else{ ?>
@@ -69,18 +70,18 @@ include ('../../app/controllers/administrativos/listado_de_administrativos.php')
                                         </td>
                                         <td style="text-align: center">
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <a href="show.php?id=<?=$id_usuario;?>" type="button" title="Ver" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
-                                                <a href="edit.php?id=<?=$id_usuario;?>" type="button" title="Editar" class="btn btn-success btn-sm icono-blanco"><i class="bi bi-pencil-square"></i></a>
-                                                <form action="<?=APP_URL;?>/app/controllers/usuarios/delete.php" onclick="preguntar<?=$id_usuario;?>(event)" method="post" id="miFormulario<?=$id_usuario;?>">
-                                                    <input type="text" name="id_usuario" value="<?=$id_usuario;?>" hidden>
+                                                <a href="show.php?id=<?=$id_administrativo;?>" type="button" title="Ver" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
+                                                <a href="edit.php?id=<?=$id_administrativo;?>" type="button" title="Editar" class="btn btn-success btn-sm icono-blanco"><i class="bi bi-pencil-square"></i></a>
+                                                <!-- <form action="<?=APP_URL;?>/app/controllers/administrativos/delete.php" onclick="preguntar<?=$id_administrativo;?>(event)" method="post" id="miFormulario<?=$id_administrativo;?>">
+                                                    <input type="text" name="id_administrativo" value="<?=$id_administrativo;?>" hidden>
                                                     <button type="submit" title="Eliminar" class="btn btn-danger btn-sm" style="border-radius: 0px 5px 5px 0px"><i class="bi bi-trash"></i></button>
                                                 </form>
                                                 <script>
-                            function preguntar<?=$id_usuario;?>(event) {
+                            function preguntar<?=$id_administrativo;?>(event) {
                                 event.preventDefault();
                                 Swal.fire({
-                                    title: 'Eliminar usuario existente',
-                                    text: '¿Desea eliminar este usuario?',
+                                    title: 'Eliminar administrativo existente',
+                                    text: '¿Desea eliminar este administrativo?',
                                     icon: 'question',
                                     showDenyButton: true,
                                     confirmButtonText: 'Eliminar',
@@ -89,13 +90,13 @@ include ('../../app/controllers/administrativos/listado_de_administrativos.php')
                                     denyButtonText: 'Cancelar',
                                 }).then((result) => {
                                     if (result.isConfirmed) {
-                                        var form = $('#miFormulario<?=$id_usuario;?>');
+                                        var form = $('#miFormulario<?=$id_administrativo;?>');
                                         form.submit();
-                                        Swal.fire('Eliminado', 'se eliminó el usuario correctamente', 'success');
+                                        Swal.fire('Eliminado', 'Se eliminó el administrativo correctamente', 'success');
                                     }
                                 });
                             }
-                            </script>
+                            </script> -->
                                             </div>
                                         </td>
                                     </tr>
