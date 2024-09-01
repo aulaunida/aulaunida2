@@ -14,7 +14,7 @@ include ('../../app/controllers/configuraciones/gestion/listado_de_gestiones.php
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Modificar nivel: <?=$nivel;?></h1>
+                <h1>Editar nivel educativo <i class="bi bi-chevron-right"></i> <?=$nivel;?></h1>
             </div>
             <br>
             <div class="row">

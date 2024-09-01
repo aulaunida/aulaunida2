@@ -14,7 +14,7 @@ include('../../app/controllers/materias/datos_materias.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Materia: <?= $nombre_materia; ?></h1>
+                <h1>Ver más detalles <i class="bi bi-chevron-right"></i> <?= $nombre_materia; ?></h1>
             </div>
             <br>
             <div class="row">

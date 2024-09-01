@@ -3,7 +3,6 @@
 $id_administrativo = $_GET['id'];
 include('../../app/config.php');
 include('../../admin/layout/parte1.php');
-
 include('../../app/controllers/administrativos/datos_administrativos.php');
 
 ?>
@@ -14,7 +13,7 @@ include('../../app/controllers/administrativos/datos_administrativos.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Ver más detalles: <?=$nombres.' '.$apellidos;?></h1>
+                <h1>Ver más detalles <i class="bi bi-chevron-right"></i> <?=$nombres.' '.$apellidos;?></h1>
             </div>
             <br>
             <div class="row">

@@ -12,7 +12,7 @@ include ('../../app/controllers/niveles/listado_de_niveles.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Registro de nuevo grado</h1>
+                <h1>Grado <i class="bi bi-chevron-right"></i> Crear nuevo grado</h1>
             </div>
             <br>
             <div class="row">

@@ -12,7 +12,7 @@ include ('../../app/controllers/materias/listado_de_materias.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Materias | Ver listado de materias</h1>
+                <h1>Materias <i class="bi bi-chevron-right"></i> Ver listado de materias</h1>
             </div>
             <br>
             <div class="row">

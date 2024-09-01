@@ -36,7 +36,7 @@ include ('../../app/controllers/usuarios/datos_del_usuario.php');
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="">Nombre y Apellido</label>
-                                            <p><?=$nombres;?></p>
+                                            <p><?=$nombres.' '.$apellidos;?></p>
                                         </div>
                                     </div>
 

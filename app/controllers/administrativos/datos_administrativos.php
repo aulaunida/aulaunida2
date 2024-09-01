@@ -9,6 +9,7 @@ $query_administrativos->execute();
 $administrativos = $query_administrativos->fetchAll(PDO::FETCH_ASSOC);
 
 foreach($administrativos as $administrativo){
+    $id_administrativo = $administrativo['id_administrativo'];
     $nombres = $administrativo['nombres'];
     $apellidos = $administrativo['apellidos'];
     $nombre_rol = $administrativo['nombre_rol'];

@@ -12,7 +12,7 @@ include ('../../app/controllers/niveles/listado_de_niveles.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Niveles | Ver listado de niveles</h1>
+                <h1>Niveles educativos <i class="bi bi-chevron-right"></i> Ver listado de niveles</h1>
             </div>
             <br>
             <div class="row">

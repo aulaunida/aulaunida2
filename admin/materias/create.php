@@ -10,7 +10,7 @@ include ('../../admin/layout/parte1.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Registro de nueva materia</h1>
+                <h1>Materias <i class="bi bi-chevron-right"></i> Crear nueva materia</h1>
             </div>
             <br>
             <div class="row">

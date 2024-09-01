@@ -11,7 +11,7 @@ include ('../../app/controllers/roles/listado_de_roles.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Creación de un nuevo usuario</h1>
+                <h1>Crear nuevo usuario</h1>
             </div>
             <br>
             <div class="row">
