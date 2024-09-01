@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 30-08-2024 a las 16:52:09
+-- Tiempo de generación: 01-09-2024 a las 02:46:53
 -- Versión del servidor: 8.3.0
 -- Versión de PHP: 8.2.18
 
@@ -137,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `grados` (
   `curso` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
   `paralelo` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
   `fyh_creacion` date DEFAULT NULL,
-  `fyh_actualizacion` datetime DEFAULT NULL,
+  `fyh_actualizacion` date DEFAULT NULL,
   `estado` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_grado`),
   KEY `nivel_id` (`nivel_id`)
@@ -148,18 +148,18 @@ CREATE TABLE IF NOT EXISTS `grados` (
 --
 
 INSERT INTO `grados` (`id_grado`, `nivel_id`, `curso`, `paralelo`, `fyh_creacion`, `fyh_actualizacion`, `estado`) VALUES
-(1, 1, 'PRIMARIA - PRIMERO', 'A', '2024-08-24', '2024-08-24 00:00:00', '1'),
-(2, 2, 'PRIMARIA - PRIMERO', 'B', '2024-08-25', '2024-08-25 00:00:00', '1'),
-(8, 1, 'PRIMARIA - SEGUNDO', 'A', '2024-08-25', '2024-08-25 00:00:00', '1'),
-(9, 2, 'PRIMARIA - SEGUNDO', 'B', '2024-08-25', '2024-08-25 00:00:00', '1'),
-(10, 1, 'PRIMARIA - TERCERO', 'A', '2024-08-25', NULL, '1'),
-(11, 2, 'PRIMARIA - TERCERO', 'B', '2024-08-25', NULL, '1'),
-(12, 1, 'PRIMARIA - CUARTO', 'A', '2024-08-25', '2024-08-25 00:00:00', '1'),
-(13, 2, 'PRIMARIA - CUARTO', 'B', '2024-08-25', NULL, '1'),
-(14, 1, 'PRIMARIA - QUINTO', 'A', '2024-08-25', NULL, '1'),
-(15, 2, 'PRIMARIA - QUINTO', 'B', '2024-08-25', NULL, '1'),
-(16, 1, 'PRIMARIA - SEXTO', 'A', '2024-08-25', NULL, '1'),
-(17, 2, 'PRIMARIA - SEXTO', 'B', '2024-08-25', NULL, '1');
+(1, 1, 'PRIMER GRADO', 'A', '2024-08-24', '2024-08-24', '1'),
+(2, 2, 'PRIMER GRADO', 'B', '2024-08-25', '2024-08-25', '1'),
+(8, 1, 'SEGUNDO GRADO', 'A', '2024-08-25', '2024-08-25', '1'),
+(9, 2, 'SEGUNDO GRADO', 'B', '2024-08-25', '2024-08-25', '1'),
+(10, 1, 'TERCER GRADO', 'A', '2024-08-25', NULL, '1'),
+(11, 2, 'TERCER GRADO', 'B', '2024-08-25', NULL, '1'),
+(12, 1, 'CUARTO GRADO', 'A', '2024-08-25', '2024-08-25', '1'),
+(13, 2, 'CUARTO GRADO', 'B', '2024-08-25', NULL, '1'),
+(14, 1, 'QUINTO GRADO', 'A', '2024-08-25', NULL, '1'),
+(15, 2, 'QUINTO GRADO', 'B', '2024-08-25', NULL, '1'),
+(16, 1, 'SEXTO GRADO', 'A', '2024-08-25', NULL, '1'),
+(17, 2, 'SEXTO GRADO', 'B', '2024-08-25', NULL, '1');
 
 -- --------------------------------------------------------
 
@@ -230,7 +230,7 @@ CREATE TABLE IF NOT EXISTS `personas` (
   `usuario_id` int NOT NULL,
   `nombres` varchar(50) COLLATE utf8mb4_spanish_ci NOT NULL,
   `apellidos` varchar(50) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `ci` varchar(20) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `dni` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
   `fecha_nacimiento` varchar(20) COLLATE utf8mb4_spanish_ci NOT NULL,
   `profesion` varchar(50) COLLATE utf8mb4_spanish_ci NOT NULL,
   `direccion` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
@@ -246,7 +246,7 @@ CREATE TABLE IF NOT EXISTS `personas` (
 -- Volcado de datos para la tabla `personas`
 --
 
-INSERT INTO `personas` (`id_persona`, `usuario_id`, `nombres`, `apellidos`, `ci`, `fecha_nacimiento`, `profesion`, `direccion`, `celular`, `fyh_creacion`, `fyh_actualizacion`, `estado`) VALUES
+INSERT INTO `personas` (`id_persona`, `usuario_id`, `nombres`, `apellidos`, `dni`, `fecha_nacimiento`, `profesion`, `direccion`, `celular`, `fyh_creacion`, `fyh_actualizacion`, `estado`) VALUES
 (1, 1, 'Leonardo', 'Rodriguez', '36143425', '1991-10-29', 'Analista de Sistemas', 'Ana Maria Janer 1227', '3512558885', '2024-08-30', NULL, '1');
 
 -- --------------------------------------------------------
