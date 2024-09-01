@@ -48,7 +48,7 @@ include('../../app/controllers/roles/listado_de_roles.php');
                                         $contador_rol = $contador_rol + 1; ?>
                                         <tr>
                                             <!-- <td style="text-align: center"><?= $contador_rol; ?></td> -->
-                                            <td><?= $role['nombre_rol']; ?></td>
+                                            <td style="text-align: center"><?= $role['nombre_rol']; ?></td>
                                             <td style="text-align: center">
                                                 <div class="btn-group" role="group" aria-label="Basic example">
                                                     <a href="show.php?id=<?= $id_rol; ?>" type="button" title="Ver" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>

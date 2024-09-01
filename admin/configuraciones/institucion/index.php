@@ -49,16 +49,16 @@ include ('../../../app/controllers/configuraciones/institucion/listado_de_instit
                                     $contador_institucion = $contador_institucion +1; ?>
                                     <tr>
                                         <!-- <td style="text-align: center"><?=$contador_institucion;?></td> -->
-                                        <td><?=$institucione['nombre_institucion'];?></td>
-                                        <td>
+                                        <td style="text-align: center"><?=$institucione['nombre_institucion'];?></td>
+                                        <td style="text-align: center">
                                             <img src="<?=APP_URL."/public/images/configuracion/".$institucione['logo'];?>" width="100px" alt="">
                                         </td>
-                                        <td><?=$institucione['direccion'];?></td>
-                                        <td><?=$institucione['telefono'];?></td>
-                                        <td><?=$institucione['celular'];?></td>
-                                        <td><?=$institucione['correo'];?></td>
+                                        <td style="text-align: center"><?=$institucione['direccion'];?></td>
+                                        <td style="text-align: center"><?=$institucione['telefono'];?></td>
+                                        <td style="text-align: center"><?=$institucione['celular'];?></td>
+                                        <td style="text-align: center"><?=$institucione['correo'];?></td>
                                         <!-- <td>?=$institucione['fyh_creacion'];?></td> -->
-                                        <td>
+                                        <td style="text-align: center">
                                         <?php
                                             if($institucione['estado'] == "1"){ ?>
                                                 <button class="btn btn-success btn-sm" style="border-radius: 20px">ACTIVO</button>

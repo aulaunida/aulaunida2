@@ -50,21 +50,18 @@ include('../../app/controllers/niveles/listado_de_niveles.php');
                                         <div class="form-group">
                                             <label for="">Curso</label>
                                             <select name="curso" id="" class="form-control">
-                                                <option value="INICIAL - PRIMERO"<?=$curso=='INICIAL - PRIMERO' ? 'selected' : ''?>>INICIAL - PRIMERO</option>
-                                                <option value="INICIAL - SEGUNDO"<?=$curso=='INICIAL - SEGUNDO' ? 'selected' : ''?>>INICIAL - SEGUNDO</option>
-                                                <option value="PRIMARIA - PRIMERO"<?=$curso=='PRIMARIA - PRIMERO' ? 'selected' : ''?>>PRIMARIA - PRIMERO</option>
-                                                <option value="PRIMARIA - SEGUNDO"<?=$curso=='PRIMARIA - SEGUNDO' ? 'selected' : ''?>>PRIMARIA - SEGUNDO</option>
-                                                <option value="PRIMARIA - TERCERO"<?=$curso=='PRIMARIA - TERCERO' ? 'selected' : ''?>>PRIMARIA - TERCERO</option>
-                                                <option value="PRIMARIA - CUARTO"<?=$curso=='PRIMARIA - CUARTO' ? 'selected' : ''?>>PRIMARIA - CUARTO</option>
-                                                <option value="PRIMARIA - QUINTO"<?=$curso=='PRIMARIA - QUINTO' ? 'selected' : ''?>>PRIMARIA - QUINTO</option>
-                                                <option value="PRIMARIA - SEXTO"<?=$curso=='PRIMARIA - SEXTO' ? 'selected' : ''?>>PRIMARIA - SEXTO</option>
-                                                <option value="SECUNDARIA - PRIMERO"<?=$curso=='SECUNDARIA - PRIMERO' ? 'selected' : ''?>>SECUNDARIA - PRIMERO</option>
-                                                <option value="SECUNDARIA - SEGUNDO"<?=$curso=='SECUNDARIA - SEGUNDO' ? 'selected' : ''?>>SECUNDARIA - SEGUNDO</option>
-                                                <option value="SECUNDARIA - TERCERO"<?=$curso=='SECUNDARIA - TERCERO' ? 'selected' : ''?>>SECUNDARIA - TERCERO</option>
-                                                <option value="SECUNDARIA - CUARTO"<?=$curso=='SECUNDARIA - CUARTO' ? 'selected' : ''?>>SECUNDARIA - CUARTO</option>
-                                                <option value="SECUNDARIA - QUINTO"<?=$curso=='SECUNDARIA - QUINTO' ? 'selected' : ''?>>SECUNDARIA - QUINTO</option>
-                                                <option value="SECUNDARIA - SEXTO"<?=$curso=='SECUNDARIA - SEXTO' ? 'selected' : ''?>>SECUNDARIA - SEXTO</option>
-
+                                                <option value="PRIMER GRADO" <?=$curso=='PRIMER GRADO' ? 'selected' : ''?>>PRIMER GRADO</option>
+                                                <option value="SEGUNDO GRADO" <?=$curso=='SEGUNDO GRADO' ? 'selected' : ''?>>SEGUNDO GRADO</option>
+                                                <option value="TERCER GRADO" <?=$curso=='TERCER GRADO' ? 'selected' : ''?>>TERCER GRADO</option>
+                                                <option value="CUARTO GRADO" <?=$curso=='CUARTO GRADO' ? 'selected' : ''?>>CUARTO GRADO</option>
+                                                <option value="QUINTO GRADO" <?=$curso=='QUINTO GRADO' ? 'selected' : ''?>>QUINTO GRADO</option>
+                                                <option value="SEXTO GRADO" <?=$curso=='SEXTO GRADO' ? 'selected' : ''?>>SEXTO GRADO</option>
+                                                <option value="PRIMER AÑO" <?=$curso=='PRIMER AÑO' ? 'selected' : ''?>>PRIMER AÑO</option>
+                                                <option value="SEGUNDO AÑO" <?=$curso=='SEGUNDO AÑO' ? 'selected' : ''?>>SEGUNDO AÑO</option>
+                                                <option value="TERCER AÑO" <?=$curso=='TERCER AÑO' ? 'selected' : ''?>>TERCER AÑO</option>
+                                                <option value="CUARTO AÑO" <?=$curso=='CUARTO AÑO' ? 'selected' : ''?>>CUARTO AÑO</option>
+                                                <option value="QUINTO AÑO" <?=$curso=='QUINTO AÑO' ? 'selected' : ''?>>QUINTO AÑO</option>
+                                                <option value="SEXTO AÑO" <?=$curso=='SEXTO AÑO' ? 'selected' : ''?>>SEXTO AÑO</option>
                                             </select>
                                         </div>
                                     </div>

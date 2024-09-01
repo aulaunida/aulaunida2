@@ -31,9 +31,9 @@ include ('../../app/controllers/grados/listado_de_grados.php');
                                 <tr>
                                     <!-- <th><center>Nro</center></th> -->
                                     <th><center>Nivel</center></th>
-                                    <th><center>Turno</center></th>
                                     <th><center>Curso</center></th>
                                     <th><center>División</center></th>
+                                    <th><center>Turno</center></th>
                                     <th><center>Acciones</center></th>
                                 </tr>
                                 </thead>
@@ -46,9 +46,9 @@ include ('../../app/controllers/grados/listado_de_grados.php');
                                     <tr>
                                         <!-- <td style="text-align: center"><?=$contador_grados;?></td> -->
                                         <td style="text-align: center"><?=$grado['nivel'];?></td>
-                                        <td style="text-align: center"><?=$grado['turno'];?></td>
                                         <td style="text-align: center"><?=$grado['curso'];?></td>
                                         <td style="text-align: center"><?=$grado['paralelo'];?></td>
+                                        <td style="text-align: center"><?=$grado['turno'];?></td>
                                         <td style="text-align: center">
                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                 <a href="show.php?id=<?=$id_grado;?>" type="button" title="Ver" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>

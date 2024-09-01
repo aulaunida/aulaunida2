@@ -51,9 +51,9 @@ include ('../../app/controllers/usuarios/listado_de_usuarios.php');
                                     $contador_usuarios = $contador_usuarios +1; ?>
                                     <tr>
                                         <!-- <td style="text-align: center"><?=$contador_usuarios;?></td> -->
-                                        <td><?=$usuario['nombres'];?></td>
-                                        <td><?=$usuario['nombre_rol'];?></td>
-                                        <td><?=$usuario['email'];?></td>
+                                        <td style="text-align: center"><?=$usuario['nombres'];?></td>
+                                        <td style="text-align: center"><?=$usuario['nombre_rol'];?></td>
+                                        <td style="text-align: center"><?=$usuario['email'];?></td>
                                         <!-- <td>?=$usuario['fyh_creacion'];?></td> -->
                                         <!-- <td>?=$usuario['estado'] == '1' ? "Activo" : "Inactivo"; ?></td> -->
                                         <td class="text-center">

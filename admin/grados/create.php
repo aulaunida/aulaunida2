@@ -47,21 +47,18 @@ include ('../../app/controllers/niveles/listado_de_niveles.php');
                                         <div class="form-group">
                                             <label for="">Curso</label>
                                             <select name="curso" id="" class="form-control">
-                                                <option value="INICIAL - PRIMERO">INICIAL - PRIMERO</option>
-                                                <option value="INICIAL - SEGUNDO">INICIAL - SEGUNDO</option>
-                                                <option value="PRIMARIA - PRIMERO">PRIMARIA - PRIMERO</option>
-                                                <option value="PRIMARIA - SEGUNDO">PRIMARIA - SEGUNDO</option>
-                                                <option value="PRIMARIA - TERCERO">PRIMARIA - TERCERO</option>
-                                                <option value="PRIMARIA - CUARTO">PRIMARIA - CUARTO</option>
-                                                <option value="PRIMARIA - QUINTO">PRIMARIA - QUINTO</option>
-                                                <option value="PRIMARIA - SEXTO">PRIMARIA - SEXTO</option>
-                                                <option value="SECUNDARIA - PRIMERO">SECUNDARIA - PRIMERO</option>
-                                                <option value="SECUNDARIA - SEGUNDO">SECUNDARIA - SEGUNDO</option>
-                                                <option value="SECUNDARIA - TERCERO">SECUNDARIA - TERCERO</option>
-                                                <option value="SECUNDARIA - CUARTO">SECUNDARIA - CUARTO</option>
-                                                <option value="SECUNDARIA - QUINTO">SECUNDARIA - QUINTO</option>
-                                                <option value="SECUNDARIA - SEXTO">SECUNDARIA - SEXTO</option>
-
+                                                <option value="PRIMER GRADO">PRIMER GRADO</option>
+                                                <option value="SEGUNDO GRADO">SEGUNDO GRADO</option>
+                                                <option value="TERCER GRADO">TERCER GRADO</option>
+                                                <option value="CUARTO GRADO">CUARTO GRADO</option>
+                                                <option value="QUINTO GRADO">QUINTO GRADO</option>
+                                                <option value="SEXTO GRADO">SEXTO GRADO</option>
+                                                <option value="PRIMER AÑO">PRIMER AÑO</option>
+                                                <option value="SEGUNDO AÑO">SEGUNDO AÑO</option>
+                                                <option value="TERCER AÑO">TERCER AÑO</option>
+                                                <option value="CUARTO AÑO">CUARTO AÑO</option>
+                                                <option value="QUINTO AÑO">QUINTO AÑO</option>
+                                                <option value="SEXTO AÑO">SEXTO AÑO</option>
                                             </select>
                                         </div>
                                     </div>

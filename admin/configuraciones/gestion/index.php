@@ -44,8 +44,8 @@ include ('../../../app/controllers/configuraciones/gestion/listado_de_gestiones.
                                     $contador_gestiones = $contador_gestiones +1; ?>
                                     <tr>
                                         <!-- <td style="text-align: center"><?=$contador_gestiones;?></td> -->
-                                        <td><?=$gestione['gestion'];?></td>
-                                        <td><?=$gestione['fyh_creacion'];?></td>
+                                        <td style="text-align: center"><?=$gestione['gestion'];?></td>
+                                        <td style="text-align: center"><?=$gestione['fyh_creacion'];?></td>
                                         <td class="text-center">
                                             <?php
                                             if($gestione['estado'] == "1"){ ?>
