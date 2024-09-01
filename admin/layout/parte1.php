@@ -286,23 +286,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </ul>
                     </li>
 
-                    <!-- <li class="nav-item">
+                    <li class="nav-item">
                         <a href="#" class="nav-link active">
-                            <i class="nav-icon fas"><i class="bi bi-bookmarks"></i></i>
+                            <i class="nav-icon fas"><i class="bi bi-person-video3"></i></i>
                             <p>
-                                Roles de usuario
+                                Administrativos
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="<?=APP_URL;?>/admin/roles" class="nav-link active">
+                                <a href="<?=APP_URL;?>/admin/administrativos" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Listado de roles</p>
+                                    <p>Ver listado de administrativos</p>
                                 </a>
                             </li>
                         </ul>
-                    </li> -->
+                    </li>
 
                     <li class="nav-item">
                         <a href="#" class="nav-link active">
