@@ -40,12 +40,12 @@ include ('../../app/controllers/roles/listado_de_roles.php');
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <!-- <div class="col-md-4">
                                         <div class="form-group">
                                         <label for="">Nombre y Apellido</label>
                                             <input type="text" name="nombres" class="form-control" required>
                                         </div>
-                                    </div>
+                                    </div> -->
 
                                     <div class="col-md-4">
                                         <div class="form-group">

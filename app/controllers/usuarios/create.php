@@ -8,7 +8,7 @@
 
 include ('../../../app/config.php');
 
- $nombres = $_POST['nombres'];
+//  $nombres = $_POST['nombres'];
  $rol_id = $_POST['rol_id'];
  $email = $_POST['email'];
  $password = $_POST['password'];
@@ -19,10 +19,10 @@ include ('../../../app/config.php');
      $password = password_hash($password, PASSWORD_DEFAULT); //para encriptar contraseña
  
      $sentencia = $pdo->prepare('INSERT INTO usuarios
-     (nombres,rol_id,email,password, fyh_creacion, estado)
-     VALUES ( :nombres,:rol_id,:email,:password,:fyh_creacion,:estado)');
+     (rol_id,email,password, fyh_creacion, estado)
+     VALUES (:rol_id,:email,:password,:fyh_creacion,:estado)');
      
-     $sentencia->bindParam(':nombres',$nombres);
+    //  $sentencia->bindParam(':nombres',$nombres);
      $sentencia->bindParam(':rol_id',$rol_id);
      $sentencia->bindParam(':email',$email);
      $sentencia->bindParam(':password',$password);

@@ -20,8 +20,8 @@ $query_usuarios->execute();
 $usuarios = $query_usuarios->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($usuarios as $usuario){
-    $nombres = $usuario['nombres'];
-    $apellidos = $usuario['apellidos'];
+    // $nombres = $usuario['nombres'];
+    // $apellidos = $usuario['apellidos'];
     $nombre_rol = $usuario['nombre_rol'];
     $email = $usuario['email'];
     $password = $usuario['password'];
