@@ -2,7 +2,7 @@
 include ('../../app/config.php');
 include ('../../admin/layout/parte1.php');
 
-include ('../../app/controllers/administrativos/listado_de_administrativos.php');
+include ('../../app/controllers/docentes/listado_de_docentes.php');
 
 
 ?>
@@ -18,7 +18,7 @@ include ('../../app/controllers/administrativos/listado_de_administrativos.php')
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Administrativos <i class="bi bi-chevron-right"></i> Ver listado de personal administrativo</h1>
+                <h1>Docentes <i class="bi bi-chevron-right"></i> Ver listado de docentes</h1>
             </div>
             <br>
             <div class="row">
@@ -26,40 +26,41 @@ include ('../../app/controllers/administrativos/listado_de_administrativos.php')
                 <div class="col-md-12">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Administrativos registrados</h3>
+                            <h3 class="card-title">Docentes registrados</h3>
                             <div class="card-tools">
-                                <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-square"></i> Crear nuevo administrativo</a>
+                                <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-square"></i> Crear nuevo docente</a>
                             </div>
                         </div>
                         <div class="card-body">
                             <table id="example1" class="table table-striped table-bordered table-hover table-sm">
                                 <thead>
                                 <tr> 
-                                    <th><center>Nombre del administrativo</center></th>
+                                    <th><center>Nombre del docente</center></th>
                                     <th><center>Rol</center></th>
                                     <th><center>DNI</center></th>
                                     <th><center>Fecha de nacimiento</center></th>
                                     <th><center>Correo electrónico</center></th>
                                     <th><center>Estado</center></th>
+                                    <th><center>Integrador</center></th>
                                     <th><center>Acciones</center></th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php
-                                $contador_administrativos = 0;
-                                foreach ($administrativos as $administrativo){
-                                    $id_administrativo = $administrativo['id_administrativo'];
-                                    $contador_administrativos = $contador_administrativos +1; ?>
+                                $contador_docentes = 0;
+                                foreach ($docentes as $docente){
+                                    $id_docente = $docente['id_docente'];
+                                    $contador_docentes = $contador_docentes +1; ?>
                                     <tr>
-                                        <!-- <td style="text-align: center"><?=$contador_administrativos;?></td> -->
-                                        <td style="text-align: center"><?=$administrativo['nombres'] .' '. $administrativo['apellidos'];?></td>
-                                        <td style="text-align: center"><?=$administrativo['nombre_rol'];?></td>
-                                        <td style="text-align: center"><?=$administrativo['dni'];?></td>
-                                        <td style="text-align: center"><?=$administrativo['fecha_nacimiento'];?></td>
-                                        <td style="text-align: center"><?=$administrativo['email'];?></td>
+                                        <!-- <td style="text-align: center"><?=$contador_docentes;?></td> -->
+                                        <td style="text-align: center"><?=$docente['nombres'] .' '. $docente['apellidos'];?></td>
+                                        <td style="text-align: center"><?=$docente['nombre_rol'];?></td>
+                                        <td style="text-align: center"><?=$docente['dni'];?></td>
+                                        <td style="text-align: center"><?=$docente['fecha_nacimiento'];?></td>
+                                        <td style="text-align: center"><?=$docente['email'];?></td>
                                         <td class="text-center">
                                             <?php
-                                            if($administrativo['estado'] == "1"){ ?>
+                                            if($docente['estado'] == "1"){ ?>
                                                 <button class="btn btn-success btn-sm" style="border-radius: 20px">ACTIVO</button>
                                             <?php
                                             }else{ ?>
@@ -68,20 +69,21 @@ include ('../../app/controllers/administrativos/listado_de_administrativos.php')
                                             }
                                             ?>
                                         </td>
+                                        <td><?= $docente['integrador'] == '1' ? "SI" : "NO";?></td>
                                         <td style="text-align: center">
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <a href="show.php?id=<?=$id_administrativo;?>" type="button" title="Ver" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
-                                                <a href="edit.php?id=<?=$id_administrativo;?>" type="button" title="Editar" class="btn btn-success btn-sm icono-blanco"><i class="bi bi-pencil-square"></i></a>
-                                                <!-- <form action="<?=APP_URL;?>/app/controllers/administrativos/delete.php" onclick="preguntar<?=$id_administrativo;?>(event)" method="post" id="miFormulario<?=$id_administrativo;?>">
-                                                    <input type="text" name="id_administrativo" value="<?=$id_administrativo;?>" hidden>
+                                                <a href="show.php?id=<?=$id_docente;?>" type="button" title="Ver" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
+                                                <a href="edit.php?id=<?=$id_docente;?>" type="button" title="Editar" class="btn btn-success btn-sm icono-blanco"><i class="bi bi-pencil-square"></i></a>
+                                                <!-- <form action="<?=APP_URL;?>/app/controllers/docentes/delete.php" onclick="preguntar<?=$id_docente;?>(event)" method="post" id="miFormulario<?=$id_docente;?>">
+                                                    <input type="text" name="id_docente" value="<?=$id_docente;?>" hidden>
                                                     <button type="submit" title="Eliminar" class="btn btn-danger btn-sm" style="border-radius: 0px 5px 5px 0px"><i class="bi bi-trash"></i></button>
                                                 </form>
                                                 <script>
-                            function preguntar<?=$id_administrativo;?>(event) {
+                            function preguntar<?=$id_docente;?>(event) {
                                 event.preventDefault();
                                 Swal.fire({
-                                    title: 'Eliminar administrativo existente',
-                                    text: '¿Desea eliminar este administrativo?',
+                                    title: 'Eliminar docente existente',
+                                    text: '¿Desea eliminar este docente?',
                                     icon: 'question',
                                     showDenyButton: true,
                                     confirmButtonText: 'Eliminar',
@@ -90,9 +92,9 @@ include ('../../app/controllers/administrativos/listado_de_administrativos.php')
                                     denyButtonText: 'Cancelar',
                                 }).then((result) => {
                                     if (result.isConfirmed) {
-                                        var form = $('#miFormulario<?=$id_administrativo;?>');
+                                        var form = $('#miFormulario<?=$id_docente;?>');
                                         form.submit();
-                                        Swal.fire('Eliminado', 'Se eliminó el administrativo correctamente', 'success');
+                                        Swal.fire('Eliminado', 'Se eliminó el docente correctamente', 'success');
                                     }
                                 });
                             }
@@ -137,15 +139,15 @@ include ('../../layout/mensajes.php');
             "pageLength": 25,
             "language": {
                 "emptyTable": "No hay información",
-                "info": "Mostrando _START_ - _END_ | _TOTAL_ Administrativos",
-                "infoEmpty": "Mostrando 0 - 0 | 0 Administrativos",
-                "infoFiltered": "(Filtrado de _MAX_ total Administrativos)",
+                "info": "Mostrando _START_ - _END_ | _TOTAL_ docentes",
+                "infoEmpty": "Mostrando 0 - 0 | 0 docentes",
+                "infoFiltered": "(Filtrado de _MAX_ total docentes)",
                 "infoPostFix": "",
                 "thousands": ",",
-                "lengthMenu": "Mostrar _MENU_ Administrativos",
+                "lengthMenu": "Mostrar _MENU_ docentes",
                 "loadingRecords": "Cargando...",
                 "processing": "Procesando...",
-                "search": "Buscar administrativo:",
+                "search": "Buscar docente:",
                 "zeroRecords": "Sin resultados encontrados",
                 "paginate": {
                     "first": "Primero",

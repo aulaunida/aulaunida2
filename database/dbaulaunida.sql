@@ -84,6 +84,8 @@ DROP TABLE IF EXISTS `docentes`;
 CREATE TABLE IF NOT EXISTS `docentes` (
   `id_docente` int NOT NULL AUTO_INCREMENT,
   `persona_id` int NOT NULL,
+  `integrador` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `tipo_cargo` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `fyh_creacion` date DEFAULT NULL,
   `fyh_actualizacion` date DEFAULT NULL,
   `estado` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
