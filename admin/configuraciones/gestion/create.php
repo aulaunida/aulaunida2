@@ -25,7 +25,7 @@ include ('../../../admin/layout/parte1.php');
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Gestión educativa</label>
+                                            <label for="">Descripción de Ciclo lectivo</label>
                                             <input type="text" name="gestion" class="form-control">
                                         </div>
                                     </div>

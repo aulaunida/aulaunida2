@@ -26,7 +26,7 @@ include ('../../../app/controllers/configuraciones/gestion/datos_gestion.php');
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Gestión educativa</label>
+                                            <label for="">Descripción de Ciclo lectivo</label>
                                             <p><?=$gestion;?></p>
                                         </div>
                                     </div>

@@ -30,7 +30,7 @@ include ('../../app/controllers/niveles/listado_de_niveles.php');
                                 <thead>
                                 <tr>
                                     <!-- <th><center>Nro</center></th> -->
-                                    <th><center>Gestión educativa</center></th>
+                                    <th><center>Ciclo lectivo</center></th>
                                     <th><center>Nivel</center></th>
                                     <th><center>Turno</center></th>
                                     <th><center>Estado</center></th>

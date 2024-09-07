@@ -29,7 +29,7 @@ include ('../../app/controllers/configuraciones/gestion/listado_de_gestiones.php
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Gestión educativa</label>
+                                            <label for="">Ciclo lectivo</label>
                                             <input type="text" name="id_nivel" value="<?=$id_nivel;?>" hidden>
                                             <select name="gestion_id" id="" class="form-control">
                                                 <?php

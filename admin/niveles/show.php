@@ -29,7 +29,7 @@ include ('../../app/controllers/niveles/datos_nivel.php');
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Gestión educativa</label>
+                                            <label for="">Ciclo lectivo</label>
                                             <p><?=$gestion;?></p>
                                         </div>
                                     </div>
