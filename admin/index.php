@@ -6,6 +6,7 @@ include ('../app/controllers/usuarios/listado_de_usuarios.php');
 include ('../app/controllers/niveles/listado_de_niveles.php');
 include ('../app/controllers/grados/listado_de_grados.php');
 include ('../app/controllers/materias/listado_de_materias.php');
+include ('../app/controllers/docentes/listado_de_docentes.php');
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -120,6 +121,27 @@ include ('../app/controllers/materias/listado_de_materias.php');
                             <i class="fas"><i class="bi bi-book-half"></i></i>
                         </div>
                         <a href="<?=APP_URL;?>/admin/materias" class="small-box-footer">
+                            Más información <i class="fas fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-3">
+                    <div class="small-box bg-light">
+                        <div class="inner">
+                            <?php
+                            $contador_docentes = 0;
+                            foreach ($docentes as $docente){
+                                $contador_docentes = $contador_docentes + 1;
+                            }
+                            ?>
+                            <h3><?=$contador_docentes;?></h3>
+                            <p>Docentes registrados</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas"><i class="bi bi-book-half"></i></i>
+                        </div>
+                        <a href="<?=APP_URL;?>/admin/docentes" class="small-box-footer">
                             Más información <i class="fas fa-arrow-circle-right"></i>
                         </a>
                     </div>

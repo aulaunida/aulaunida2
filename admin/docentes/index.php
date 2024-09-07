@@ -10,6 +10,10 @@ include ('../../app/controllers/docentes/listado_de_docentes.php');
 .icono-blanco i {
     color: white; /* Cambia el color del icono a blanco */
 }
+
+.uppercase {
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+}
 </style>
 
 <!-- Content Wrapper. Contains page content -->
@@ -37,11 +41,12 @@ include ('../../app/controllers/docentes/listado_de_docentes.php');
                                 <tr> 
                                     <th><center>Nombre del docente</center></th>
                                     <th><center>Rol</center></th>
-                                    <th><center>DNI</center></th>
-                                    <th><center>Fecha de nacimiento</center></th>
+                                    <!-- <th><center>DNI</center></th> -->
+                                    <!-- <th><center>Fecha de nacimiento</center></th> -->
                                     <th><center>Correo electrónico</center></th>
-                                    <th><center>Estado</center></th>
                                     <th><center>Integrador</center></th>
+                                    <th><center>Tipo de cargo</center></th>
+                                    <th><center>Estado</center></th>
                                     <th><center>Acciones</center></th>
                                 </tr>
                                 </thead>
@@ -53,11 +58,13 @@ include ('../../app/controllers/docentes/listado_de_docentes.php');
                                     $contador_docentes = $contador_docentes +1; ?>
                                     <tr>
                                         <!-- <td style="text-align: center"><?=$contador_docentes;?></td> -->
-                                        <td style="text-align: center"><?=$docente['nombres'] .' '. $docente['apellidos'];?></td>
+                                        <td class="uppercase" style="text-align: center"><?=$docente['nombres'] .' '. $docente['apellidos'];?></td>
                                         <td style="text-align: center"><?=$docente['nombre_rol'];?></td>
-                                        <td style="text-align: center"><?=$docente['dni'];?></td>
-                                        <td style="text-align: center"><?=$docente['fecha_nacimiento'];?></td>
+                                        <!-- <td style="text-align: center"><?=$docente['dni'];?></td> -->
+                                        <!-- <td style="text-align: center"><?=$docente['fecha_nacimiento'];?></td> -->
                                         <td style="text-align: center"><?=$docente['email'];?></td>
+                                        <td class="text-center"><?= $docente['integrador'] == 'NO' ? "NO" : "SI";?></td>
+                                        <td class="text-center"><?= $docente['tipo_cargo'] == 'TITULAR' ? "TITULAR" : "SUPLENTE";?></td>
                                         <td class="text-center">
                                             <?php
                                             if($docente['estado'] == "1"){ ?>
@@ -69,7 +76,6 @@ include ('../../app/controllers/docentes/listado_de_docentes.php');
                                             }
                                             ?>
                                         </td>
-                                        <td><?= $docente['integrador'] == '1' ? "SI" : "NO";?></td>
                                         <td style="text-align: center">
                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                 <a href="show.php?id=<?=$id_docente;?>" type="button" title="Ver" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
