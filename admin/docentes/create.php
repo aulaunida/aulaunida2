@@ -24,21 +24,18 @@ include('../../app/controllers/roles/listado_de_roles.php');
                         <div class="card-body">
                             <form action="<?= APP_URL; ?>/app/controllers/docentes/create.php" method="post">
                                 <div class="row">
-                                    <div class="col-md-3">
+                                    <div class="col-md-3" hidden>
                                         <div class="form-group">
                                             <label for="">Nombre del rol</label>
                                             
                                                 <select name="rol_id" id="" class="form-control">
                                                     <?php
                                                     foreach ($roles as $role) { ?>
-                                                        <option value="<?= $role['id_rol']; ?>" <?=$role['nombre_rol']=='DOCENTE' ? 'selected' : ''?> disabled><?= $role['nombre_rol']; ?></option>
+                                                        <option value="<?= $role['id_rol']; ?>" <?=$role['nombre_rol']=='DOCENTE' ? 'selected' : ''?>><?= $role['nombre_rol']; ?></option>
                                                     <?php
                                                     }
                                                     ?>
-                                                </select>
-                                            
-
-                                            
+                                                </select> 
                                         </div>
                                     </div>
                                     <div class="col-md-3">
@@ -55,14 +52,7 @@ include('../../app/controllers/roles/listado_de_roles.php');
                                         </div>
                                     </div>
 
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label for="">Correo Electrónico</label>
-                                            <input type="email" name="email" class="form-control" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
+                                    
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">DNI</label>
@@ -75,24 +65,37 @@ include('../../app/controllers/roles/listado_de_roles.php');
                                             <input type="date" name="fecha_nacimiento" class="form-control" required>
                                         </div>
                                     </div>
+
+
+                                </div>
+                                <div class="row">
+                                <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Dirección</label>
+                                            <input type="address" name="direccion" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="">Correo Electrónico</label>
+                                            <input type="email" name="email" class="form-control" required>
+                                        </div>
+                                    </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">Celular</label>
                                             <input type="number" name="celular" class="form-control" required>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
+                                    
+                                </div>
+                                <div class="row">
+                                    
+                                <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">Profesión</label>
                                             <input type="text" name="profesion" class="form-control" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="">Dirección</label>
-                                            <input type="address" name="direccion" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
