@@ -40,7 +40,7 @@ include ('../../app/controllers/docentes/listado_de_docentes.php');
                                 <thead>
                                 <tr> 
                                     <th><center>Nombre del docente</center></th>
-                                    <th><center>Rol</center></th>
+                                    <!-- <th><center>Rol</center></th> -->
                                     <!-- <th><center>DNI</center></th> -->
                                     <!-- <th><center>Fecha de nacimiento</center></th> -->
                                     <th><center>Correo electrónico</center></th>
@@ -59,7 +59,7 @@ include ('../../app/controllers/docentes/listado_de_docentes.php');
                                     <tr>
                                         <!-- <td style="text-align: center"><?=$contador_docentes;?></td> -->
                                         <td class="uppercase" style="text-align: center"><?=$docente['nombres'] .' '. $docente['apellidos'];?></td>
-                                        <td style="text-align: center"><?=$docente['nombre_rol'];?></td>
+                                        <!-- <td style="text-align: center"><?=$docente['nombre_rol'];?></td> -->
                                         <!-- <td style="text-align: center"><?=$docente['dni'];?></td> -->
                                         <!-- <td style="text-align: center"><?=$docente['fecha_nacimiento'];?></td> -->
                                         <td style="text-align: center"><?=$docente['email'];?></td>
