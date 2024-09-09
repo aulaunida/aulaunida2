@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 06-09-2024 a las 11:51:26
+-- Tiempo de generación: 09-09-2024 a las 11:10:16
 -- Versión del servidor: 8.3.0
 -- Versión de PHP: 8.2.18
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `administrativos` (
   `persona_id` int NOT NULL,
   `fyh_creacion` date DEFAULT NULL,
   `fyh_actualizacion` date DEFAULT NULL,
-  `estado` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `estado` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_administrativo`),
   KEY `persona_id` (`persona_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
@@ -55,15 +55,15 @@ INSERT INTO `administrativos` (`id_administrativo`, `persona_id`, `fyh_creacion`
 DROP TABLE IF EXISTS `configuracion_instituciones`;
 CREATE TABLE IF NOT EXISTS `configuracion_instituciones` (
   `id_config_institucion` int NOT NULL AUTO_INCREMENT,
-  `nombre_institucion` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `logo` varchar(255) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  `direccion` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `telefono` varchar(100) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  `celular` varchar(100) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  `correo` varchar(100) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `nombre_institucion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `logo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `direccion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `telefono` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `celular` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `correo` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `fyh_creacion` date DEFAULT NULL,
   `fyh_actualizacion` date DEFAULT NULL,
-  `estado` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `estado` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_config_institucion`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
@@ -84,14 +84,27 @@ DROP TABLE IF EXISTS `docentes`;
 CREATE TABLE IF NOT EXISTS `docentes` (
   `id_docente` int NOT NULL AUTO_INCREMENT,
   `persona_id` int NOT NULL,
-  `integrador` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  `tipo_cargo` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `integrador` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `tipo_cargo` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `fyh_creacion` date DEFAULT NULL,
   `fyh_actualizacion` date DEFAULT NULL,
-  `estado` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `estado` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_docente`),
   KEY `persona_id` (`persona_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `docentes`
+--
+
+INSERT INTO `docentes` (`id_docente`, `persona_id`, `integrador`, `tipo_cargo`, `fyh_creacion`, `fyh_actualizacion`, `estado`) VALUES
+(1, 4, 'NO', 'TITULAR', '2024-09-07', NULL, '1'),
+(2, 5, 'SI', 'SUPLENTE', '2024-09-07', '2024-09-08', '1'),
+(3, 6, 'NO', 'TITULAR', '2024-09-07', '2024-09-08', '1'),
+(4, 7, 'SI', 'TITULAR', '2024-09-07', NULL, '1'),
+(5, 8, 'NO', 'SUPLENTE', '2024-09-07', NULL, '1'),
+(6, 9, 'NO', 'TITULAR', '2024-09-07', NULL, '1'),
+(7, 10, 'SI', 'TITULAR', '2024-09-07', NULL, '1');
 
 -- --------------------------------------------------------
 
@@ -99,21 +112,21 @@ CREATE TABLE IF NOT EXISTS `docentes` (
 -- Estructura de tabla para la tabla `estudiantes`
 --
 
-CREATE TABLE estudiantes (
-  `id_estudiante` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+DROP TABLE IF EXISTS `estudiantes`;
+CREATE TABLE IF NOT EXISTS `estudiantes` (
+  `id_estudiante` int NOT NULL AUTO_INCREMENT,
   `persona_id` int NOT NULL,
   `nivel_id` int NOT NULL,
   `grado_id` int NOT NULL,
-  `matricula` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
-
+  `matricula` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
   `fyh_creacion` date DEFAULT NULL,
   `fyh_actualizacion` date DEFAULT NULL,
-  `estado` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  
-FOREIGN KEY (persona_id) REFERENCES personas (id_persona) on delete no action on update cascade,
-FOREIGN KEY (nivel_id) REFERENCES niveles (id_nivel) on delete no action on update cascade,
-FOREIGN KEY (grado_id) REFERENCES grados (id_grado) on delete no action on update cascade
-) ENGINE=InnoDB;
+  `estado` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`id_estudiante`),
+  KEY `persona_id` (`persona_id`),
+  KEY `nivel_id` (`nivel_id`),
+  KEY `grado_id` (`grado_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 -- --------------------------------------------------------
 
@@ -124,10 +137,10 @@ FOREIGN KEY (grado_id) REFERENCES grados (id_grado) on delete no action on updat
 DROP TABLE IF EXISTS `gestiones`;
 CREATE TABLE IF NOT EXISTS `gestiones` (
   `id_gestion` int NOT NULL AUTO_INCREMENT,
-  `gestion` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `gestion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
   `fyh_creacion` date DEFAULT NULL,
   `fyh_actualizacion` date DEFAULT NULL,
-  `estado` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `estado` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_gestion`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
@@ -149,11 +162,11 @@ DROP TABLE IF EXISTS `grados`;
 CREATE TABLE IF NOT EXISTS `grados` (
   `id_grado` int NOT NULL AUTO_INCREMENT,
   `nivel_id` int NOT NULL,
-  `curso` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `paralelo` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `curso` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `paralelo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
   `fyh_creacion` date DEFAULT NULL,
   `fyh_actualizacion` date DEFAULT NULL,
-  `estado` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `estado` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_grado`),
   KEY `nivel_id` (`nivel_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
@@ -185,10 +198,10 @@ INSERT INTO `grados` (`id_grado`, `nivel_id`, `curso`, `paralelo`, `fyh_creacion
 DROP TABLE IF EXISTS `materias`;
 CREATE TABLE IF NOT EXISTS `materias` (
   `id_materia` int NOT NULL AUTO_INCREMENT,
-  `nombre_materia` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `nombre_materia` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
   `fyh_creacion` date DEFAULT NULL,
   `fyh_actualizacion` date DEFAULT NULL,
-  `estado` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `estado` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_materia`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
@@ -216,11 +229,11 @@ DROP TABLE IF EXISTS `niveles`;
 CREATE TABLE IF NOT EXISTS `niveles` (
   `id_nivel` int NOT NULL AUTO_INCREMENT,
   `gestion_id` int NOT NULL,
-  `nivel` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `turno` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `nivel` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `turno` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
   `fyh_creacion` date DEFAULT NULL,
   `fyh_actualizacion` date DEFAULT NULL,
-  `estado` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `estado` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_nivel`),
   KEY `gestion_id` (`gestion_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
@@ -243,19 +256,19 @@ DROP TABLE IF EXISTS `personas`;
 CREATE TABLE IF NOT EXISTS `personas` (
   `id_persona` int NOT NULL AUTO_INCREMENT,
   `usuario_id` int NOT NULL,
-  `nombres` varchar(50) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `apellidos` varchar(50) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `nombres` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `apellidos` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
   `dni` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
-  `fecha_nacimiento` varchar(20) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `profesion` varchar(50) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `direccion` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `celular` varchar(20) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `fecha_nacimiento` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `profesion` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `direccion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `celular` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
   `fyh_creacion` date DEFAULT NULL,
   `fyh_actualizacion` date DEFAULT NULL,
-  `estado` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `estado` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_persona`),
   KEY `usuario_id` (`usuario_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `personas`
@@ -264,7 +277,14 @@ CREATE TABLE IF NOT EXISTS `personas` (
 INSERT INTO `personas` (`id_persona`, `usuario_id`, `nombres`, `apellidos`, `dni`, `fecha_nacimiento`, `profesion`, `direccion`, `celular`, `fyh_creacion`, `fyh_actualizacion`, `estado`) VALUES
 (1, 1, 'Leonardo', 'Rodriguez', '36143425', '1991-10-29', 'Analista de Sistemas', 'Ana Maria Janer 1227', '3512558885', '2024-08-30', NULL, '1'),
 (2, 4, 'Pablo', 'Castillo', '36875234', '1992-08-04', 'DESARROLLADOR', 'Sucre 1826', '3513454237', '2024-09-01', '2024-09-01', '1'),
-(3, 5, 'Leonardo', 'Rodriguez', '36143425', '1991-10-29', 'ANALISTA DE SISTEMAS', 'Ana Maria Janer 1227 Piso 3 Depto 10', '3512558885', '2024-09-01', NULL, '1');
+(3, 5, 'Leonardo', 'Rodriguez', '36143425', '1991-10-29', 'ANALISTA DE SISTEMAS', 'Ana Maria Janer 1227 Piso 3 Depto 10', '3512558885', '2024-09-01', NULL, '1'),
+(4, 6, 'Noelia', 'Alfonso', '37453855', '1994-09-09', 'Profesorado en Educación Primaria', 'Miguel de Ardiles 517', '3515237651', '2024-09-07', NULL, '1'),
+(5, 7, 'ROMINA MICAELA', 'PIZARRO', '34024504', '1987-11-14', 'Licenciatura en Educación', 'PADRE LUIS MONTI 1969', '3584493006', '2024-09-07', '2024-09-08', '1'),
+(6, 8, 'SILVIA DAIANA', 'REINOSO', '350618543', '1990-04-02', 'Licenciada en Educación', 'BVRD DE LOS FRIULANOS 6115', '3514934669', '2024-09-07', '2024-09-08', '1'),
+(7, 9, 'NAIRA', 'VITTAR', '340695548', '1989-06-08', 'Profesorado en Educación Especial', 'DR JOSE INGENIEROS 2353', '3514603267', '2024-09-07', NULL, '1'),
+(8, 10, 'ESTEFANIA', 'DOTTI', '22036866', '1988-10-24', 'Profesorado en Matemática', 'OBISPO SALGUERO 774', '3514825583', '2024-09-07', NULL, '1'),
+(9, 11, 'MARIA EUGENIA', 'PINTO', '34091167', '1989-02-18', 'Profesorado en Ciencias de la Educación', 'DIAGONAL ICA 450', '3513420385', '2024-09-07', NULL, '1'),
+(10, 12, 'DANIELA', 'HEREDIA', '34128110', '1990-07-01', 'Profesorado en Educación Especial', 'TOLEDO PIMENTEL 680', '3541421369', '2024-09-07', NULL, '1');
 
 -- --------------------------------------------------------
 
@@ -272,24 +292,23 @@ INSERT INTO `personas` (`id_persona`, `usuario_id`, `nombres`, `apellidos`, `dni
 -- Estructura de tabla para la tabla `ppffs`
 --
 
-CREATE TABLE ppffs (
-  `id_ppff` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+DROP TABLE IF EXISTS `ppffs`;
+CREATE TABLE IF NOT EXISTS `ppffs` (
+  `id_ppff` int NOT NULL AUTO_INCREMENT,
   `estudiante_id` int NOT NULL,
-  `nombres_apellidos_ppff` varchar(50) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `dni_ppff` varchar(20) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `celular_ppff` varchar(20) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `ocupacion_ppff` varchar(50) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `ref_nombre` varchar(50) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `nombres_apellidos_ppff` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `dni_ppff` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `celular_ppff` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `ocupacion_ppff` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `ref_nombre` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
   `ref_parentezco` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
-  `ref_celular` varchar(20) COLLATE utf8mb4_spanish_ci NOT NULL,
-
+  `ref_celular` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
   `fyh_creacion` date DEFAULT NULL,
   `fyh_actualizacion` date DEFAULT NULL,
-  `estado` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  
-FOREIGN KEY (estudiante_id) REFERENCES estudiantes (id_estudiante) on delete no action on update cascade
-
-) ENGINE=InnoDB;
+  `estado` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`id_ppff`),
+  KEY `estudiante_id` (`estudiante_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 -- --------------------------------------------------------
 
@@ -300,10 +319,10 @@ FOREIGN KEY (estudiante_id) REFERENCES estudiantes (id_estudiante) on delete no 
 DROP TABLE IF EXISTS `roles`;
 CREATE TABLE IF NOT EXISTS `roles` (
   `id_rol` int NOT NULL AUTO_INCREMENT,
-  `nombre_rol` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `nombre_rol` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
   `fyh_creacion` date DEFAULT NULL,
   `fyh_actualizacion` date DEFAULT NULL,
-  `estado` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `estado` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_rol`),
   UNIQUE KEY `nombre_rol` (`nombre_rol`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
@@ -327,15 +346,15 @@ DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `id_usuario` int NOT NULL AUTO_INCREMENT,
   `rol_id` int NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `password` text COLLATE utf8mb4_spanish_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `password` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
   `fyh_creacion` date DEFAULT NULL,
   `fyh_actualizacion` date DEFAULT NULL,
-  `estado` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `estado` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `email` (`email`),
   KEY `rol_id` (`rol_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -343,8 +362,15 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 
 INSERT INTO `usuarios` (`id_usuario`, `rol_id`, `email`, `password`, `fyh_creacion`, `fyh_actualizacion`, `estado`) VALUES
 (1, 1, 'admin@admin.com', '$2y$10$0tYmdHU9uGCIxY1f90W1EuIm54NQ8axowkxL1WzLbqO2LdNa8m3l2', '2024-05-13', NULL, '1'),
-(4, 1, 'pablojcastillo.94@gmail.com', '$2y$10$BTQFQLjKDcGL9DJbeLA26e485/reyDBmIlvncB8NC2k8EiZgu7UTG', '2024-09-01', '2024-09-01', '1'),
-(5, 1, 'rodriguez.cl@outlook.com', '$2y$10$8cNIAmfI6OhlCKxTcuym3.obMgNhZDnaoK0WGaK2FMrvlCYf6YEvW', '2024-09-01', NULL, '1');
+(4, 1, 'pablojcastillo.94@gmail.com', '$2y$10$9Qu0M0r2dR/6RxwMAwHkH.NACy1G/w6sIOogT4Ne2Jeg1kIGaQAbW', '2024-09-01', '2024-09-08', '1'),
+(5, 1, 'rodriguez.cl@outlook.com', '$2y$10$8cNIAmfI6OhlCKxTcuym3.obMgNhZDnaoK0WGaK2FMrvlCYf6YEvW', '2024-09-01', NULL, '1'),
+(6, 3, 'noealfonso@gmail.com', '$2y$10$lzsfS0PBrr1Lq7WuV/VqS.T2wTNp5pPALYYgxAI4Ey6AN5GOf5QA2', '2024-09-07', NULL, '1'),
+(7, 3, 'romipizarro_15@hotmail.com', '$2y$10$u4LS3WJZs72.iia34HZqa.OaJLuoSpcLi2Jh13x/fX0ZnaZGJYUxK', '2024-09-07', '2024-09-08', '1'),
+(8, 3, 'reinosodaiana61@gmail.com', '$2y$10$8Qa87CrK9tmeqbTHgyrt6eMndnEIID5/k5WsNEvreuWLx7Mzafo4.', '2024-09-07', '2024-09-08', '1'),
+(9, 3, 'nairavittar@gmail.com', '$2y$10$L9S2u5..7nYZAksfMOqXXOwampDQTu2kS7YhO4VZCPjt5MIIl0Avi', '2024-09-07', NULL, '1'),
+(10, 3, 'tefidotti88@gmail.com', '$2y$10$Mh3kL.xE535mZSuzIndvv.ZHSTDSsyTULYoEzthanKjtvBdeqmPM6', '2024-09-07', NULL, '1'),
+(11, 3, 'euge_pinto89@hotmail.com', '$2y$10$ak8YbDqGoFWYjNqOb84VGOLimDwTVeY/81EE1nJXC8NZRwdS2L.bG', '2024-09-07', NULL, '1'),
+(12, 3, 'natty_9950@hotmail.com', '$2y$10$snw8fRybAQFbwmrtaPKZZeWEcuPdL9OTBndZhtgPkINPdwb.dog5u', '2024-09-07', NULL, '1');
 
 --
 -- Restricciones para tablas volcadas
@@ -366,14 +392,15 @@ ALTER TABLE `docentes`
 -- Filtros para la tabla `estudiantes`
 --
 ALTER TABLE `estudiantes`
-  ADD CONSTRAINT `estudiantes_ibfk_1` FOREIGN KEY (`persona_id`) REFERENCES `personas` (`id_persona`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `estudiantes_ibfk_1` FOREIGN KEY (`persona_id`) REFERENCES `personas` (`id_persona`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `estudiantes_ibfk_2` FOREIGN KEY (`nivel_id`) REFERENCES `niveles` (`id_nivel`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `estudiantes_ibfk_3` FOREIGN KEY (`grado_id`) REFERENCES `grados` (`id_grado`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `grados`
 --
 ALTER TABLE `grados`
   ADD CONSTRAINT `grados_ibfk_1` FOREIGN KEY (`nivel_id`) REFERENCES `niveles` (`id_nivel`) ON UPDATE CASCADE;
-
 
 --
 -- Filtros para la tabla `niveles`
@@ -391,7 +418,7 @@ ALTER TABLE `personas`
 -- Filtros para la tabla `ppffs`
 --
 ALTER TABLE `ppffs`
-  ADD CONSTRAINT `ppffs_ibfk_1` FOREIGN KEY (`persona_id`) REFERENCES `personas` (`id_persona`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `ppffs_ibfk_1` FOREIGN KEY (`estudiante_id`) REFERENCES `estudiantes` (`id_estudiante`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `usuarios`
