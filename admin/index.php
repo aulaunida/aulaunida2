@@ -147,6 +147,27 @@ include ('../app/controllers/docentes/listado_de_docentes.php');
                     </div>
                 </div>
 
+                <div class="col-lg-3 col-3">
+                    <div class="small-box bg-dark">
+                        <div class="inner">
+                            <?php
+                            $contador_docentes = 0;
+                            foreach ($docentes as $docente){
+                                $contador_docentes = $contador_docentes + 1;
+                            }
+                            ?>
+                            <h3><?=$contador_docentes;?></h3>
+                            <p>Estudiantes registrados</p>
+                        </div>
+                        <div style="color: white;" class="icon">
+                            <i class="fas"><i class="bi bi-mortarboard-fill"></i></i>
+                        </div>
+                        <a href="<?=APP_URL;?>/admin/estudiantes" class="small-box-footer">
+                            Más información <i class="fas fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+
 
             </div>
             <!-- /.row -->

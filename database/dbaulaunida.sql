@@ -99,16 +99,21 @@ CREATE TABLE IF NOT EXISTS `docentes` (
 -- Estructura de tabla para la tabla `estudiantes`
 --
 
-DROP TABLE IF EXISTS `estudiantes`;
-CREATE TABLE IF NOT EXISTS `estudiantes` (
-  `id_estudiante` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE estudiantes (
+  `id_estudiante` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `persona_id` int NOT NULL,
+  `nivel_id` int NOT NULL,
+  `grado_id` int NOT NULL,
+  `matricula` varchar(255) COLLATE utf8mb4_spanish_ci NOT NULL,
+
   `fyh_creacion` date DEFAULT NULL,
   `fyh_actualizacion` date DEFAULT NULL,
   `estado` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  PRIMARY KEY (`id_estudiante`),
-  KEY `persona_id` (`persona_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+  
+FOREIGN KEY (persona_id) REFERENCES personas (id_persona) on delete no action on update cascade,
+FOREIGN KEY (nivel_id) REFERENCES niveles (id_nivel) on delete no action on update cascade,
+FOREIGN KEY (grado_id) REFERENCES grados (id_grado) on delete no action on update cascade
+) ENGINE=InnoDB;
 
 -- --------------------------------------------------------
 
@@ -267,16 +272,24 @@ INSERT INTO `personas` (`id_persona`, `usuario_id`, `nombres`, `apellidos`, `dni
 -- Estructura de tabla para la tabla `ppffs`
 --
 
-DROP TABLE IF EXISTS `ppffs`;
-CREATE TABLE IF NOT EXISTS `ppffs` (
-  `id_ppff` int NOT NULL AUTO_INCREMENT,
-  `persona_id` int NOT NULL,
+CREATE TABLE ppffs (
+  `id_ppff` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `estudiante_id` int NOT NULL,
+  `nombres_apellidos_ppff` varchar(50) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `dni_ppff` varchar(20) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `celular_ppff` varchar(20) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `ocupacion_ppff` varchar(50) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `ref_nombre` varchar(50) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `ref_parentezco` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `ref_celular` varchar(20) COLLATE utf8mb4_spanish_ci NOT NULL,
+
   `fyh_creacion` date DEFAULT NULL,
   `fyh_actualizacion` date DEFAULT NULL,
   `estado` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  PRIMARY KEY (`id_ppff`),
-  KEY `persona_id` (`persona_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+  
+FOREIGN KEY (estudiante_id) REFERENCES estudiantes (id_estudiante) on delete no action on update cascade
+
+) ENGINE=InnoDB;
 
 -- --------------------------------------------------------
 
@@ -360,6 +373,7 @@ ALTER TABLE `estudiantes`
 --
 ALTER TABLE `grados`
   ADD CONSTRAINT `grados_ibfk_1` FOREIGN KEY (`nivel_id`) REFERENCES `niveles` (`id_nivel`) ON UPDATE CASCADE;
+
 
 --
 -- Filtros para la tabla `niveles`
