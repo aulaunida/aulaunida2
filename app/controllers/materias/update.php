@@ -18,7 +18,7 @@ $sentencia->bindParam('id_materia',$id_materia);
 if($sentencia->execute()){
     echo 'success';
     session_start();
-    $_SESSION['mensaje'] = "Materia actualizada de manera correcta en la base de datos";
+    $_SESSION['mensaje'] = "Se actualizó correctamente el nivel";
     $_SESSION['icono'] = "success";
     $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
     $_SESSION['timerProgressBar'] = true;
@@ -28,7 +28,7 @@ if($sentencia->execute()){
 }else{
     echo 'Error al registrar materia a la base de datos';
     session_start();
-    $_SESSION['mensaje'] = "Error al actualizar materia en la base datos, comuníquese con el administrador";
+    $_SESSION['mensaje'] = "Error al actualizar la materia. Comunicarse con el administrador";
     $_SESSION['icono'] = "warning";
     $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
     $_SESSION['timerProgressBar'] = true;

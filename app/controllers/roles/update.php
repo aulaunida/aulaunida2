@@ -32,7 +32,7 @@ $sentencia->bindParam('id_rol',$id_rol);
 try{
   if($sentencia->execute()){ 
   session_start();
-  $_SESSION['mensaje'] = "Se actualizó correctamente el nuevo rol";
+  $_SESSION['mensaje'] = "Se actualizó correctamente el rol";
   $_SESSION['icono'] = "success";
   $_SESSION['timer'] = 3000;  // Duración del mensaje en milisegundos 
   $_SESSION['timerProgressBar'] = true;
@@ -40,7 +40,7 @@ try{
   header('Location:'.APP_URL."/admin/roles"); // redireccionar
 }else{
   session_start();
-      $_SESSION['mensaje'] = "Error al actualizar nuevo rol. Comunicarse con el administrador";
+      $_SESSION['mensaje'] = "Error al actualizar el rol. Comunicarse con el administrador";
       $_SESSION['icono'] = "error";
       $_SESSION['timer'] = 3000;  // Duración del mensaje en milisegundos
       $_SESSION['timerProgressBar'] = true;

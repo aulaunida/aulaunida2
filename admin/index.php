@@ -139,7 +139,7 @@ include ('../app/controllers/docentes/listado_de_docentes.php');
                             <p>Docentes registrados</p>
                         </div>
                         <div class="icon">
-                            <i class="fas"><i class="bi bi-book-half"></i></i>
+                            <i class="fas"><i class="bi bi-person-video3"></i></i>
                         </div>
                         <a href="<?=APP_URL;?>/admin/docentes" class="small-box-footer">
                             Más información <i class="fas fa-arrow-circle-right"></i>

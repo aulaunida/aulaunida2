@@ -79,7 +79,7 @@ if($password == ""){
         try{
             if ($sentencia->execute()){
             session_start();
-            $_SESSION['mensaje'] = "Se registró correctamente el nuevo usuario";
+            $_SESSION['mensaje'] = "Se actualizó correctamente el usuario";
             $_SESSION['icono'] = "success";
             $_SESSION['timer'] = 3000;  // Duración del mensaje en milisegundos 
             $_SESSION['timerProgressBar'] = true;
@@ -87,7 +87,7 @@ if($password == ""){
             header('Location:'.APP_URL."/admin/usuarios");
             }else {
                 session_start();
-            $_SESSION['mensaje'] = "Error al registrar nuevo usuario, comunicarse con el administrador";
+            $_SESSION['mensaje'] = "Error al actualizar el usuario. Comunicarse con el administrador";
             $_SESSION['icono'] = "error";
             $_SESSION['timer'] = 3000;  // Duración del mensaje en milisegundos 
             $_SESSION['timerProgressBar'] = true;

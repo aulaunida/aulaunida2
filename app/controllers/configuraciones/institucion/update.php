@@ -54,7 +54,7 @@ $sentencia->bindParam('id_config_institucion',$id_config_institucion);
 if($sentencia->execute()){
     echo 'success';
     session_start();
-    $_SESSION['mensaje'] = "Se actualizaron los datos de configuración de manera correcta en la base de datos";
+    $_SESSION['mensaje'] = "Se actualizó correctamente la institución educativa";
     $_SESSION['icono'] = "success";
     $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
     $_SESSION['timerProgressBar'] = true;
@@ -64,7 +64,7 @@ if($sentencia->execute()){
 }else{
     //echo 'error al registrar a la base de datos';
     session_start();
-    $_SESSION['mensaje'] = "Error no se pudo registrar en la base datos, comuníquese con el administrador";
+    $_SESSION['mensaje'] = "Error al actualizar la institución educativa. Comunicarse con el administrador";
     $_SESSION['icono'] = "warning";
     $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
     $_SESSION['timerProgressBar'] = true;

@@ -76,7 +76,7 @@ if($sentencia->execute()){
 echo 'success';
 $pdo->commit();
 session_start();
-         $_SESSION['mensaje'] = "Se actualizó correctamente el registro administrativo";
+         $_SESSION['mensaje'] = "Se actualizó correctamente el administrativo";
          $_SESSION['icono'] = "success";
          $_SESSION['timer'] = 3000;  // Duración del mensaje en milisegundos 
          $_SESSION['timerProgressBar'] = true;
@@ -86,7 +86,7 @@ session_start();
 echo 'error al registrar a la base de datos';
 $pdo->rollBack();
 session_start();
-$_SESSION['mensaje'] = "Error al actualizar el registro administrativo. Comunicarse con el administrador";
+$_SESSION['mensaje'] = "Error al actualizar el administrativo. Comunicarse con el administrador";
 $_SESSION['icono'] = "error";
 $_SESSION['timer'] = 3000;  // Duración del mensaje en milisegundos 
 $_SESSION['timerProgressBar'] = true;

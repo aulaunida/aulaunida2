@@ -32,7 +32,7 @@ if($sentencia->execute()){
     //echo 'success';
     echo 'success';
     session_start();
-    $_SESSION['mensaje'] = "Se actualizó la gestión educativa de manera correcta en la base de datos";
+    $_SESSION['mensaje'] = "Se actualizó correctamente el ciclo lectivo";
     $_SESSION['icono'] = "success";
     $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
     $_SESSION['timerProgressBar'] = true;
@@ -42,7 +42,7 @@ if($sentencia->execute()){
 }else{
     echo 'error al registrar a la base de datos';
     session_start();
-    $_SESSION['mensaje'] = "Error no se pudo actualizar en la base datos, comuníquese con el administrador";
+    $_SESSION['mensaje'] = "Error al actualizar el ciclo lectivo. Comunicarse con el administrador";
     $_SESSION['icono'] = "warning";
     $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
     $_SESSION['timerProgressBar'] = true;

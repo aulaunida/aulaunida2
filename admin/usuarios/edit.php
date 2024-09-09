@@ -80,7 +80,7 @@ include ('../../app/controllers/roles/listado_de_roles.php');
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                        <button type="submit" class="btn btn-success">Guardar cambios</button>
+                                        <button type="submit" class="btn btn-success">Actualizar</button>
                                         <a href="<?=APP_URL;?>/admin/usuarios" class="btn btn-secondary">Cancelar</a>
                                         </div>
                                     </div>
