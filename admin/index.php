@@ -160,7 +160,7 @@ include ('../app/controllers/docentes/listado_de_docentes.php');
                             <p>Estudiantes registrados</p>
                         </div>
                         <div style="color: white;" class="icon">
-                            <i class="fas"><i class="bi bi-mortarboard-fill"></i></i>
+                            <i class="fas"><i class="bi bi-person-lines-fill"></i></i>
                         </div>
                         <a href="<?=APP_URL;?>/admin/estudiantes" class="small-box-footer">
                             Más información <i class="fas fa-arrow-circle-right"></i>
