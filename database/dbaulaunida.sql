@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 09-09-2024 a las 14:43:31
+-- Tiempo de generación: 10-09-2024 a las 01:36:13
 -- Versión del servidor: 8.3.0
 -- Versión de PHP: 8.2.18
 
@@ -365,7 +365,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 
 INSERT INTO `usuarios` (`id_usuario`, `rol_id`, `email`, `password`, `fyh_creacion`, `fyh_actualizacion`, `estado`) VALUES
 (1, 1, 'admin@admin.com', '$2y$10$0tYmdHU9uGCIxY1f90W1EuIm54NQ8axowkxL1WzLbqO2LdNa8m3l2', '2024-05-13', NULL, '1'),
-(4, 1, 'pablojcastillo.94@gmail.com', '$2y$10$9Qu0M0r2dR/6RxwMAwHkH.NACy1G/w6sIOogT4Ne2Jeg1kIGaQAbW', '2024-09-01', '2024-09-08', '1'),
+(4, 1, 'pablojcastillo.94@gmail.com', '$2y$10$GquT900MudKROP8zGR4AZuyqBfGeeqN/xaUQy8Hp3LPBw65PQD/dy', '2024-09-01', '2024-09-09', '1'),
 (5, 1, 'rodriguez.cl@outlook.com', '$2y$10$8cNIAmfI6OhlCKxTcuym3.obMgNhZDnaoK0WGaK2FMrvlCYf6YEvW', '2024-09-01', NULL, '1'),
 (6, 3, 'noealfonso@gmail.com', '$2y$10$lzsfS0PBrr1Lq7WuV/VqS.T2wTNp5pPALYYgxAI4Ey6AN5GOf5QA2', '2024-09-07', NULL, '1'),
 (7, 3, 'romipizarro_15@hotmail.com', '$2y$10$u4LS3WJZs72.iia34HZqa.OaJLuoSpcLi2Jh13x/fX0ZnaZGJYUxK', '2024-09-07', '2024-09-08', '1'),
