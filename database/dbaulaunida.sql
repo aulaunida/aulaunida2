@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 09-09-2024 a las 11:10:16
+-- Tiempo de generación: 09-09-2024 a las 14:43:31
 -- Versión del servidor: 8.3.0
 -- Versión de PHP: 8.2.18
 
@@ -118,7 +118,9 @@ CREATE TABLE IF NOT EXISTS `estudiantes` (
   `persona_id` int NOT NULL,
   `nivel_id` int NOT NULL,
   `grado_id` int NOT NULL,
-  `matricula` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `matricula` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `integracion` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `genero` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `fyh_creacion` date DEFAULT NULL,
   `fyh_actualizacion` date DEFAULT NULL,
   `estado` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
@@ -325,7 +327,7 @@ CREATE TABLE IF NOT EXISTS `roles` (
   `estado` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_rol`),
   UNIQUE KEY `nombre_rol` (`nombre_rol`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `roles`
@@ -334,7 +336,8 @@ CREATE TABLE IF NOT EXISTS `roles` (
 INSERT INTO `roles` (`id_rol`, `nombre_rol`, `fyh_creacion`, `fyh_actualizacion`, `estado`) VALUES
 (1, 'ADMINISTRADOR', '2024-01-03', NULL, '1'),
 (2, 'DIRECTOR', '2024-01-03', NULL, '1'),
-(3, 'DOCENTE', '2024-01-03', NULL, '1');
+(3, 'DOCENTE', '2024-01-03', NULL, '1'),
+(4, 'ESTUDIANTE', '2024-09-09', NULL, '1');
 
 -- --------------------------------------------------------
 
