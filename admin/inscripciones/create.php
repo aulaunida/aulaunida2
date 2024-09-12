@@ -5,15 +5,7 @@ include('../../app/controllers/roles/listado_de_roles.php');
 include('../../app/controllers/niveles/listado_de_niveles.php');
 include('../../app/controllers/grados/listado_de_grados.php');
 
-// Eliminar espacios en blanco
-// $nombres = preg_replace('/\s+/', '', $nombres);
-// $apellidos = preg_replace('/\s+/', '', $apellidos);
 
-// Obtener la primera letra del nombre
-// $inicial_nombre = strtolower(substr($nombres, 0, 1));
-
-// Concatenar con el apellido y el dominio
-// $correo = $inicial_nombre . strtolower($apellidos) . "@aulaunida.com";
 
 ?>
 
@@ -89,7 +81,7 @@ include('../../app/controllers/grados/listado_de_grados.php');
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">Género</label>
-                                            <select name="tipo_cargo" id="" class="form-control" required>
+                                            <select name="genero" id="" class="form-control" required>
                                                 <option value="MASCULINO">MASCULINO</option>
                                                 <option value="FEMENINO">FEMENINO</option>
                                                 <option value="PREFIERO NO DECIRLO">PREFIERO NO DECIRLO</option>
@@ -104,10 +96,10 @@ include('../../app/controllers/grados/listado_de_grados.php');
                                             <input type="address" name="direccion" class="form-control" required>
                                         </div>
                                     </div>
-                                    <div class="col-md-3" hidden>
+                                    <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Correo Electrónico</label>
-                                            <input type="email" name="email" value="<?= $correo; ?>" class="form-control" required>
+                                            <label for="">nombrecompleto@aulaunida.com</label>
+                                            <input type="email" name="email" class="form-control" required>
                                         </div>
                                     </div>
 
