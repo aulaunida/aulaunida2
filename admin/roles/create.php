@@ -26,7 +26,7 @@ include ('../../admin/layout/parte1.php');
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Nombre del rol</label>
+                                            <label for="">Nombre del rol<b style="color:red">*</b></label>
                                             <input type="text" name="nombre_rol" class="form-control" required>
                                         </div>
                                     </div>

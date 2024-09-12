@@ -48,7 +48,7 @@ include ('../app/config.php');
 
 <div class="login-box">
     <center>
-        <img src="<?= APP_URL; ?>/public/images/capdevila.png" width="200px" alt="">
+        <img src="<?= APP_URL; ?>/public/images/logoau.png" width="200px" alt="">
         <br>
     </center>
     <div class="login-logo">

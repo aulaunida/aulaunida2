@@ -27,7 +27,7 @@ include ('../../app/controllers/configuraciones/gestion/listado_de_gestiones.php
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Ciclo lectivo</label>
+                                            <label for="">Ciclo lectivo<b style="color:red">*</b></label>
                                             <select name="gestion_id" id="" class="form-control">
                                                 <?php
                                                 foreach ($gestiones as $gestione){
@@ -45,7 +45,7 @@ include ('../../app/controllers/configuraciones/gestion/listado_de_gestiones.php
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Niveles</label>
+                                            <label for="">Niveles<b style="color:red">*</b></label>
                                             <select name="nivel" id="" class="form-control">
                                                 <option value="INICIAL">INICIAL</option>
                                                 <option value="PRIMARIA">PRIMARIA</option>
@@ -57,7 +57,7 @@ include ('../../app/controllers/configuraciones/gestion/listado_de_gestiones.php
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Turnos</label>
+                                            <label for="">Turnos<b style="color:red">*</b></label>
                                             <select name="turno" id="" class="form-control">
                                                 <option value="MAÑANA">MAÑANA</option>
                                                 <option value="TARDE">TARDE</option>

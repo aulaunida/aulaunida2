@@ -30,7 +30,7 @@ include('../../app/controllers/materias/datos_materias.php');
                                     <div class="col-md-12">
                                         <div class="form-group">
                                         <input type="text" name="id_materia" value="<?=$id_materia;?>" hidden>
-                                            <label for="">Materia</label>
+                                            <label for="">Materia<b style="color:red">*</b></label>
                                             <input type="text" value="<?=$nombre_materia;?>" name="nombre_materia" class="form-control" required>
                                         </div>
                                     </div>

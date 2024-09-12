@@ -26,7 +26,7 @@ include('../../app/controllers/roles/listado_de_roles.php');
                                 <div class="row">
                                     <div class="col-md-3" hidden>
                                         <div class="form-group">
-                                            <label for="">Nombre del rol</label>
+                                            <label for="">Nombre del rol<b style="color:red">*</b></label>
                                             
                                                 <select name="rol_id" id="" class="form-control">
                                                     <?php
@@ -40,14 +40,14 @@ include('../../app/controllers/roles/listado_de_roles.php');
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Nombre</label>
+                                            <label for="">Nombre<b style="color:red">*</b></label>
                                             <input type="text" name="nombres" class="form-control" required>
                                         </div>
                                     </div>
 
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Apellido</label>
+                                            <label for="">Apellido<b style="color:red">*</b></label>
                                             <input type="text" name="apellidos" class="form-control" required>
                                         </div>
                                     </div>
@@ -55,13 +55,13 @@ include('../../app/controllers/roles/listado_de_roles.php');
                                     
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">DNI</label>
+                                            <label for="">DNI<b style="color:red">*</b></label>
                                             <input type="number" name="dni" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Fecha de Nacimiento</label>
+                                            <label for="">Fecha de Nacimiento<b style="color:red">*</b></label>
                                             <input type="date" name="fecha_nacimiento" class="form-control" required>
                                         </div>
                                     </div>
@@ -71,20 +71,20 @@ include('../../app/controllers/roles/listado_de_roles.php');
                                 <div class="row">
                                 <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">Dirección</label>
+                                            <label for="">Dirección<b style="color:red">*</b></label>
                                             <input type="address" name="direccion" class="form-control" required>
                                         </div>
                                     </div>
                                     
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Correo Electrónico</label>
+                                            <label for="">Correo Electrónico<b style="color:red">*</b></label>
                                             <input type="email" name="email" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Celular</label>
+                                            <label for="">Celular<b style="color:red">*</b></label>
                                             <input type="number" name="celular" class="form-control" required>
                                         </div>
                                     </div>
@@ -94,13 +94,13 @@ include('../../app/controllers/roles/listado_de_roles.php');
                                     
                                 <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Profesión</label>
+                                            <label for="">Título<b style="color:red">*</b></label>
                                             <input type="text" name="profesion" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Integrador</label>
+                                            <label for="">Integrador<b style="color:red">*</b></label>
                                             <select name="integrador" id="" class="form-control" required>
                                                 <option value="NO">NO</option>
                                                 <option value="SI">SI</option>
@@ -109,7 +109,7 @@ include('../../app/controllers/roles/listado_de_roles.php');
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Tipo de cargo</label>
+                                            <label for="">Tipo de cargo<b style="color:red">*</b></label>
                                             <select name="tipo_cargo" id="" class="form-control" required>
                                                 <option value="TITULAR">TITULAR</option>
                                                 <option value="SUPLENTE">SUPLENTE</option>

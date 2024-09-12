@@ -29,7 +29,7 @@ include('../../app/controllers/niveles/listado_de_niveles.php');
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Nivel</label>
+                                            <label for="">Nivel<b style="color:red">*</b></label>
                                             <input type="text" name="id_grado" value="<?=$id_grado;?>" hidden>
                                             <select name="nivel_id" id="" class="form-control">
                                                 <?php
@@ -48,7 +48,7 @@ include('../../app/controllers/niveles/listado_de_niveles.php');
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Curso</label>
+                                            <label for="">Curso<b style="color:red">*</b></label>
                                             <select name="curso" id="" class="form-control">
                                                 <option value="PRIMER GRADO" <?=$curso=='PRIMER GRADO' ? 'selected' : ''?>>PRIMER GRADO</option>
                                                 <option value="SEGUNDO GRADO" <?=$curso=='SEGUNDO GRADO' ? 'selected' : ''?>>SEGUNDO GRADO</option>
@@ -69,7 +69,7 @@ include('../../app/controllers/niveles/listado_de_niveles.php');
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">División</label>
+                                            <label for="">División<b style="color:red">*</b></label>
                                             <select name="paralelo" id="" class="form-control">
                                                 <option value="A"<?=$paralelo=='A' ? 'selected' : ''?>>A</option>
                                                 <option value="B"<?=$paralelo=='B' ? 'selected' : ''?>>B</option>

@@ -28,7 +28,7 @@ include ('../../../app/controllers/configuraciones/gestion/datos_gestion.php');
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <input type="text" name="id_gestion" value="<?=$id_gestion;?>" hidden>
-                                            <label for="">Descripción de Ciclo lectivo</label>
+                                            <label for="">Descripción de Ciclo lectivo<b style="color:red">*</b></label>
                                             <input type="text" value="<?=$gestion;?>" name="gestion" class="form-control">
                                         </div>
                                     </div>
@@ -36,7 +36,7 @@ include ('../../../app/controllers/configuraciones/gestion/datos_gestion.php');
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Estado</label>
+                                            <label for="">Estado<b style="color:red">*</b></label>
                                             <select name="estado" id="" class="form-control">
                                                 <?php
                                                 if($estado == "1"){ ?>

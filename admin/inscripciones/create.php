@@ -32,7 +32,7 @@ include('../../app/controllers/grados/listado_de_grados.php');
                                 <div class="row">
                                     <div class="col-md-3" hidden>
                                         <div class="form-group">
-                                            <label for="">Nombre del rol</label>
+                                            <label for="">Nombre del rol<b style="color:red">*</b></label>
 
                                             <select name="rol_id" id="" class="form-control">
                                                 <?php
@@ -49,14 +49,14 @@ include('../../app/controllers/grados/listado_de_grados.php');
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="">Nombre</label>
+                                            <label for="">Nombre<b style="color:red">*</b></label>
                                             <input type="text" name="nombres" class="form-control" required>
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="">Apellido</label>
+                                            <label for="">Apellido<b style="color:red">*</b></label>
                                             <input type="text" name="apellidos" class="form-control" required>
                                         </div>
                                     </div>
@@ -64,7 +64,7 @@ include('../../app/controllers/grados/listado_de_grados.php');
 
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="">DNI</label>
+                                            <label for="">DNI<b style="color:red">*</b></label>
                                             <input type="number" name="dni" class="form-control" required>
                                         </div>
                                     </div>
@@ -78,7 +78,7 @@ include('../../app/controllers/grados/listado_de_grados.php');
 
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Fecha de Nacimiento</label>
+                                            <label for="">Fecha de Nacimiento<b style="color:red">*</b></label>
                                             <input type="date" name="fecha_nacimiento" class="form-control" required>
                                         </div>
                                     </div>
@@ -87,7 +87,7 @@ include('../../app/controllers/grados/listado_de_grados.php');
 
 
                                         <div class="form-group">
-                                            <label for="">Género</label>
+                                            <label for="">Género<b style="color:red">*</b></label>
                                             <select name="genero" id="" class="form-control" required>
                                                 <option value="MASCULINO">MASCULINO</option>
                                                 <option value="FEMENINO">FEMENINO</option>
@@ -99,7 +99,7 @@ include('../../app/controllers/grados/listado_de_grados.php');
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">Dirección</label>
+                                            <label for="">Dirección<b style="color:red">*</b></label>
                                             <input type="address" name="direccion" class="form-control" required>
                                         </div>
                                     </div>
@@ -122,7 +122,7 @@ include('../../app/controllers/grados/listado_de_grados.php');
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Nivel</label>
+                                            <label for="">Nivel<b style="color:red">*</b></label>
 
                                             <select name="nivel_id" id="" class="form-control">
                                                 <?php
@@ -138,7 +138,7 @@ include('../../app/controllers/grados/listado_de_grados.php');
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Grado</label>
+                                            <label for="">Grado<b style="color:red">*</b></label>
                                             <select name="grado_id" id="" class="form-control">
                                                 <?php
                                                 foreach ($grados as $grado) { ?>
@@ -154,14 +154,14 @@ include('../../app/controllers/grados/listado_de_grados.php');
 
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Matricula</label>
+                                            <label for="">Matricula<b style="color:red">*</b></label>
                                             <input type="text" name="matricula" class="form-control" required>
                                         </div>
                                     </div>
 
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Integración</label>
+                                            <label for="">Integración<b style="color:red">*</b></label>
                                             <select name="integracion" id="" class="form-control" required>
                                                 <option value="NO">NO</option>
                                                 <option value="SI">SI</option>
@@ -185,7 +185,7 @@ include('../../app/controllers/grados/listado_de_grados.php');
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Nombre y Apellido</label>
+                                            <label for="">Nombre y Apellido<b style="color:red">*</b></label>
                                             <input type="text" name="nombres_apellidos_ppff" class="form-control"
                                                 required>
                                         </div>
@@ -193,7 +193,7 @@ include('../../app/controllers/grados/listado_de_grados.php');
 
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">DNI</label>
+                                            <label for="">DNI<b style="color:red">*</b></label>
                                             <input type="number" name="dni_ppff" class="form-control" required>
                                         </div>
                                     </div>
@@ -201,14 +201,14 @@ include('../../app/controllers/grados/listado_de_grados.php');
 
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Celular</label>
+                                            <label for="">Celular<b style="color:red">*</b></label>
                                             <input type="number" name="celular_ppff" class="form-control" required>
                                         </div>
                                     </div>
 
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Correo electrónico</label>
+                                            <label for="">Correo electrónico<b style="color:red">*</b></label>
                                             <input type="email" name="email" class="form-control" required>
                                         </div>
                                     </div>
@@ -219,20 +219,20 @@ include('../../app/controllers/grados/listado_de_grados.php');
 
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Ocupación</label>
+                                            <label for="">Ocupación<b style="color:red">*</b></label>
                                             <input type="text" name="ocupacion_ppff" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Contacto adicional emergencia</label>
+                                            <label for="">Contacto adicional emergencia<b style="color:red">*</b></label>
                                             <input type="text" name="ref_nombre" class="form-control" required>
                                         </div>
                                     </div>
 
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">N° de contacto emergencia</label>
+                                            <label for="">N° de contacto emergencia<b style="color:red">*</b></label>
                                             <input type="number" name="ref_celular" class="form-control" required>
                                         </div>
                                     </div>
@@ -240,7 +240,7 @@ include('../../app/controllers/grados/listado_de_grados.php');
 
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Parentezco del contacto emergencia</label>
+                                            <label for="">Parentezco contacto emergencia<b style="color:red">*</b></label>
                                             <input type="text" name="ref_parentezco" class="form-control" required>
                                         </div>
                                     </div>

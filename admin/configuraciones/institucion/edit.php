@@ -32,13 +32,13 @@ include ('../../../app/controllers/configuraciones/institucion/datos_institucion
                                                 <div class="form-group">
                                                     <input type="text" name="id_config_institucion" value="<?=$id_config_institucion;?>" hidden>
                                                     <input type="text" name="logo" value="<?=$logo;?>" hidden>
-                                                    <label for="">Nombre de la institución <b>*</b></label>
+                                                    <label for="">Nombre de la institución <b style="color:red">*</b></label>
                                                     <input type="text" name="nombre_institucion" value="<?=$nombre_institucion;?>" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="">Correo de la institución</label>
+                                                    <label for="">Correo de la institución<b style="color:red">*</b></label>
                                                     <input type="email" name="correo" value="<?=$correo;?>" class="form-control">
                                                 </div>
                                             </div>
@@ -46,13 +46,13 @@ include ('../../../app/controllers/configuraciones/institucion/datos_institucion
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="">Teléfono</label>
+                                                    <label for="">Teléfono<b style="color:red">*</b></label>
                                                     <input type="number" name="telefono" value="<?=$telefono;?>" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="">Celular <b>*</b></label>
+                                                    <label for="">Celular <b style="color:red">*</b></label>
                                                     <input type="number" name="celular" value="<?=$celular;?>" class="form-control" required>
                                                 </div>
                                             </div>
@@ -60,7 +60,7 @@ include ('../../../app/controllers/configuraciones/institucion/datos_institucion
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label for="">Dirección <b>*</b></label>
+                                                    <label for="">Dirección <b style="color:red">*</b></label>
                                                     <input type="text" name="direccion" value="<?=$direccion;?>" class="form-control" required>
                                                 </div>
                                             </div>
