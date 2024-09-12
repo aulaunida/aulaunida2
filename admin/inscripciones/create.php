@@ -37,8 +37,11 @@ include('../../app/controllers/grados/listado_de_grados.php');
                                             <select name="rol_id" id="" class="form-control">
                                                 <?php
                                                 foreach ($roles as $role) { ?>
-                                                    <option value="<?= $role['id_rol']; ?>" <?= $role['nombre_rol'] == 'ESTUDIANTE' ? 'selected' : '' ?>><?= $role['nombre_rol']; ?></option>
-                                                <?php
+                                                    <option value="<?= $role['id_rol']; ?>"
+                                                        <?= $role['nombre_rol'] == 'ESTUDIANTE' ? 'selected' : '' ?>>
+                                                        <?= $role['nombre_rol']; ?>
+                                                    </option>
+                                                    <?php
                                                 }
                                                 ?>
                                             </select>
@@ -71,6 +74,8 @@ include('../../app/controllers/grados/listado_de_grados.php');
                                 </div>
                                 <div class="row">
 
+
+
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">Fecha de Nacimiento</label>
@@ -79,6 +84,8 @@ include('../../app/controllers/grados/listado_de_grados.php');
                                     </div>
 
                                     <div class="col-md-3">
+
+
                                         <div class="form-group">
                                             <label for="">Género</label>
                                             <select name="genero" id="" class="form-control" required>
@@ -96,12 +103,7 @@ include('../../app/controllers/grados/listado_de_grados.php');
                                             <input type="address" name="direccion" class="form-control" required>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label for="">nombrecompleto@aulaunida.com</label>
-                                            <input type="email" name="email" class="form-control" required>
-                                        </div>
-                                    </div>
+
 
                                 </div>
                             </div>
@@ -125,8 +127,10 @@ include('../../app/controllers/grados/listado_de_grados.php');
                                             <select name="nivel_id" id="" class="form-control">
                                                 <?php
                                                 foreach ($niveles as $nivele) { ?>
-                                                    <option value="<?= $nivele['id_nivel']; ?>"> <?= $nivele['nivel'] . ' ' . '- TURNO' . ' ' . $nivele['turno']; ?></option>
-                                                <?php
+                                                    <option value="<?= $nivele['id_nivel']; ?>">
+                                                        <?= $nivele['nivel'] . ' ' . '- TURNO' . ' ' . $nivele['turno']; ?>
+                                                    </option>
+                                                    <?php
                                                 }
                                                 ?>
                                             </select>
@@ -138,8 +142,10 @@ include('../../app/controllers/grados/listado_de_grados.php');
                                             <select name="grado_id" id="" class="form-control">
                                                 <?php
                                                 foreach ($grados as $grado) { ?>
-                                                    <option value="<?= $grado['id_grado']; ?>"> <?= $grado['curso'] . ' - ' . $grado['paralelo']; ?></option>
-                                                <?php
+                                                    <option value="<?= $grado['id_grado']; ?>">
+                                                        <?= $grado['curso'] . ' - ' . $grado['paralelo']; ?>
+                                                    </option>
+                                                    <?php
                                                 }
                                                 ?>
                                             </select>
@@ -180,7 +186,8 @@ include('../../app/controllers/grados/listado_de_grados.php');
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">Nombre y Apellido</label>
-                                            <input type="text" name="nombres_apellidos_ppff" class="form-control" required>
+                                            <input type="text" name="nombres_apellidos_ppff" class="form-control"
+                                                required>
                                         </div>
                                     </div>
 
@@ -198,32 +205,42 @@ include('../../app/controllers/grados/listado_de_grados.php');
                                             <input type="number" name="celular_ppff" class="form-control" required>
                                         </div>
                                     </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="">Correo electrónico</label>
+                                            <input type="email" name="email" class="form-control" required>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="row">
+
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">Ocupación</label>
                                             <input type="text" name="ocupacion_ppff" class="form-control" required>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Nombre de contacto adicional de emergencia</label>
+                                            <label for="">Contacto adicional emergencia</label>
                                             <input type="text" name="ref_nombre" class="form-control" required>
                                         </div>
                                     </div>
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">N° de contacto adicional de emergencia</label>
+                                            <label for="">N° de contacto emergencia</label>
                                             <input type="number" name="ref_celular" class="form-control" required>
                                         </div>
                                     </div>
 
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Parentezco del contacto adicional de emergencia</label>
+                                            <label for="">Parentezco del contacto emergencia</label>
                                             <input type="text" name="ref_parentezco" class="form-control" required>
                                         </div>
                                     </div>
