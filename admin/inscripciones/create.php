@@ -256,7 +256,7 @@ include('../../app/controllers/grados/listado_de_grados.php');
                     <div class="col-md-12">
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">Registrar</button>
-                            <a href="<?= APP_URL; ?>/admin/inscripciones" class="btn btn-danger">Cancelar</a>
+                            <a href="<?= APP_URL; ?>/admin/estudiantes" class="btn btn-danger">Cancelar</a>
                         </div>
                     </div>
                 </div>

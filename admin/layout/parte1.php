@@ -339,14 +339,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </a>
                             </li>
                         </ul>
-                        <ul class="nav nav-treeview">
+                        <!-- <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="<?=APP_URL;?>/admin/inscripciones" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Inscribir estudiante</p>
                                 </a>
                             </li>
-                        </ul>
+                        </ul> -->
                     </li>
 
                     <li class="nav-item">
