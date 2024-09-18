@@ -77,7 +77,7 @@ $sentencia->bindParam(':grado_id',$grado_id);
 $sentencia->bindParam(':matricula',$matricula);
 $sentencia->bindParam(':integracion',$integracion);
 $sentencia->bindParam(':genero',$genero);
-$sentencia->bindParam('fyh_creacion',$fyh_creacion);
+$sentencia->bindParam('fyh_creacion',$fechaHora);
 $sentencia->bindParam('estado',$estado_de_registro);
 
 $sentencia->execute();
@@ -98,7 +98,7 @@ $sentencia->bindParam(':ocupacion_ppff',$ocupacion_ppff);
 $sentencia->bindParam(':ref_nombre',$ref_nombre);
 $sentencia->bindParam(':ref_parentezco',$ref_parentezco);
 $sentencia->bindParam(':ref_celular',$ref_celular);
-$sentencia->bindParam('fyh_creacion',$fyh_creacion);
+$sentencia->bindParam('fyh_creacion',$fechaHora);
 $sentencia->bindParam('estado',$estado_de_registro);
 
 

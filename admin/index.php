@@ -7,6 +7,7 @@ include ('../app/controllers/niveles/listado_de_niveles.php');
 include ('../app/controllers/grados/listado_de_grados.php');
 include ('../app/controllers/materias/listado_de_materias.php');
 include ('../app/controllers/docentes/listado_de_docentes.php');
+include ('../app/controllers/estudiantes/listado_de_estudiantes.php');
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -151,12 +152,12 @@ include ('../app/controllers/docentes/listado_de_docentes.php');
                     <div class="small-box bg-dark">
                         <div class="inner">
                             <?php
-                            $contador_docentes = 0;
-                            foreach ($docentes as $docente){
-                                $contador_docentes = $contador_docentes + 1;
+                            $contador_estudiantes = 0;
+                            foreach ($estudiantes as $estudiante){
+                                $contador_estudiantes = $contador_estudiantes + 1;
                             }
                             ?>
-                            <h3><?=$contador_docentes;?></h3>
+                            <h3><?=$contador_estudiantes;?></h3>
                             <p>Estudiantes registrados</p>
                         </div>
                         <div style="color: white;" class="icon">
