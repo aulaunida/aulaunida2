@@ -4,17 +4,19 @@ session_start();
 if(isset($_SESSION['sesion_email'])){
    // echo "el usuarios paso por el login";
     $email_sesion = $_SESSION['sesion_email'];
-    $query_sesion = $pdo->prepare("SELECT * FROM usuarios WHERE email = '$email_sesion' AND estado = '1' ");
+    $query_sesion = $pdo->prepare("SELECT * FROM usuarios as usu INNER JOIN personas AS per ON per.usuario_id = usu.id_usuario  WHERE usu.email = '$email_sesion' AND usu.estado = '1' ");
     $query_sesion->execute();
 
     $datos_sesion_usuarios = $query_sesion->fetchAll(PDO::FETCH_ASSOC);
     foreach ($datos_sesion_usuarios as $datos_sesion_usuario){
-       $nombre_sesion_usuario = $datos_sesion_usuario['email'];
+       $nombre_sesion_usuario = $datos_sesion_usuario['nombres'].' '.$datos_sesion_usuario['apellidos'];
     }
 }else{
     //echo "el usuario no paso por el login";
     header('Location:'.APP_URL."/login");
 }
+
+
 ?>
 <!DOCTYPE html>
 <!--
@@ -123,10 +125,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="<?=APP_URL;?>/admin" class="brand-link text-center">
-            
-            <span class="brand-text font-weight-light"><img src="<?= APP_URL; ?>/public/images/logoau.png" alt="AulaUnida Logo" width="60px" style="opacity: .8"><br> Aula Unida®</span>
-        </a>
+<a href="<?=APP_URL;?>/admin" class="brand-link">
+    <img src="<?= APP_URL; ?>/public/images/logoau.png" alt="AulaUnida Logo" class="brand-image" style="width: 36px;">
+    <span class="brand-text d-none d-sm-inline">Aula Unida®</span>
+</a>
 
         <!-- Sidebar -->
         <div class="sidebar">
