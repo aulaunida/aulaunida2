@@ -234,6 +234,28 @@ INSERT INTO `materias` (`id_materia`, `nombre_materia`, `fyh_creacion`, `fyh_act
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `asignaciones`
+--
+
+CREATE TABLE `asignaciones` (
+  `id_asignacion` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `docente_id` int (11) NOT NULL,
+  `nivel_id` int (11) NOT NULL,
+  `grado_id` int (11) NOT NULL,
+  
+  `fyh_creacion` date DEFAULT NULL,
+  `fyh_actualizacion` date DEFAULT NULL,
+  `estado` varchar(11),
+
+  FOREIGN KEY (docente_id) REFERENCES docentes (id_docente) on delete no action on update cascade,
+  FOREIGN KEY (nivel_id) REFERENCES niveles (id_nivel) on delete no action on update cascade,
+  FOREIGN KEY (grado_id) REFERENCES grados (id_grado) on delete no action on update cascade
+) ENGINE=InnoDB;
+
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `niveles`
 --
 
