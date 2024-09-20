@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 10-09-2024 a las 01:36:13
+-- Tiempo de generación: 20-09-2024 a las 01:12:59
 -- Versión del servidor: 8.3.0
 -- Versión de PHP: 8.2.18
 
@@ -128,7 +128,17 @@ CREATE TABLE IF NOT EXISTS `estudiantes` (
   KEY `persona_id` (`persona_id`),
   KEY `nivel_id` (`nivel_id`),
   KEY `grado_id` (`grado_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `estudiantes`
+--
+
+INSERT INTO `estudiantes` (`id_estudiante`, `persona_id`, `nivel_id`, `grado_id`, `matricula`, `integracion`, `genero`, `fyh_creacion`, `fyh_actualizacion`, `estado`) VALUES
+(1, 11, 1, 1, '476234', 'NO', 'MASCULINO', '2024-09-18', NULL, '1'),
+(2, 12, 1, 1, '456090', 'SI', 'MASCULINO', '2024-09-18', NULL, '1'),
+(3, 13, 1, 1, '568745', 'NO', 'PREFIERO NO DECIRLO', '2024-09-18', NULL, '1'),
+(4, 14, 2, 2, '536985', 'NO', 'FEMENINO', '2024-09-18', '2024-09-18', '1');
 
 -- --------------------------------------------------------
 
@@ -171,7 +181,7 @@ CREATE TABLE IF NOT EXISTS `grados` (
   `estado` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_grado`),
   KEY `nivel_id` (`nivel_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `grados`
@@ -238,7 +248,7 @@ CREATE TABLE IF NOT EXISTS `niveles` (
   `estado` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_nivel`),
   KEY `gestion_id` (`gestion_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `niveles`
@@ -270,7 +280,7 @@ CREATE TABLE IF NOT EXISTS `personas` (
   `estado` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_persona`),
   KEY `usuario_id` (`usuario_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `personas`
@@ -286,7 +296,11 @@ INSERT INTO `personas` (`id_persona`, `usuario_id`, `nombres`, `apellidos`, `dni
 (7, 9, 'NAIRA', 'VITTAR', '340695548', '1989-06-08', 'Profesorado en Educación Especial', 'DR JOSE INGENIEROS 2353', '3514603267', '2024-09-07', NULL, '1'),
 (8, 10, 'ESTEFANIA', 'DOTTI', '22036866', '1988-10-24', 'Profesorado en Matemática', 'OBISPO SALGUERO 774', '3514825583', '2024-09-07', NULL, '1'),
 (9, 11, 'MARIA EUGENIA', 'PINTO', '34091167', '1989-02-18', 'Profesorado en Ciencias de la Educación', 'DIAGONAL ICA 450', '3513420385', '2024-09-07', NULL, '1'),
-(10, 12, 'DANIELA', 'HEREDIA', '34128110', '1990-07-01', 'Profesorado en Educación Especial', 'TOLEDO PIMENTEL 680', '3541421369', '2024-09-07', NULL, '1');
+(10, 12, 'DANIELA', 'HEREDIA', '34128110', '1990-07-01', 'Profesorado en Educación Especial', 'TOLEDO PIMENTEL 680', '3541421369', '2024-09-07', NULL, '1'),
+(11, 13, 'Santos', 'Diaz', '50398745', '2018-04-24', 'ESTUDIANTE', 'Juan Lucente 432', '0', '2024-09-12', NULL, '1'),
+(12, 14, 'German', 'Gilla', '49547342', '2017-09-11', 'ESTUDIANTE', 'Av. Colón 1281', '0', '2024-09-13', NULL, '1'),
+(13, 15, 'Adrian', 'Peralta', '45478965', '2006-08-28', 'ESTUDIANTE', 'Jose Calasanz 802', '0', '2024-09-18', NULL, '1'),
+(14, 16, 'Jazmin', 'Torres', '51896635', '2006-08-28', 'ESTUDIANTE', 'Andres Maria Ampere 6050', '0', '2024-09-18', '2024-09-18', '1');
 
 -- --------------------------------------------------------
 
@@ -310,7 +324,17 @@ CREATE TABLE IF NOT EXISTS `ppffs` (
   `estado` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_ppff`),
   KEY `estudiante_id` (`estudiante_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `ppffs`
+--
+
+INSERT INTO `ppffs` (`id_ppff`, `estudiante_id`, `nombres_apellidos_ppff`, `dni_ppff`, `celular_ppff`, `ocupacion_ppff`, `ref_nombre`, `ref_parentezco`, `ref_celular`, `fyh_creacion`, `fyh_actualizacion`, `estado`) VALUES
+(1, 1, 'Mariano Diaz', '33476345', '3516987656', 'Empleado de comercio', 'Monica Juarez', 'Madre de Santos', '3513765560', '2024-09-18', NULL, '1'),
+(2, 2, 'Ariel Gilla', '38987871', '3516812761', 'Encargado de Sucursal', 'Sandra Lopez', 'Tía', '3517843221', '2024-09-18', NULL, '1'),
+(3, 3, 'Jose Peralta', '27458965', '3513698741', 'Empleado Municipal', 'Luciana Jimenez', 'Madre de Adrian', '3516986353', '2024-09-18', NULL, '1'),
+(4, 4, 'Benjamin Torres', '36896574', '3515214789', 'Autónomo', 'Miriam Bejarano', 'Abuela de Jazmin', '3516896354', '2024-09-18', '2024-09-18', '1');
 
 -- --------------------------------------------------------
 
@@ -357,7 +381,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `email` (`email`),
   KEY `rol_id` (`rol_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -373,7 +397,11 @@ INSERT INTO `usuarios` (`id_usuario`, `rol_id`, `email`, `password`, `fyh_creaci
 (9, 3, 'nairavittar@gmail.com', '$2y$10$L9S2u5..7nYZAksfMOqXXOwampDQTu2kS7YhO4VZCPjt5MIIl0Avi', '2024-09-07', NULL, '1'),
 (10, 3, 'tefidotti88@gmail.com', '$2y$10$Mh3kL.xE535mZSuzIndvv.ZHSTDSsyTULYoEzthanKjtvBdeqmPM6', '2024-09-07', NULL, '1'),
 (11, 3, 'euge_pinto89@hotmail.com', '$2y$10$ak8YbDqGoFWYjNqOb84VGOLimDwTVeY/81EE1nJXC8NZRwdS2L.bG', '2024-09-07', NULL, '1'),
-(12, 3, 'natty_9950@hotmail.com', '$2y$10$snw8fRybAQFbwmrtaPKZZeWEcuPdL9OTBndZhtgPkINPdwb.dog5u', '2024-09-07', NULL, '1');
+(12, 3, 'natty_9950@hotmail.com', '$2y$10$snw8fRybAQFbwmrtaPKZZeWEcuPdL9OTBndZhtgPkINPdwb.dog5u', '2024-09-07', NULL, '1'),
+(13, 4, 'marianodiaztillard@gmail.com', '$2y$10$SvnT7ZH10o/iyIJsRDW9s.plfmb2FE2Fy3AQE1xrbn6.TzrOG.woq', '2024-09-12', NULL, '1'),
+(14, 4, 'agilla@gmail.com', '$2y$10$F9HcXoe77sNJJU7DFyWf5OxNgBSr4LybOTr7OBLnWgJlWB98PTXW6', '2024-09-13', NULL, '1'),
+(15, 4, 'joseperalta24@gmail.com', '$2y$10$sTzEF5MlXbitmoap1T23tOiQvO4COHgitgqthfS722K/yTF4zposS', '2024-09-18', NULL, '1'),
+(16, 4, 'torresbenjamin696@gmail.com', '$2y$10$Ev6hKgUGWwoqid3u4P5MDeEmVx5z0ZbTqFj9riWwkVWah/06jdaOO', '2024-09-18', '2024-09-18', '1');
 
 --
 -- Restricciones para tablas volcadas
