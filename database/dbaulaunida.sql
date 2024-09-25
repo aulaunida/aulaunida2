@@ -242,11 +242,12 @@ CREATE TABLE `asignaciones` (
   `docente_id` int (11) NOT NULL,
   `nivel_id` int (11) NOT NULL,
   `grado_id` int (11) NOT NULL,
-  
+  `materia_id` int (11) NOT NULL,
   `fyh_creacion` date DEFAULT NULL,
   `fyh_actualizacion` date DEFAULT NULL,
   `estado` varchar(11),
 
+  FOREIGN KEY (materia_id) REFERENCES materias (id_materia) on delete no action on update cascade,
   FOREIGN KEY (docente_id) REFERENCES docentes (id_docente) on delete no action on update cascade,
   FOREIGN KEY (nivel_id) REFERENCES niveles (id_nivel) on delete no action on update cascade,
   FOREIGN KEY (grado_id) REFERENCES grados (id_grado) on delete no action on update cascade
