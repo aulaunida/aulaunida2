@@ -5,6 +5,7 @@ include('../../app/controllers/docentes/listado_de_docentes.php');
 include('../../app/controllers/niveles/listado_de_niveles.php');
 include('../../app/controllers/grados/listado_de_grados.php');
 include('../../app/controllers/materias/listado_de_materias.php');
+include('../../app/controllers/docentes/listado_de_asignaciones.php');
 ?>
 
 <style>
@@ -85,11 +86,11 @@ include('../../app/controllers/materias/listado_de_materias.php');
                                                 <?php
                                                 }
                                                 ?>
-                                                <div class="modal fade" id="modal_materia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="modal_materia<?=$id_docente;?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-lg">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h5 class="modal-title" id="exampleModalLabel"><b>Asignar materia a <?= $docente['apellidos'] . ', ' . $docente['nombres']; ?></b></h5>
+                                                                <h5 class="modal-title" id="exampleModalLabel"><b>Materias asignadas a <?= $docente['apellidos'] . ', ' . $docente['nombres']; ?></b></h5>
                                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                     <span aria-hidden="true">&times;</span>
                                                                 </button>
@@ -103,6 +104,23 @@ include('../../app/controllers/materias/listado_de_materias.php');
                                                                         <th><center>División</center></th>
                                                                         <th><center>Materia</center></th>
                                                                     </tr>
+                                                                    <?php
+                                                                    $contador = 0;
+                                                                    foreach ($asignaciones as $asignacione){
+                                                                        
+                                                                        if ($asignacione['docente_id']==$id_docente){ $contador = $contador + 1;?>
+                                                                        <tr>
+                                                                            <!-- <td><center><?=$contador;?></center></td> -->
+                                                                            <td><center><?=$asignacione['nivel'];?></center></td>
+                                                                            <td><center><?=$asignacione['turno'];?></center></td>
+                                                                            <td><center><?=$asignacione['curso'];?></center></td>
+                                                                            <td><center><?=$asignacione['paralelo'];?></center></td>
+                                                                            <td><center><?=$asignacione['nombre_materia'];?></center></td>
+                                                                        </tr>
+                                                                    <?php
+                                                                        }
+                                                                    }
+                                                                    ?>
                                                                 </table>
 
                                                             </div>
@@ -112,7 +130,7 @@ include('../../app/controllers/materias/listado_de_materias.php');
                                                 </div>
                                             </td>
                                             <td style="text-align: center">
-                                                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal_materia"><i class="bi bi-card-checklist"></i> Consultar materias asignadas</button>
+                                                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal_materia<?=$id_docente;?>"><i class="bi bi-card-checklist"></i> Consultar materias asignadas</button>
                                             </td>
                                             <td style="text-align: center">
                                                 <div class="btn-group" role="group" aria-label="Basic example">
