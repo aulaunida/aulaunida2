@@ -58,7 +58,7 @@ include ('../../app/controllers/docentes/listado_de_docentes.php');
                                     $contador_docentes = $contador_docentes +1; ?>
                                     <tr>
                                         <!-- <td style="text-align: center"><?=$contador_docentes;?></td> -->
-                                        <td class="uppercase" style="text-align: center"><?=$docente['nombres'] .' '. $docente['apellidos'];?></td>
+                                        <td class="uppercase" style="text-align: center"><?=$docente['apellidos'] .', '. $docente['nombres'];?></td>
                                         <!-- <td style="text-align: center"><?=$docente['nombre_rol'];?></td> -->
                                         <!-- <td style="text-align: center"><?=$docente['dni'];?></td> -->
                                         <!-- <td style="text-align: center"><?=$docente['fecha_nacimiento'];?></td> -->

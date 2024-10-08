@@ -49,28 +49,22 @@ include('../../app/controllers/grados/listado_de_grados.php');
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="">Nombre<b style="color:red">*</b></label>
-                                            <input type="text" name="nombres" class="form-control" required>
+                                            <label for="">DNI<b style="color:red">*</b></label>
+                                            <input type="number" name="dni" class="form-control" required>
                                         </div>
                                     </div>
-
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="">Apellido<b style="color:red">*</b></label>
                                             <input type="text" name="apellidos" class="form-control" required>
                                         </div>
                                     </div>
-
-
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="">DNI<b style="color:red">*</b></label>
-                                            <input type="number" name="dni" class="form-control" required>
+                                            <label for="">Nombre<b style="color:red">*</b></label>
+                                            <input type="text" name="nombres" class="form-control" required>
                                         </div>
                                     </div>
-
-
-
                                 </div>
                                 <div class="row">
 

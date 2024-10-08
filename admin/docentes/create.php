@@ -40,25 +40,23 @@ include('../../app/controllers/roles/listado_de_roles.php');
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Nombre<b style="color:red">*</b></label>
-                                            <input type="text" name="nombres" class="form-control" required>
+                                            <label for="">DNI<b style="color:red">*</b></label>
+                                            <input type="number" name="dni" class="form-control" required>
                                         </div>
                                     </div>
-
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">Apellido<b style="color:red">*</b></label>
                                             <input type="text" name="apellidos" class="form-control" required>
                                         </div>
                                     </div>
-
-                                    
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">DNI<b style="color:red">*</b></label>
-                                            <input type="number" name="dni" class="form-control" required>
+                                            <label for="">Nombre<b style="color:red">*</b></label>
+                                            <input type="text" name="nombres" class="form-control" required>
                                         </div>
                                     </div>
+                                    
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">Fecha de Nacimiento<b style="color:red">*</b></label>

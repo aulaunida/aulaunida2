@@ -46,23 +46,20 @@ include('../../app/controllers/roles/listado_de_roles.php');
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Nombre</label>
-                                            <input type="text" name="nombres" value="<?=$nombres;?>" class="form-control" required>
+                                            <label for="">DNI</label>
+                                            <input type="number" name="dni" value="<?=$dni;?>"  class="form-control" required>
                                         </div>
                                     </div>
-
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="">Apellido</label>
                                             <input type="text" name="apellidos" value="<?=$apellidos;?>"  class="form-control" required>
                                         </div>
                                     </div>
-
-
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">DNI</label>
-                                            <input type="number" name="dni" value="<?=$dni;?>"  class="form-control" required>
+                                            <label for="">Nombre</label>
+                                            <input type="text" name="nombres" value="<?=$nombres;?>" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="col-md-3">

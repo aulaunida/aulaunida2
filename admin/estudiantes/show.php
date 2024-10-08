@@ -39,10 +39,10 @@ include('../../app/controllers/estudiantes/datos_estudiantes.php');
 
                             <div class="row">
 
-                                <div class="col-md-3">
+                            <div class="col-md-3">
                                     <div class="form-group">
-                                        <label for="">Nombre</label>
-                                        <p class="uppercase"><?= $nombres; ?></p>
+                                        <label for="">DNI</label>
+                                        <p><?= $dni; ?></p>
                                     </div>
                                 </div>
 
@@ -53,13 +53,13 @@ include('../../app/controllers/estudiantes/datos_estudiantes.php');
                                     </div>
                                 </div>
 
-
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label for="">DNI</label>
-                                        <p><?= $dni; ?></p>
+                                        <label for="">Nombre</label>
+                                        <p class="uppercase"><?= $nombres; ?></p>
                                     </div>
                                 </div>
+
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="">Fecha de Nacimiento</label>
