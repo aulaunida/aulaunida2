@@ -22,7 +22,7 @@ include ('../../../app/controllers/configuraciones/institucion/listado_de_instit
                         <div class="card-header">
                             <h3 class="card-title">Instituciones eductativas registradas</h3>
                             <div class="card-tools">
-                                <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-square"></i> Crear nueva institución</a>
+                                <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-square"></i> Registrar institución</a>
                             </div>
                         </div>
                         <div class="card-body">
@@ -72,7 +72,7 @@ include ('../../../app/controllers/configuraciones/institucion/listado_de_instit
 
                                         <td style="text-align: center">
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <a href="show.php?id=<?=$id_config_institucion;?>" type="button" title="Ver" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
+                                                <a href="show.php?id=<?=$id_config_institucion;?>" type="button" title="Consultar detalles" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
                                                 <a href="edit.php?id=<?=$id_config_institucion;?>" type="button" title="Editar" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
                                                 <form action="<?=APP_URL;?>/app/controllers/configuraciones/institucion/delete.php" onclick="preguntar<?=$id_config_institucion;?>(event)" method="post" id="miFormulario<?=$id_config_institucion;?>">
                                                     <input type="text" name="id_config_institucion" value="<?=$id_config_institucion;?>" hidden>

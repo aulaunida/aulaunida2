@@ -12,7 +12,7 @@ include ('../../app/controllers/grados/listado_de_grados.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Grados <i class="bi bi-chevron-right"></i> Ver listado de grados</h1>
+                <h1>Grados <i class="bi bi-chevron-right"></i> Consultar grados</h1>
             </div>
             <br>
             <div class="row">
@@ -51,7 +51,7 @@ include ('../../app/controllers/grados/listado_de_grados.php');
                                         <td style="text-align: center"><?=$grado['turno'];?></td>
                                         <td style="text-align: center">
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <a href="show.php?id=<?=$id_grado;?>" type="button" title="Ver" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
+                                                <a href="show.php?id=<?=$id_grado;?>" type="button" title="Consultar detalles" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
                                                 <a href="edit.php?id=<?=$id_grado;?>" type="button" title="Editar" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
                                                 <!-- <form action="<?=APP_URL;?>/app/controllers/grados/delete.php" onclick="preguntar<?=$id_grado;?>(event)" method="post" id="miFormulario<?=$id_grado;?>">
                                                     <input type="text" name="id_grado" value="<?=$id_grado;?>" hidden>

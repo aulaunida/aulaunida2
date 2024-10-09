@@ -16,7 +16,7 @@ include ('../app/controllers/estudiantes/listado_de_estudiantes.php');
     <div class="container">
         <div class="container">
             <div class="row">
-                <h1><?=APP_NAME;?>®</h1>
+                <h1><?=APP_NAME;?>® <i class="bi bi-chevron-right"></i> Menú Principal</h1>
             </div>
             <br>
             <div class="row">
@@ -31,7 +31,7 @@ include ('../app/controllers/estudiantes/listado_de_estudiantes.php');
                             }
                             ?>
                             <h3><?=$contador_roles;?></h3>
-                            <p>Roles registrados</p>
+                            <p>Roles</p>
                         </div>
                         <div class="icon">
                             <i class="fas"><i class="bi bi-bookmarks"></i></i>
@@ -52,7 +52,7 @@ include ('../app/controllers/estudiantes/listado_de_estudiantes.php');
                             }
                             ?>
                             <h3><?=$contador_usuarios;?></h3>
-                            <p>Usuarios registrados</p>
+                            <p>Usuarios</p>
                         </div>
                         <div class="icon">
                             <i class="fas"><i class="bi bi-people-fill"></i></i>
@@ -74,7 +74,7 @@ include ('../app/controllers/estudiantes/listado_de_estudiantes.php');
                             }
                             ?>
                             <h3><?=$contador_niveles;?></h3>
-                            <p>Niveles registrados</p>
+                            <p>Niveles</p>
                         </div>
                         <div class="icon">
                             <i class="fas"><i class="bi bi-bookshelf"></i></i></i>
@@ -95,7 +95,7 @@ include ('../app/controllers/estudiantes/listado_de_estudiantes.php');
                             }
                             ?>
                             <h3><?=$contador_grados;?></h3>
-                            <p>Grados registrados</p>
+                            <p>Grados</p>
                         </div>
                         <div class="icon">
                             <i class="fas"><i class="bi bi-bar-chart-steps"></i></i>
@@ -116,7 +116,7 @@ include ('../app/controllers/estudiantes/listado_de_estudiantes.php');
                             }
                             ?>
                             <h3><?=$contador_materias;?></h3>
-                            <p>Materias registradas</p>
+                            <p>Materias</p>
                         </div>
                         <div class="icon">
                             <i class="fas"><i class="bi bi-book-half"></i></i>
@@ -137,7 +137,7 @@ include ('../app/controllers/estudiantes/listado_de_estudiantes.php');
                             }
                             ?>
                             <h3><?=$contador_docentes;?></h3>
-                            <p>Docentes registrados</p>
+                            <p>Docentes</p>
                         </div>
                         <div class="icon">
                             <i class="fas"><i class="bi bi-person-video3"></i></i>
@@ -158,7 +158,7 @@ include ('../app/controllers/estudiantes/listado_de_estudiantes.php');
                             }
                             ?>
                             <h3><?=$contador_estudiantes;?></h3>
-                            <p>Estudiantes registrados</p>
+                            <p>Estudiantes</p>
                         </div>
                         <div style="color: white;" class="icon">
                             <i class="fas"><i class="bi bi-person-lines-fill"></i></i>

@@ -12,7 +12,7 @@ include('../../app/controllers/roles/listado_de_roles.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Usuarios | Ver roles de usuario</h1>
+                <h1>Usuarios <i class="bi bi-chevron-right"></i> Consultar roles</h1>
             </div>
             <br>
             <div class="row">
@@ -51,7 +51,7 @@ include('../../app/controllers/roles/listado_de_roles.php');
                                             <td style="text-align: center"><?= $role['nombre_rol']; ?></td>
                                             <td style="text-align: center">
                                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <a href="show.php?id=<?= $id_rol; ?>" type="button" title="Ver" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
+                                                    <a href="show.php?id=<?= $id_rol; ?>" type="button" title="Consultar detalles" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
                                                     <a href="edit.php?id=<?= $id_rol; ?>" type="button" title="Editar" class="btn btn-success btn-sm icono-blanco"><i class="bi bi-pencil-square"></i></a>
                                                     <form action="<?= APP_URL; ?>/app/controllers/roles/delete.php" onclick="preguntar<?= $id_rol; ?>(event)" method="post" id="miFormulario<?= $id_rol; ?>">
                                                         <input type="text" name="id_rol" value="<?= $id_rol; ?>" hidden>

@@ -22,7 +22,7 @@ include ('../../app/controllers/docentes/listado_de_docentes.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Docentes <i class="bi bi-chevron-right"></i> Ver listado de docentes</h1>
+                <h1>Docentes <i class="bi bi-chevron-right"></i> Consultar docentes</h1>
             </div>
             <br>
             <div class="row">
@@ -78,7 +78,7 @@ include ('../../app/controllers/docentes/listado_de_docentes.php');
                                         </td>
                                         <td style="text-align: center">
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <a href="show.php?id=<?=$id_docente;?>" type="button" title="Ver" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
+                                                <a href="show.php?id=<?=$id_docente;?>" type="button" title="Consultar detalles" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
                                                 <a href="edit.php?id=<?=$id_docente;?>" type="button" title="Editar" class="btn btn-success btn-sm icono-blanco"><i class="bi bi-pencil-square"></i></a>
                                                 <!-- <form action="<?=APP_URL;?>/app/controllers/docentes/delete.php" onclick="preguntar<?=$id_docente;?>(event)" method="post" id="miFormulario<?=$id_docente;?>">
                                                     <input type="text" name="id_docente" value="<?=$id_docente;?>" hidden>

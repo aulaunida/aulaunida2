@@ -12,7 +12,7 @@ include ('../../app/controllers/niveles/listado_de_niveles.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Niveles educativos <i class="bi bi-chevron-right"></i> Ver listado de niveles</h1>
+                <h1>Niveles educativos <i class="bi bi-chevron-right"></i> Consultar niveles</h1>
             </div>
             <br>
             <div class="row">
@@ -61,7 +61,7 @@ include ('../../app/controllers/niveles/listado_de_niveles.php');
                                         </td>
                                         <td style="text-align: center">
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <a href="show.php?id=<?=$id_nivel;?>" type="button" title="Ver" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
+                                                <a href="show.php?id=<?=$id_nivel;?>" type="button" title="Consultar detalles" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
                                                 <a href="edit.php?id=<?=$id_nivel;?>" type="button" title="Editar" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
                                                 <!-- <form action="<?=APP_URL;?>/app/controllers/niveles/delete.php" onclick="preguntar<?=$id_nivel;?>(event)" method="post" id="miFormulario<?=$id_nivel;?>">
                                                     <input type="text" name="id_nivel" value="<?=$id_nivel;?>" hidden>

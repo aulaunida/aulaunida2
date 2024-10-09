@@ -217,25 +217,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                     <li class="nav-item">
                         <a href="#" class="nav-link active">
-                            <i class="nav-icon fas"><i class="bi bi-gear"></i></i>
-                        <p>
-                            Administrador
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?=APP_URL;?>/admin/configuraciones" class="nav-link active">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Ver Configuraciones</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-
-                    <li class="nav-item">
-                        <a href="#" class="nav-link active">
                             <i class="nav-icon fas"><i class="bi bi-bookshelf"></i></i>
                             <p>
                                 Niveles educativos
@@ -246,7 +227,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <li class="nav-item">
                                 <a href="<?=APP_URL;?>/admin/niveles" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Ver listado de niveles</p>
+                                    <p>Consultar niveles</p>
                                 </a>
                             </li>
                         </ul>
@@ -264,7 +245,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <li class="nav-item">
                                 <a href="<?=APP_URL;?>/admin/grados" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Ver listado de grados</p>
+                                    <p>Consultar grados</p>
                                 </a>
                             </li>
                         </ul>
@@ -282,7 +263,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <li class="nav-item">
                                 <a href="<?=APP_URL;?>/admin/materias" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Ver listado de materias</p>
+                                    <p>Consultar materias</p>
                                 </a>
                             </li>
                         </ul>
@@ -318,7 +299,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <li class="nav-item">
                                 <a href="<?=APP_URL;?>/admin/docentes" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Ver listado de docentes</p>
+                                    <p>Consultar docentes</p>
                                 </a>
                             </li>
                         </ul>
@@ -345,7 +326,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <li class="nav-item">
                                 <a href="<?=APP_URL;?>/admin/estudiantes" class="nav-link active">
                                 <i class="far fa-circle nav-icon"></i>
-                                    <p>Ver listado estudiantes</p>
+                                    <p>Consultar estudiantes</p>
                                 </a>
                             </li>
                         </ul>
@@ -371,7 +352,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <li class="nav-item">
                                 <a href="<?=APP_URL;?>/admin/usuarios" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Ver listado de usuarios</p>
+                                    <p>Consultar usuarios</p>
                                 </a>
                             </li>
                         </ul>
@@ -379,11 +360,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <li class="nav-item">
                                 <a href="<?=APP_URL;?>/admin/roles" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Ver roles de usuario</p>
+                                    <p>Consultar roles</p>
                                 </a>
                             </li>
                         </ul>
                     </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">
+                            <i class="nav-icon fas"><i class="bi bi-gear"></i></i>
+                        <p>
+                            Configuraciones
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?=APP_URL;?>/admin/configuraciones" class="nav-link active">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Administrador</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
                     <li class="nav-item">
                 <a href="<?=APP_URL;?>/login/logout.php" class="nav-link" style="background-color: #c52510;color:white">
                   <i class="nav-icon fas"><i class="bi bi-door-open"></i></i>

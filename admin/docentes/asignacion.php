@@ -26,7 +26,7 @@ include('../../app/controllers/docentes/listado_de_asignaciones.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Asignar materias <i class="bi bi-chevron-right"></i> Ver docentes asignados</h1>
+                <h1>Asignar materias <i class="bi bi-chevron-right"></i> Consultar docentes asignados</h1>
             </div>
             <br>
             <div class="row">
@@ -57,9 +57,6 @@ include('../../app/controllers/docentes/listado_de_asignaciones.php');
                                         <th>
                                             <center>Materias asignadas</center>
                                         </th>
-                                        <th>
-                                            <center>Acciones</center>
-                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -86,7 +83,7 @@ include('../../app/controllers/docentes/listado_de_asignaciones.php');
                                                 <?php
                                                 }
                                                 ?>
-                                                <div class="modal fade" id="modal_materia<?=$id_docente;?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal fade" id="modal_materia<?= $id_docente; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog modal-lg">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
@@ -98,25 +95,154 @@ include('../../app/controllers/docentes/listado_de_asignaciones.php');
                                                             <div class="modal-body">
                                                                 <table class="table table-bordered table-striped table-hover table-sm">
                                                                     <tr>
-                                                                        <th><center>Nivel</center></th>
-                                                                        <th><center>Turno</center></th>
-                                                                        <th><center>Grado</center></th>
-                                                                        <th><center>División</center></th>
-                                                                        <th><center>Materia</center></th>
+                                                                        <th>
+                                                                            <center>Nivel</center>
+                                                                        </th>
+                                                                        <th>
+                                                                            <center>Turno</center>
+                                                                        </th>
+                                                                        <th>
+                                                                            <center>Grado</center>
+                                                                        </th>
+                                                                        <th>
+                                                                            <center>División</center>
+                                                                        </th>
+                                                                        <th>
+                                                                            <center>Materia</center>
+                                                                        </th>
+                                                                        <th>
+                                                                            <center>Acciones</center>
+                                                                        </th>
                                                                     </tr>
                                                                     <?php
                                                                     $contador = 0;
-                                                                    foreach ($asignaciones as $asignacione){
-                                                                        
-                                                                        if ($asignacione['docente_id']==$id_docente){ $contador = $contador + 1;?>
-                                                                        <tr>
-                                                                            <!-- <td><center><?=$contador;?></center></td> -->
-                                                                            <td><center><?=$asignacione['nivel'];?></center></td>
-                                                                            <td><center><?=$asignacione['turno'];?></center></td>
-                                                                            <td><center><?=$asignacione['curso'];?></center></td>
-                                                                            <td><center><?=$asignacione['paralelo'];?></center></td>
-                                                                            <td><center><?=$asignacione['nombre_materia'];?></center></td>
-                                                                        </tr>
+                                                                    foreach ($asignaciones as $asignacione) {
+                                                                        $id_asignacion = $asignacione['id_asignacion'];
+                                                                        if ($asignacione['docente_id'] == $id_docente) {
+                                                                            $contador = $contador + 1; ?>
+                                                                            <tr>
+                                                                                <!-- <td><center><?= $contador; ?></center></td> -->
+                                                                                <td>
+                                                                                    <center><?= $asignacione['nivel']; ?></center>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <center><?= $asignacione['turno']; ?></center>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <center><?= $asignacione['curso']; ?></center>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <center><?= $asignacione['paralelo']; ?></center>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <center><?= $asignacione['nombre_materia']; ?></center>
+                                                                                </td>
+                                                                                <td style="text-align: center">
+                                                                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                                                                        <a data-toggle="modal" data-target="#modal_edicion<?= $id_asignacion; ?>" type="button" title="Editar" class="btn btn-success btn-sm icono-blanco"><i class="bi bi-pencil-square"></i></a>
+
+                                                                                        <!-- INICIO MODAL EDICION -->
+
+                                                                                        <div class="modal fade" id="modal_edicion<?= $id_asignacion; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                                            <div class="modal-dialog modal-dialog-centered">
+                                                                                                <div class="modal-content">
+                                                                                                    <div class="modal-header" style="background-color:#28a745; color:#FFFFFF">
+                                                                                                        <h5 class="modal-title" id="exampleModalLabel"><b>Editar asignación de materia</b></h5>
+                                                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                                            <span aria-hidden="true">&times;</span>
+                                                                                                        </button>
+                                                                                                    </div>
+                                                                                                    <div class="modal-body">
+                                                                                                        <form action="<?= APP_URL; ?>/app/controllers/docentes/update_asignaciones.php" method="post">
+
+                                                                                                            <div class="row">
+                                                                                                                <div class="col-md-12">
+                                                                                                                    <div class="form-group">
+                                                                                                                        <input type="text" name="id_asignacion" value="<?=$id_asignacion;?>" hidden>
+                                                                                                                        <label for="">Seleccionar nivel</label>
+                                                                                                                        <select name="id_nivel" id="" class="form-control">
+                                                                                                                            <?php
+                                                                                                                            foreach ($niveles as $nivele) {
+                                                                                                                                $id_nivel = $nivele['id_nivel']; ?>
+                                                                                                                                <option value="<?= $id_nivel; ?>"<?= $nivele['id_nivel'] == $asignacione['nivel_id'] ? 'selected' : '' ?>><?= $nivele['nivel']; ?> - TURNO <?= $nivele['turno']; ?></option>
+                                                                                                                            <?php
+                                                                                                                            }
+                                                                                                                            ?>
+                                                                                                                        </select>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div class="col-md-12">
+                                                                                                                    <div class="form-group">
+                                                                                                                        <label for="">Seleccionar grado</label>
+                                                                                                                        <select name="id_grado" id="" class="form-control">
+                                                                                                                            <?php
+                                                                                                                            foreach ($grados as $grado) {
+                                                                                                                                $id_grado = $grado['id_grado']; ?>
+                                                                                                                                <option value="<?= $id_grado; ?>" <?= $grado['id_grado'] == $asignacione['grado_id'] ? 'selected' : '' ?>><?= $grado['curso']; ?> - DIVISIÓN <?= $grado['paralelo']; ?></option>
+                                                                                                                            <?php
+                                                                                                                            }
+                                                                                                                            ?>
+                                                                                                                        </select>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div class="col-md-12">
+                                                                                                                    <div class="form-group">
+                                                                                                                        <label for="">Seleccionar materia</label>
+                                                                                                                        <select name="id_materia" id="" class="form-control">
+                                                                                                                            <?php
+                                                                                                                            foreach ($materias as $materia) {
+                                                                                                                                $id_materia = $materia['id_materia']; ?>
+                                                                                                                                <option value="<?= $id_materia; ?>" <?= $materia['id_materia'] == $asignacione['materia_id'] ? 'selected' : '' ?>><?= $materia['nombre_materia']; ?></option>
+                                                                                                                            <?php
+                                                                                                                            }
+                                                                                                                            ?>
+                                                                                                                        </select>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <div class="modal-footer">
+                                                                                                                <button type="submit" class="btn btn-primary">Registrar</button>
+                                                                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                                                                            </div>
+                                                                                                        </form>
+
+                                                                                                    </div>
+
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                        <!-- FIN MODAL EDICION -->
+
+
+                                                                                        <form action="<?= APP_URL; ?>/app/controllers/docentes/delete.php" onclick="preguntar<?= $id_docente; ?>(event)" method="post" id="miFormulario<?= $id_docente; ?>">
+                                                                                            <input type="text" name="id_docente" value="<?= $id_docente; ?>" hidden>
+                                                                                            <button type="submit" title="Eliminar" class="btn btn-danger btn-sm" style="border-radius: 0px 5px 5px 0px"><i class="bi bi-trash"></i></button>
+                                                                                        </form>
+                                                                                        <script>
+                                                                                            function preguntar<?= $id_docente; ?>(event) {
+                                                                                                event.preventDefault();
+                                                                                                Swal.fire({
+                                                                                                    title: 'Eliminar docente existente',
+                                                                                                    text: '¿Desea eliminar este docente?',
+                                                                                                    icon: 'question',
+                                                                                                    showDenyButton: true,
+                                                                                                    confirmButtonText: 'Eliminar',
+                                                                                                    confirmButtonColor: '#a5161d',
+                                                                                                    denyButtonColor: '#270a0a',
+                                                                                                    denyButtonText: 'Cancelar',
+                                                                                                }).then((result) => {
+                                                                                                    if (result.isConfirmed) {
+                                                                                                        var form = $('#miFormulario<?= $id_docente; ?>');
+                                                                                                        form.submit();
+                                                                                                        Swal.fire('Eliminado', 'Se eliminó el docente correctamente', 'success');
+                                                                                                    }
+                                                                                                });
+                                                                                            }
+                                                                                        </script>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
                                                                     <?php
                                                                         }
                                                                     }
@@ -130,39 +256,9 @@ include('../../app/controllers/docentes/listado_de_asignaciones.php');
                                                 </div>
                                             </td>
                                             <td style="text-align: center">
-                                                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal_materia<?=$id_docente;?>"><i class="bi bi-card-checklist"></i> Consultar materias asignadas</button>
+                                                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal_materia<?= $id_docente; ?>"><i class="bi bi-card-checklist"> </i> Consultar detalle</button>
                                             </td>
-                                            <td style="text-align: center">
-                                                <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <a href="show.php?id=<?= $id_docente; ?>" type="button" title="Ver" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
-                                                    <a href="edit.php?id=<?= $id_docente; ?>" type="button" title="Editar" class="btn btn-success btn-sm icono-blanco"><i class="bi bi-pencil-square"></i></a>
-                                                    <!-- <form action="<?= APP_URL; ?>/app/controllers/docentes/delete.php" onclick="preguntar<?= $id_docente; ?>(event)" method="post" id="miFormulario<?= $id_docente; ?>">
-                                                    <input type="text" name="id_docente" value="<?= $id_docente; ?>" hidden>
-                                                    <button type="submit" title="Eliminar" class="btn btn-danger btn-sm" style="border-radius: 0px 5px 5px 0px"><i class="bi bi-trash"></i></button>
-                                                </form>
-                                                <script>
-                            function preguntar<?= $id_docente; ?>(event) {
-                                event.preventDefault();
-                                Swal.fire({
-                                    title: 'Eliminar docente existente',
-                                    text: '¿Desea eliminar este docente?',
-                                    icon: 'question',
-                                    showDenyButton: true,
-                                    confirmButtonText: 'Eliminar',
-                                    confirmButtonColor: '#a5161d',
-                                    denyButtonColor: '#270a0a',
-                                    denyButtonText: 'Cancelar',
-                                }).then((result) => {
-                                    if (result.isConfirmed) {
-                                        var form = $('#miFormulario<?= $id_docente; ?>');
-                                        form.submit();
-                                        Swal.fire('Eliminado', 'Se eliminó el docente correctamente', 'success');
-                                    }
-                                });
-                            }
-                            </script> -->
-                                                </div>
-                                            </td>
+
                                         </tr>
                                     <?php
                                     }
@@ -271,7 +367,7 @@ include('../../layout/mensajes.php');
                                     <?php
                                     foreach ($docentes as $docente) {
                                         $id_docente = $docente['id_docente']; ?>
-                                        <option value="<?= $id_docente; ?>"><?= $docente['nombres']; ?> <?= $docente['apellidos']; ?></option>
+                                        <option value="<?= $id_docente; ?>"><?= $docente['apellidos']; ?>, <?= $docente['nombres']; ?> </option>
                                     <?php
                                     }
                                     ?>

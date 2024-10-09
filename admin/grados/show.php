@@ -14,7 +14,7 @@ include('../../app/controllers/grados/datos_grados.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Ver más detalles <i class="bi bi-chevron-right"></i> <?= $curso . " - " . $paralelo; ?></h1>
+                <h1>Consultar detalles <i class="bi bi-chevron-right"></i> <?= $curso . " - " . $paralelo; ?></h1>
             </div>
             <br>
             <div class="row">

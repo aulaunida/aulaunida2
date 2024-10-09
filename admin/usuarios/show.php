@@ -14,7 +14,7 @@ include ('../../app/controllers/usuarios/datos_del_usuario.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Usuario: <?=$email;?></h1>
+                <h1>Consultar detalles <i class="bi bi-chevron-right"></i> <?=$email;?></h1>
             </div>
             <br>
             <div class="row">

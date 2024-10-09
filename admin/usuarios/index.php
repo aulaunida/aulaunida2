@@ -17,7 +17,7 @@ include ('../../app/controllers/usuarios/listado_de_usuarios.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Usuarios | Ver listado de Usuarios</h1>
+                <h1>Usuarios <i class="bi bi-chevron-right"></i> Consultar usuarios</h1>
             </div>
             <br>
             <div class="row">
@@ -69,7 +69,7 @@ include ('../../app/controllers/usuarios/listado_de_usuarios.php');
                                         </td>
                                         <td style="text-align: center">
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <a href="show.php?id=<?=$id_usuario;?>" type="button" title="Ver" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
+                                                <a href="show.php?id=<?=$id_usuario;?>" type="button" title="Consultar detalles" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
                                                 <a href="edit.php?id=<?=$id_usuario;?>" type="button" title="Editar" class="btn btn-success btn-sm icono-blanco"><i class="bi bi-pencil-square"></i></a>
                                                 <form action="<?=APP_URL;?>/app/controllers/usuarios/delete.php" onclick="preguntar<?=$id_usuario;?>(event)" method="post" id="miFormulario<?=$id_usuario;?>">
                                                     <input type="text" name="id_usuario" value="<?=$id_usuario;?>" hidden>

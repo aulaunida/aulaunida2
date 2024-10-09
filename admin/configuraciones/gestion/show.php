@@ -12,7 +12,7 @@ include ('../../../app/controllers/configuraciones/gestion/datos_gestion.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Ver más detalles <i class="bi bi-chevron-right"></i> <?=$gestion;?></h1>
+                <h1>Consultar detalles <i class="bi bi-chevron-right"></i> <?=$gestion;?></h1>
             </div>
             <br>
             <div class="row">
