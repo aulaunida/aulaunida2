@@ -32,7 +32,7 @@ include ('../../app/controllers/docentes/listado_de_docentes.php');
                         <div class="card-header">
                             <h3 class="card-title">Docentes registrados</h3>
                             <div class="card-tools">
-                                <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-square"></i> Crear nuevo docente</a>
+                                <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-square"></i> Registrar docente</a>
                             </div>
                         </div>
                         <div class="card-body">

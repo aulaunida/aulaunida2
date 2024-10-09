@@ -22,7 +22,7 @@ include ('../../app/controllers/grados/listado_de_grados.php');
                         <div class="card-header">
                             <h3 class="card-title">Grados registrados</h3>
                             <div class="card-tools">
-                                <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-square"></i> Crear nuevo grado</a>
+                                <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-square"></i> Registrar grado</a>
                             </div>
                         </div>
                         <div class="card-body">

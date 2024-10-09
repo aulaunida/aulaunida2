@@ -22,7 +22,7 @@ include ('../../../app/controllers/configuraciones/gestion/listado_de_gestiones.
                         <div class="card-header">
                             <h3 class="card-title">Ciclos lectivos registrados</h3>
                             <div class="card-tools">
-                                <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-square"></i> Crear nuevo ciclo lectivo</a>
+                                <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-square"></i> Registrar ciclo lectivo</a>
                             </div>
                         </div>
                         <div class="card-body">

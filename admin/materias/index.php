@@ -22,7 +22,7 @@ include ('../../app/controllers/materias/listado_de_materias.php');
                         <div class="card-header">
                             <h3 class="card-title">Materias registradas</h3>
                             <div class="card-tools">
-                                <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-square"></i> Crear nueva materia</a>
+                                <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-square"></i> Registrar materia</a>
                             </div>
                         </div>
                         <div class="card-body">

@@ -32,7 +32,7 @@ include ('../../app/controllers/estudiantes/listado_de_estudiantes.php');
                         <div class="card-header">
                             <h3 class="card-title">Estudiantes registrados</h3>
                             <div class="card-tools">
-                                <a href="../inscripciones/create.php" class="btn btn-primary"><i class="bi bi-plus-square"></i> Crear nuevo estudiante</a>
+                                <a href="../inscripciones/create.php" class="btn btn-primary"><i class="bi bi-plus-square"></i> Registrar estudiante</a>
                             </div>
                         </div>
                         <div class="card-body">

@@ -22,7 +22,7 @@ include ('../../app/controllers/niveles/listado_de_niveles.php');
                         <div class="card-header">
                             <h3 class="card-title">Niveles registrados</h3>
                             <div class="card-tools">
-                                <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-square"></i> Crear nuevo nivel</a>
+                                <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-square"></i> Registrar nivel educativo</a>
                             </div>
                         </div>
                         <div class="card-body">
