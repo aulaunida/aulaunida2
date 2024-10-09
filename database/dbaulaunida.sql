@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 20-09-2024 a las 01:12:59
+-- Tiempo de generación: 09-10-2024 a las 10:19:03
 -- Versión del servidor: 8.3.0
 -- Versión de PHP: 8.2.18
 
@@ -45,6 +45,40 @@ CREATE TABLE IF NOT EXISTS `administrativos` (
 INSERT INTO `administrativos` (`id_administrativo`, `persona_id`, `fyh_creacion`, `fyh_actualizacion`, `estado`) VALUES
 (1, 2, '2024-09-01', '2024-09-01', '1'),
 (2, 3, '2024-09-01', NULL, '1');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `asignaciones`
+--
+
+DROP TABLE IF EXISTS `asignaciones`;
+CREATE TABLE IF NOT EXISTS `asignaciones` (
+  `id_asignacion` int NOT NULL AUTO_INCREMENT,
+  `docente_id` int NOT NULL,
+  `nivel_id` int NOT NULL,
+  `grado_id` int NOT NULL,
+  `materia_id` int NOT NULL,
+  `fyh_creacion` date DEFAULT NULL,
+  `fyh_actualizacion` date DEFAULT NULL,
+  `estado` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`id_asignacion`),
+  KEY `materia_id` (`materia_id`),
+  KEY `docente_id` (`docente_id`),
+  KEY `nivel_id` (`nivel_id`),
+  KEY `grado_id` (`grado_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `asignaciones`
+--
+
+INSERT INTO `asignaciones` (`id_asignacion`, `docente_id`, `nivel_id`, `grado_id`, `materia_id`, `fyh_creacion`, `fyh_actualizacion`, `estado`) VALUES
+(1, 1, 1, 1, 1, '2024-10-08', '2024-10-08', '1'),
+(2, 1, 1, 1, 2, '2024-10-08', NULL, '1'),
+(3, 5, 2, 2, 1, '2024-10-08', NULL, '1'),
+(4, 5, 2, 2, 2, '2024-10-08', NULL, '1'),
+(5, 7, 2, 9, 4, '2024-10-08', '2024-10-08', '1');
 
 -- --------------------------------------------------------
 
@@ -98,13 +132,13 @@ CREATE TABLE IF NOT EXISTS `docentes` (
 --
 
 INSERT INTO `docentes` (`id_docente`, `persona_id`, `integrador`, `tipo_cargo`, `fyh_creacion`, `fyh_actualizacion`, `estado`) VALUES
-(1, 4, 'NO', 'TITULAR', '2024-09-07', NULL, '1'),
-(2, 5, 'SI', 'SUPLENTE', '2024-09-07', '2024-09-08', '1'),
+(1, 4, 'NO', 'TITULAR', '2024-09-07', '2024-09-19', '1'),
+(2, 5, 'SI', 'TITULAR', '2024-09-07', '2024-10-08', '1'),
 (3, 6, 'NO', 'TITULAR', '2024-09-07', '2024-09-08', '1'),
 (4, 7, 'SI', 'TITULAR', '2024-09-07', NULL, '1'),
-(5, 8, 'NO', 'SUPLENTE', '2024-09-07', NULL, '1'),
-(6, 9, 'NO', 'TITULAR', '2024-09-07', NULL, '1'),
-(7, 10, 'SI', 'TITULAR', '2024-09-07', NULL, '1');
+(5, 8, 'NO', 'TITULAR', '2024-09-07', '2024-10-08', '1'),
+(6, 9, 'NO', 'SUPLENTE', '2024-09-07', '2024-10-08', '1'),
+(7, 10, 'SI', 'SUPLENTE', '2024-09-07', '2024-10-08', '1');
 
 -- --------------------------------------------------------
 
@@ -234,29 +268,6 @@ INSERT INTO `materias` (`id_materia`, `nombre_materia`, `fyh_creacion`, `fyh_act
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `asignaciones`
---
-
-CREATE TABLE `asignaciones` (
-  `id_asignacion` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `docente_id` int (11) NOT NULL,
-  `nivel_id` int (11) NOT NULL,
-  `grado_id` int (11) NOT NULL,
-  `materia_id` int (11) NOT NULL,
-  `fyh_creacion` date DEFAULT NULL,
-  `fyh_actualizacion` date DEFAULT NULL,
-  `estado` varchar(11),
-
-  FOREIGN KEY (materia_id) REFERENCES materias (id_materia) on delete no action on update cascade,
-  FOREIGN KEY (docente_id) REFERENCES docentes (id_docente) on delete no action on update cascade,
-  FOREIGN KEY (nivel_id) REFERENCES niveles (id_nivel) on delete no action on update cascade,
-  FOREIGN KEY (grado_id) REFERENCES grados (id_grado) on delete no action on update cascade
-) ENGINE=InnoDB;
-
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `niveles`
 --
 
@@ -313,13 +324,13 @@ INSERT INTO `personas` (`id_persona`, `usuario_id`, `nombres`, `apellidos`, `dni
 (1, 1, 'Leonardo', 'Rodriguez', '36143425', '1991-10-29', 'Analista de Sistemas', 'Ana Maria Janer 1227', '3512558885', '2024-08-30', NULL, '1'),
 (2, 4, 'Pablo', 'Castillo', '36875234', '1992-08-04', 'DESARROLLADOR', 'Sucre 1826', '3513454237', '2024-09-01', '2024-09-01', '1'),
 (3, 5, 'Leonardo', 'Rodriguez', '36143425', '1991-10-29', 'ANALISTA DE SISTEMAS', 'Ana Maria Janer 1227 Piso 3 Depto 10', '3512558885', '2024-09-01', NULL, '1'),
-(4, 6, 'Noelia', 'Alfonso', '37453855', '1994-09-09', 'Profesorado en Educación Primaria', 'Miguel de Ardiles 517', '3515237651', '2024-09-07', NULL, '1'),
-(5, 7, 'ROMINA MICAELA', 'PIZARRO', '34024504', '1987-11-14', 'Licenciatura en Educación', 'PADRE LUIS MONTI 1969', '3584493006', '2024-09-07', '2024-09-08', '1'),
+(4, 6, 'NOELIA', 'ALFONSO', '37453855', '1994-09-09', 'Profesorado en Educación Primaria', 'Miguel de Ardiles 517', '3515237651', '2024-09-07', '2024-09-19', '1'),
+(5, 7, 'ROMINA MICAELA', 'PIZARRO', '34024504', '1987-11-14', 'Licenciatura en Educación', 'PADRE LUIS MONTI 1969', '3584493006', '2024-09-07', '2024-10-08', '1'),
 (6, 8, 'SILVIA DAIANA', 'REINOSO', '350618543', '1990-04-02', 'Licenciada en Educación', 'BVRD DE LOS FRIULANOS 6115', '3514934669', '2024-09-07', '2024-09-08', '1'),
 (7, 9, 'NAIRA', 'VITTAR', '340695548', '1989-06-08', 'Profesorado en Educación Especial', 'DR JOSE INGENIEROS 2353', '3514603267', '2024-09-07', NULL, '1'),
-(8, 10, 'ESTEFANIA', 'DOTTI', '22036866', '1988-10-24', 'Profesorado en Matemática', 'OBISPO SALGUERO 774', '3514825583', '2024-09-07', NULL, '1'),
-(9, 11, 'MARIA EUGENIA', 'PINTO', '34091167', '1989-02-18', 'Profesorado en Ciencias de la Educación', 'DIAGONAL ICA 450', '3513420385', '2024-09-07', NULL, '1'),
-(10, 12, 'DANIELA', 'HEREDIA', '34128110', '1990-07-01', 'Profesorado en Educación Especial', 'TOLEDO PIMENTEL 680', '3541421369', '2024-09-07', NULL, '1'),
+(8, 10, 'ESTEFANIA', 'DOTTI', '22036866', '1988-10-24', 'Profesorado en Matemática', 'OBISPO SALGUERO 774', '3514825583', '2024-09-07', '2024-10-08', '1'),
+(9, 11, 'MARIA EUGENIA', 'PINTO', '34091167', '1989-02-18', 'Profesorado en Ciencias de la Educación', 'DIAGONAL ICA 450', '3513420385', '2024-09-07', '2024-10-08', '1'),
+(10, 12, 'DANIELA', 'HEREDIA', '34128110', '1990-07-01', 'Profesorado en Educación Especial', 'TOLEDO PIMENTEL 680', '3541421369', '2024-09-07', '2024-10-08', '1'),
 (11, 13, 'Santos', 'Diaz', '50398745', '2018-04-24', 'ESTUDIANTE', 'Juan Lucente 432', '0', '2024-09-12', NULL, '1'),
 (12, 14, 'German', 'Gilla', '49547342', '2017-09-11', 'ESTUDIANTE', 'Av. Colón 1281', '0', '2024-09-13', NULL, '1'),
 (13, 15, 'Adrian', 'Peralta', '45478965', '2006-08-28', 'ESTUDIANTE', 'Jose Calasanz 802', '0', '2024-09-18', NULL, '1'),
@@ -414,13 +425,13 @@ INSERT INTO `usuarios` (`id_usuario`, `rol_id`, `email`, `password`, `fyh_creaci
 (1, 1, 'admin@admin.com', '$2y$10$0tYmdHU9uGCIxY1f90W1EuIm54NQ8axowkxL1WzLbqO2LdNa8m3l2', '2024-05-13', NULL, '1'),
 (4, 1, 'pablojcastillo.94@gmail.com', '$2y$10$GquT900MudKROP8zGR4AZuyqBfGeeqN/xaUQy8Hp3LPBw65PQD/dy', '2024-09-01', '2024-09-09', '1'),
 (5, 1, 'rodriguez.cl@outlook.com', '$2y$10$8cNIAmfI6OhlCKxTcuym3.obMgNhZDnaoK0WGaK2FMrvlCYf6YEvW', '2024-09-01', NULL, '1'),
-(6, 3, 'noealfonso@gmail.com', '$2y$10$lzsfS0PBrr1Lq7WuV/VqS.T2wTNp5pPALYYgxAI4Ey6AN5GOf5QA2', '2024-09-07', NULL, '1'),
-(7, 3, 'romipizarro_15@hotmail.com', '$2y$10$u4LS3WJZs72.iia34HZqa.OaJLuoSpcLi2Jh13x/fX0ZnaZGJYUxK', '2024-09-07', '2024-09-08', '1'),
+(6, 3, 'noealfonso@gmail.com', '$2y$10$JU16A61jANNO8hcqxzBtG.WOLw1rC5TQJ76g0VDVhyBDrw49.HgHK', '2024-09-07', '2024-09-19', '1'),
+(7, 3, 'romipizarro_15@hotmail.com', '$2y$10$3Y3xG9Q75ogwL6KTGD8bQuEWifqFec3/rjArlyJwciLhSdJsQsZ0u', '2024-09-07', '2024-10-08', '1'),
 (8, 3, 'reinosodaiana61@gmail.com', '$2y$10$8Qa87CrK9tmeqbTHgyrt6eMndnEIID5/k5WsNEvreuWLx7Mzafo4.', '2024-09-07', '2024-09-08', '1'),
 (9, 3, 'nairavittar@gmail.com', '$2y$10$L9S2u5..7nYZAksfMOqXXOwampDQTu2kS7YhO4VZCPjt5MIIl0Avi', '2024-09-07', NULL, '1'),
-(10, 3, 'tefidotti88@gmail.com', '$2y$10$Mh3kL.xE535mZSuzIndvv.ZHSTDSsyTULYoEzthanKjtvBdeqmPM6', '2024-09-07', NULL, '1'),
-(11, 3, 'euge_pinto89@hotmail.com', '$2y$10$ak8YbDqGoFWYjNqOb84VGOLimDwTVeY/81EE1nJXC8NZRwdS2L.bG', '2024-09-07', NULL, '1'),
-(12, 3, 'natty_9950@hotmail.com', '$2y$10$snw8fRybAQFbwmrtaPKZZeWEcuPdL9OTBndZhtgPkINPdwb.dog5u', '2024-09-07', NULL, '1'),
+(10, 3, 'tefidotti88@gmail.com', '$2y$10$nxd183OQDHOPYyIQygyTEOmPLKALWZHF8iUG69rJjUoP/6j1JysOu', '2024-09-07', '2024-10-08', '1'),
+(11, 3, 'euge_pinto89@hotmail.com', '$2y$10$7S9IGmLpJtAKJ4pbdcELoe.4I9D/nZnOJba0tHA2A5Q5LRImtivyG', '2024-09-07', '2024-10-08', '1'),
+(12, 3, 'natty_9950@hotmail.com', '$2y$10$Vl0X5/J52CgCAFDve0f1b.kin25W/O6YhJVU/DZOf1xOKv5pAtnYC', '2024-09-07', '2024-10-08', '1'),
 (13, 4, 'marianodiaztillard@gmail.com', '$2y$10$SvnT7ZH10o/iyIJsRDW9s.plfmb2FE2Fy3AQE1xrbn6.TzrOG.woq', '2024-09-12', NULL, '1'),
 (14, 4, 'agilla@gmail.com', '$2y$10$F9HcXoe77sNJJU7DFyWf5OxNgBSr4LybOTr7OBLnWgJlWB98PTXW6', '2024-09-13', NULL, '1'),
 (15, 4, 'joseperalta24@gmail.com', '$2y$10$sTzEF5MlXbitmoap1T23tOiQvO4COHgitgqthfS722K/yTF4zposS', '2024-09-18', NULL, '1'),
@@ -435,6 +446,15 @@ INSERT INTO `usuarios` (`id_usuario`, `rol_id`, `email`, `password`, `fyh_creaci
 --
 ALTER TABLE `administrativos`
   ADD CONSTRAINT `administrativos_ibfk_1` FOREIGN KEY (`persona_id`) REFERENCES `personas` (`id_persona`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `asignaciones`
+--
+ALTER TABLE `asignaciones`
+  ADD CONSTRAINT `asignaciones_ibfk_1` FOREIGN KEY (`materia_id`) REFERENCES `materias` (`id_materia`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `asignaciones_ibfk_2` FOREIGN KEY (`docente_id`) REFERENCES `docentes` (`id_docente`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `asignaciones_ibfk_3` FOREIGN KEY (`nivel_id`) REFERENCES `niveles` (`id_nivel`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `asignaciones_ibfk_4` FOREIGN KEY (`grado_id`) REFERENCES `grados` (`id_grado`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `docentes`
