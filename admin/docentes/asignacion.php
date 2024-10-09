@@ -212,19 +212,16 @@ include('../../app/controllers/docentes/listado_de_asignaciones.php');
                                                                                             </div>
                                                                                         </div>
 
-                                                                                        <!-- FIN MODAL EDICION -->
-
-
-                                                                                        <form action="<?= APP_URL; ?>/app/controllers/docentes/delete.php" onclick="preguntar<?= $id_docente; ?>(event)" method="post" id="miFormulario<?= $id_docente; ?>">
-                                                                                            <input type="text" name="id_docente" value="<?= $id_docente; ?>" hidden>
+                                                                                        <form action="<?= APP_URL; ?>/app/controllers/docentes/delete_asignaciones.php" onclick="preguntar<?= $id_asignacion; ?>(event)" method="post" id="miFormulario<?= $id_asignacion; ?>">
+                                                                                            <input type="text" name="id_asignacion" value="<?= $id_asignacion; ?>" hidden>
                                                                                             <button type="submit" title="Eliminar" class="btn btn-danger btn-sm" style="border-radius: 0px 5px 5px 0px"><i class="bi bi-trash"></i></button>
                                                                                         </form>
                                                                                         <script>
-                                                                                            function preguntar<?= $id_docente; ?>(event) {
+                                                                                            function preguntar<?= $id_asignacion; ?>(event) {
                                                                                                 event.preventDefault();
                                                                                                 Swal.fire({
-                                                                                                    title: 'Eliminar docente existente',
-                                                                                                    text: '¿Desea eliminar este docente?',
+                                                                                                    title: 'Eliminar asignación existente',
+                                                                                                    text: '¿Desea eliminar esta asignación?',
                                                                                                     icon: 'question',
                                                                                                     showDenyButton: true,
                                                                                                     confirmButtonText: 'Eliminar',
@@ -233,14 +230,15 @@ include('../../app/controllers/docentes/listado_de_asignaciones.php');
                                                                                                     denyButtonText: 'Cancelar',
                                                                                                 }).then((result) => {
                                                                                                     if (result.isConfirmed) {
-                                                                                                        var form = $('#miFormulario<?= $id_docente; ?>');
+                                                                                                        var form = $('#miFormulario<?= $id_asignacion; ?>');
                                                                                                         form.submit();
-                                                                                                        Swal.fire('Eliminado', 'Se eliminó el docente correctamente', 'success');
+                                                                                                        Swal.fire('Eliminado', 'Se eliminó la asignación correctamente', 'success');
                                                                                                     }
                                                                                                 });
                                                                                             }
                                                                                         </script>
                                                                                     </div>
+                                                                                     <!-- FIN MODAL EDICION -->
                                                                                 </td>
                                                                             </tr>
                                                                     <?php
