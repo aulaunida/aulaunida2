@@ -266,6 +266,7 @@ CREATE TABLE calificaciones (
   `nota6` int (10) NULL,
 
 
+
   `fyh_creacion` date DEFAULT NULL,
   `fyh_actualizacion` date DEFAULT NULL,
   `estado` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
