@@ -251,6 +251,26 @@ CREATE TABLE IF NOT EXISTS `materias` (
   PRIMARY KEY (`id_materia`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
+----------------------------------------------------------
+
+CREATE TABLE calificaciones (
+  `id_calificacion` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `docente_id` int (11) NOT NULL,
+  `estudiante_id` int (11) NOT NULL,
+
+  `nota1` int (10) NOT NULL,
+  `nota2` int (10) NOT NULL,
+  `nota3` int (10) NULL,
+  `nota4` int (10) NULL,
+  `nota5` int (10) NULL,
+  `nota6` int (10) NULL,
+
+
+  `fyh_creacion` date DEFAULT NULL,
+  `fyh_actualizacion` date DEFAULT NULL,
+  `estado` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+) ENGINE=InnoDB;
+
 --
 -- Volcado de datos para la tabla `materias`
 --
