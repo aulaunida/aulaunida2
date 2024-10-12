@@ -39,7 +39,7 @@ include ('../../app/controllers/docentes/listado_de_docentes.php');
                             <table id="example1" class="table table-striped table-bordered table-hover table-sm">
                                 <thead>
                                 <tr> 
-                                    <th><center>Nombre del docente</center></th>
+                                    <th><center>Docente</center></th>
                                     <!-- <th><center>Rol</center></th> -->
                                     <!-- <th><center>DNI</center></th> -->
                                     <!-- <th><center>Fecha de nacimiento</center></th> -->

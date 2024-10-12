@@ -264,12 +264,17 @@ CREATE TABLE calificaciones (
   `nota4` int (10) NULL,
   `nota5` int (10) NULL,
   `nota6` int (10) NULL,
-
-
+  `nota7` int (10) NULL,
+  `nota8` int (10) NULL,
+  `nota9` int (10) NULL,
+  `nota10` int (10) NULL,
 
   `fyh_creacion` date DEFAULT NULL,
   `fyh_actualizacion` date DEFAULT NULL,
-  `estado` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `estado` varchar(11),
+
+  FOREIGN KEY (docente_id) REFERENCES docentes (id_docente) on delete no action on update cascade,
+  FOREIGN KEY (estudiante_id) REFERENCES estudiantes (id_estudiante) on delete no action on update cascade
 ) ENGINE=InnoDB;
 
 --
