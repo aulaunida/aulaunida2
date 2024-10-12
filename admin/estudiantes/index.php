@@ -39,7 +39,7 @@ include ('../../app/controllers/estudiantes/listado_de_estudiantes.php');
                             <table id="example1" class="table table-striped table-bordered table-hover table-sm">
                                 <thead>
                                 <tr> 
-                                    <th><center>Nombre del estudiante</center></th>
+                                    <th><center>Estudiante</center></th>
                                     <th><center>Nivel</center></th>
                                     <th><center>Grado</center></th>
                                     <th><center>Turno</center></th>

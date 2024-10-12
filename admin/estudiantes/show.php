@@ -25,7 +25,7 @@ include('../../app/controllers/estudiantes/datos_estudiantes.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Consultar detalles <i class="bi bi-chevron-right"></i> <?= $nombres . ' ' . $apellidos; ?></h1>
+                <h1>Consultar detalles <i class="bi bi-chevron-right"></i> <?= $apellidos . ' ' . $nombres; ?></h1>
             </div>
             <br>
             <div class="row">

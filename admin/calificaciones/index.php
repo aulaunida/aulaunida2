@@ -55,9 +55,6 @@ include('../../app/controllers/docentes/listado_de_asignaciones.php');
                                             <center>Materia</center>
                                         </th>
                                         <th>
-                                            <center>Estado</center>
-                                        </th>
-                                        <th>
                                             <center>Acciones</center>
                                         </th>
                                     </tr>
@@ -66,6 +63,7 @@ include('../../app/controllers/docentes/listado_de_asignaciones.php');
                                     <?php
                                     $contador = 0;
                                     foreach ($asignaciones as $asignacione) {
+                                        $id_grado = $asignacione['id_grado'];
                                         if ($email_sesion == $asignacione['email']) {
                                             $id_asignacion = $asignacione['id_asignacion'];
                                             $contador = $contador + 1; ?>
@@ -85,26 +83,14 @@ include('../../app/controllers/docentes/listado_de_asignaciones.php');
                                                 <td>
                                                     <center><?= $asignacione['nombre_materia']; ?></center>
                                                 </td>
-                                                <td>
-                                                    <center><?php
-                                                            if ($asignacione['estado'] == "1") { ?>
-                                                            <button class="btn btn-success btn-sm" style="border-radius: 20px">ACTIVO</button>
-                                                        <?php
-                                                            } else { ?>
-                                                            <button class="btn btn-danger btn-sm" style="border-radius: 20px">INACTIVO</button>
-                                                        <?php
-                                                            }
-                                                        ?>
-                                                    </center>
-                                                </td>
                                                 <td style="text-align: center">
                                                     
-                                                        <a href="show.php?id=<?= $id_asignacion; ?>" type="button" title="Consultar detalles" class="btn btn-primary btn-sm"><i class="bi bi-clipboard-data"></i> Cargar calificaciones</a>
+                                                        <a href="create.php?id_grado=<?= $id_grado?>" type="button" title="Cargar calificaciones" class="btn btn-primary btn-sm"><i class="bi bi-clipboard-data"></i> Cargar calificaciones</a>
                                                     
                                                 </td>
                                             </tr>
                                     <?php
-                                        }
+                                        }    
                                     }
                                     ?>
                                 </tbody>
