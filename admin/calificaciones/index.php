@@ -85,7 +85,7 @@ include('../../app/controllers/docentes/listado_de_asignaciones.php');
                                                 </td>
                                                 <td style="text-align: center">
                                                     
-                                                        <a href="create.php?id_grado=<?= $id_grado?>" type="button" title="Cargar calificaciones" class="btn btn-primary btn-sm"><i class="bi bi-clipboard-data"></i> Cargar calificaciones</a>
+                                                        <a href="create.php?id_grado=<?= $id_grado?>&&id_docente=<?= $asignacione['docente_id'];?>" type="button" title="Cargar calificaciones" class="btn btn-primary btn-sm"><i class="bi bi-clipboard-data"></i> Cargar calificaciones</a>
                                                     
                                                 </td>
                                             </tr>

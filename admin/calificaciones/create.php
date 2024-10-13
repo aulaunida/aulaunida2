@@ -1,6 +1,7 @@
 <?php
 
 $id_grado_get = $_GET['id_grado'];
+$id_docente_get = $_GET['id_docente'];
 include('../../app/config.php');
 include('../../admin/layout/parte1.php');
 
@@ -72,8 +73,9 @@ foreach ($estudiantes as $estudiante) {
                                             $id_estudiante = $estudiante['id_estudiante'];
                                             $contador_estudiantes++; ?>
                                             <tr>
+                                                
                                                 <!-- <td style="text-align: center"><?= $contador_estudiantes; ?></td> -->
-                                                <td class="uppercase" style="text-align: center"><?= $estudiante['apellidos'] . ', ' . $estudiante['nombres']; ?></td>
+                                                <td class="uppercase" style="text-align: center"><input type="text" value="<?=$id_estudiante;?>" name="" id="estudiante_<?=$contador_estudiantes;?>" hidden><?= $estudiante['apellidos'] . ', ' . $estudiante['nombres']; ?></td>
                                                 <td class="text-center" style="text-align: center"><?= $estudiante['integracion'] == 'NO' ? "NO" : "SI"; ?></td>
                                                 <td>
                                                     <select  id="nota1_<?=$contador_estudiantes ;?>" class="form-control" required>
@@ -169,6 +171,8 @@ foreach ($estudiantes as $estudiante) {
                                             $('#btn_guardar').click(function (){
                                             var n = '<?=$contador_estudiantes;?>';
                                             var i = 1;
+                                            var id_docente = '<?=$id_docente_get;?>';
+
                                             for (i=1; i <= n ; i++){
                                                 var a = '#nota1_'+i;
                                                 var nota1 = $(a).val();
@@ -194,10 +198,20 @@ foreach ($estudiantes as $estudiante) {
                                                 var h = '#nota8_'+i;
                                                 var nota8 = $(h).val();
 
-                                                alert(nota1 + "-" + nota2 +  "-" + nota3 + "-"  + nota4 + "-" +  nota5 +  "-" + nota6 + "-" +  nota7 + "-" +  nota8);
+                                                var k = '#estudiante_'+i;
+                                                var id_estudiante = $(k).val();
+
+
+                                                alert("id_docente: "+ id_docente + "- id_estudiante " + id_estudiante);
+                                                var url = "../../app/controllers/calificaciones/create.php";
+                                                $.get(url,{nota1:nota1},function (datos){
+                                                    alert("mando las notas");
+                                                    $('#respuesta').html(datos);
+                                                });
                                             }
                                             });
                                         </script>
+                                        <div id="respuesta"></div>
                                         <a href="<?= APP_URL; ?>/admin/calificaciones" class="btn btn-danger">Volver</a>
                                     </div>
                                 </div>

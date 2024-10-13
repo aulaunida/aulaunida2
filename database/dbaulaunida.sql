@@ -257,7 +257,7 @@ CREATE TABLE calificaciones (
   `id_calificacion` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `docente_id` int (11) NOT NULL,
   `estudiante_id` int (11) NOT NULL,
-
+  `materia_id` int (11) NOT NULL,
   `nota1` int (10) NULL,
   `nota2` int (10) NULL,
   `nota3` int (10) NULL,
@@ -272,7 +272,8 @@ CREATE TABLE calificaciones (
   `estado` varchar(11),
 
   FOREIGN KEY (docente_id) REFERENCES docentes (id_docente) on delete no action on update cascade,
-  FOREIGN KEY (estudiante_id) REFERENCES estudiantes (id_estudiante) on delete no action on update cascade
+  FOREIGN KEY (estudiante_id) REFERENCES estudiantes (id_estudiante) on delete no action on update cascade,
+  FOREIGN KEY (materia_id) REFERENCES materias (id_materia) on delete no action on update cascade
 ) ENGINE=InnoDB;
 
 --
