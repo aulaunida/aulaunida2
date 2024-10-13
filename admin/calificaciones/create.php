@@ -54,21 +54,12 @@ foreach ($estudiantes as $estudiante) {
                                             <center>Estudiante</center>
                                         </th>
                                         <th>
-                                            <center>Nivel</center>
-                                        </th>
-                                        <th>
-                                            <center>Grado</center>
-                                        </th>
-                                        <th>
-                                            <center>Turno</center>
-                                        </th>
-                                        <th>
                                             <center>Integración</center>
                                         </th>
-                                        <th>
+                                        <th colspan="4">
                                             <center>Primera Etapa</center>
                                         </th>
-                                        <th>
+                                        <th colspan="4">
                                             <center>Segunda Etapa</center>
                                         </th>
                                     </tr>
@@ -79,36 +70,90 @@ foreach ($estudiantes as $estudiante) {
                                     foreach ($estudiantes as $estudiante) {
                                         if ($id_grado_get == $estudiante['id_grado']) {
                                             $id_estudiante = $estudiante['id_estudiante'];
-                                            $contador_estudiantes = $contador_estudiantes + 1; ?>
+                                            $contador_estudiantes++; ?>
                                             <tr>
                                                 <!-- <td style="text-align: center"><?= $contador_estudiantes; ?></td> -->
                                                 <td class="uppercase" style="text-align: center"><?= $estudiante['apellidos'] . ', ' . $estudiante['nombres']; ?></td>
-                                                <td style="text-align: center"><?= $estudiante['nivel']; ?></td>
-                                                <td class="uppercase" style="text-align: center"><?= $estudiante['curso'] . ' - ' . $estudiante['paralelo']; ?></td>
-                                                <td class="text-center"><?= $estudiante['turno']; ?></td>
-                                                <td class="text-center"><?= $estudiante['integracion'] == 'NO' ? "NO" : "SI"; ?></td>
+                                                <td class="text-center" style="text-align: center"><?= $estudiante['integracion'] == 'NO' ? "NO" : "SI"; ?></td>
                                                 <td>
-                                                    <select name="nota1" id="" class="form-control" required>
-                                                        <option value="" selected disabled>Seleccione una opción</option>
-                                                        <option value="100">Excelente</option>
-                                                        <option value="80">Muy bueno</option>
-                                                        <option value="60">Bueno</option>
-                                                        <option value="40">Satisfactorio</option>
-                                                        <option value="20">No satisfactorio</option>
+                                                    <select  id="nota1_<?=$contador_estudiantes ;?>" class="form-control" required>
+                                                        <option type="number" value="0" selected>-</option>
+                                                        <option type="number" value="100">E</option>
+                                                        <option type="number" value="80">MB</option>
+                                                        <option type="number" value="60">B</option>
+                                                        <option type="number" value="40">S</option>
+                                                        <option type="number" value="20">NS</option>
                                                     </select>
                                                 </td>
-                                                <td> <select name="nota2" id="" class="form-control" required>
-                                                        <option value="" selected disabled>Seleccione una opción</option>
-                                                        <option value="100">Excelente</option>
-                                                        <option value="80">Muy bueno</option>
-                                                        <option value="60">Bueno</option>
-                                                        <option value="40">Satisfactorio</option>
-                                                        <option value="20">No satisfactorio</option>
-                                                    </select></td>
+                                                <td> <select id="nota2_<?=$contador_estudiantes ; ?>" class="form-control" required>
+                                                        <option type="number" value="0" selected>-</option>
+                                                        <option type="number" value="100">E</option>
+                                                        <option type="number" value="80">MB</option>
+                                                        <option type="number" value="60">B</option>
+                                                        <option type="number" value="40">S</option>
+                                                        <option type="number" value="20">NS</option>
+                                                    </select>
+                                                </td>
+                                                <td> <select id="nota3_<?=$contador_estudiantes ; ?>" class="form-control" required>
+                                                        <option type="number" value="0" selected>-</option>
+                                                        <option type="number" value="100">E</option>
+                                                        <option type="number" value="80">MB</option>
+                                                        <option type="number" value="60">B</option>
+                                                        <option type="number" value="40">S</option>
+                                                        <option type="number" value="20">NS</option>
+                                                    </select>
+                                                </td>
+                                                <td> <select id="nota4_<?=$contador_estudiantes ; ?>" class="form-control" required>
+                                                        <option type="number" value="0" selected>-</option>
+                                                        <option type="number" value="100">E</option>
+                                                        <option type="number" value="80">MB</option>
+                                                        <option type="number" value="60">B</option>
+                                                        <option type="number" value="40">S</option>
+                                                        <option type="number" value="20">NS</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <select  id="nota5_<?=$contador_estudiantes ;?>" class="form-control" required>
+                                                        <option type="number" value="0" selected>-</option>
+                                                        <option type="number" value="100">E</option>
+                                                        <option type="number" value="80">MB</option>
+                                                        <option type="number" value="60">B</option>
+                                                        <option type="number" value="40">S</option>
+                                                        <option type="number" value="20">NS</option>
+                                                    </select>
+                                                </td>
+                                                <td> <select id="nota6_<?=$contador_estudiantes ; ?>" class="form-control" required>
+                                                        <option type="number" value="0" selected>-</option>
+                                                        <option type="number" value="100">E</option>
+                                                        <option type="number" value="80">MB</option>
+                                                        <option type="number" value="60">B</option>
+                                                        <option type="number" value="40">S</option>
+                                                        <option type="number" value="20">NS</option>
+                                                    </select>
+                                                </td>
+                                                <td> <select id="nota7_<?=$contador_estudiantes ; ?>" class="form-control" required>
+                                                        <option type="number" value="0" selected>-</option>
+                                                        <option type="number" value="100">E</option>
+                                                        <option type="number" value="80">MB</option>
+                                                        <option type="number" value="60">B</option>
+                                                        <option type="number" value="40">S</option>
+                                                        <option type="number" value="20">NS</option>
+                                                    </select>
+                                                </td>
+                                                <td> <select id="nota8_<?=$contador_estudiantes ; ?>" class="form-control" required>
+                                                        <option type="number" value="0" selected>-</option>
+                                                        <option type="number" value="100">E</option>
+                                                        <option type="number" value="80">MB</option>
+                                                        <option type="number" value="60">B</option>
+                                                        <option type="number" value="40">S</option>
+                                                        <option type="number" value="20">NS</option>
+                                                    </select>
+                                                </td>
                                             </tr>
                                     <?php
                                         }
                                     }
+                                   $contador_estudiantes;
                                     ?>
                                 </tbody>
                             </table>
@@ -119,7 +164,40 @@ foreach ($estudiantes as $estudiante) {
                                 <div class="col-md-12">
 
                                     <div class="form-group text-center">
-                                        <button class="btn btn-primary">Guardar calificaciones</button>
+                                        <button class="btn btn-primary" id="btn_guardar">Guardar calificaciones</button>
+                                        <script>
+                                            $('#btn_guardar').click(function (){
+                                            var n = '<?=$contador_estudiantes;?>';
+                                            var i = 1;
+                                            for (i=1; i <= n ; i++){
+                                                var a = '#nota1_'+i;
+                                                var nota1 = $(a).val();
+
+                                                var b = '#nota2_'+i;
+                                                var nota2 = $(b).val();
+
+                                                var c = '#nota3_'+i;
+                                                var nota3 = $(c).val();
+
+                                                var d = '#nota4_'+i;
+                                                var nota4 = $(d).val();
+
+                                                var e = '#nota5_'+i;
+                                                var nota5 = $(e).val();
+
+                                                var f = '#nota6_'+i;
+                                                var nota6 = $(f).val();
+
+                                                var g = '#nota7_'+i;
+                                                var nota7 = $(g).val();
+
+                                                var h = '#nota8_'+i;
+                                                var nota8 = $(h).val();
+
+                                                alert(nota1 + "-" + nota2 +  "-" + nota3 + "-"  + nota4 + "-" +  nota5 +  "-" + nota6 + "-" +  nota7 + "-" +  nota8);
+                                            }
+                                            });
+                                        </script>
                                         <a href="<?= APP_URL; ?>/admin/calificaciones" class="btn btn-danger">Volver</a>
                                     </div>
                                 </div>

@@ -258,8 +258,14 @@ CREATE TABLE calificaciones (
   `docente_id` int (11) NOT NULL,
   `estudiante_id` int (11) NOT NULL,
 
-  `nota1` int (10) NOT NULL,
-  `nota2` int (10) NOT NULL,
+  `nota1` int (10) NULL,
+  `nota2` int (10) NULL,
+  `nota3` int (10) NULL,
+  `nota4` int (10) NULL,
+  `nota5` int (10) NULL,
+  `nota6` int (10) NULL,
+  `nota7` int (10) NULL,
+  `nota8` int (10) NULL,
 
   `fyh_creacion` date DEFAULT NULL,
   `fyh_actualizacion` date DEFAULT NULL,
