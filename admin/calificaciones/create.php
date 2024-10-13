@@ -2,6 +2,7 @@
 
 $id_grado_get = $_GET['id_grado'];
 $id_docente_get = $_GET['id_docente'];
+$id_materia_get = $_GET['id_materia'];
 include('../../app/config.php');
 include('../../admin/layout/parte1.php');
 
@@ -172,6 +173,7 @@ foreach ($estudiantes as $estudiante) {
                                             var n = '<?=$contador_estudiantes;?>';
                                             var i = 1;
                                             var id_docente = '<?=$id_docente_get;?>';
+                                            var id_materia = '<?=$id_materia_get;?>';
 
                                             for (i=1; i <= n ; i++){
                                                 var a = '#nota1_'+i;
@@ -202,9 +204,9 @@ foreach ($estudiantes as $estudiante) {
                                                 var id_estudiante = $(k).val();
 
 
-                                                alert("id_docente: "+ id_docente + "- id_estudiante " + id_estudiante);
+                                                //alert("id_docente: "+ id_docente + "- id_estudiante: " + id_estudiante + "- id_materia: " + id_materia);
                                                 var url = "../../app/controllers/calificaciones/create.php";
-                                                $.get(url,{nota1:nota1},function (datos){
+                                                $.get(url,{id_docente:id_docente,id_estudiante:id_estudiante,id_materia:id_materia,nota1:nota1,nota2:nota2,nota3:nota3,nota4:nota4,nota5:nota5,nota6:nota6,nota7:nota7,nota8:nota8},function (datos){
                                                     alert("mando las notas");
                                                     $('#respuesta').html(datos);
                                                 });
