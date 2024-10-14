@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 09-10-2024 a las 10:19:03
+-- Tiempo de generación: 14-10-2024 a las 10:14:43
 -- Versión del servidor: 8.3.0
 -- Versión de PHP: 8.2.18
 
@@ -67,18 +67,59 @@ CREATE TABLE IF NOT EXISTS `asignaciones` (
   KEY `docente_id` (`docente_id`),
   KEY `nivel_id` (`nivel_id`),
   KEY `grado_id` (`grado_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `asignaciones`
 --
 
 INSERT INTO `asignaciones` (`id_asignacion`, `docente_id`, `nivel_id`, `grado_id`, `materia_id`, `fyh_creacion`, `fyh_actualizacion`, `estado`) VALUES
-(1, 1, 1, 1, 1, '2024-10-08', '2024-10-08', '1'),
-(2, 1, 1, 1, 2, '2024-10-08', NULL, '1'),
+(1, 1, 1, 1, 1, '2024-10-08', '2024-10-12', '1'),
+(2, 1, 1, 1, 2, '2024-10-08', '2024-10-12', '1'),
 (3, 5, 2, 2, 1, '2024-10-08', NULL, '1'),
-(4, 5, 2, 2, 2, '2024-10-08', NULL, '1'),
-(5, 7, 2, 9, 4, '2024-10-08', '2024-10-08', '1');
+(4, 5, 2, 2, 2, '2024-10-08', NULL, '1');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `calificaciones`
+--
+
+DROP TABLE IF EXISTS `calificaciones`;
+CREATE TABLE IF NOT EXISTS `calificaciones` (
+  `id_calificacion` int NOT NULL AUTO_INCREMENT,
+  `docente_id` int NOT NULL,
+  `estudiante_id` int NOT NULL,
+  `materia_id` int NOT NULL,
+  `nota1` int DEFAULT NULL,
+  `nota2` int DEFAULT NULL,
+  `nota3` int DEFAULT NULL,
+  `nota4` int DEFAULT NULL,
+  `nota5` int DEFAULT NULL,
+  `nota6` int DEFAULT NULL,
+  `nota7` int DEFAULT NULL,
+  `nota8` int DEFAULT NULL,
+  `fyh_creacion` date DEFAULT NULL,
+  `fyh_actualizacion` date DEFAULT NULL,
+  `estado` varchar(11) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`id_calificacion`),
+  KEY `docente_id` (`docente_id`),
+  KEY `estudiante_id` (`estudiante_id`),
+  KEY `materia_id` (`materia_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `calificaciones`
+--
+
+INSERT INTO `calificaciones` (`id_calificacion`, `docente_id`, `estudiante_id`, `materia_id`, `nota1`, `nota2`, `nota3`, `nota4`, `nota5`, `nota6`, `nota7`, `nota8`, `fyh_creacion`, `fyh_actualizacion`, `estado`) VALUES
+(1, 1, 2, 1, 80, 80, 0, 0, 0, 0, 0, 0, '2024-10-13', '2024-10-13', '1'),
+(2, 1, 1, 1, 100, 100, 0, 0, 0, 0, 0, 0, '2024-10-13', '2024-10-13', '1'),
+(3, 1, 3, 1, 60, 80, 0, 0, 0, 0, 0, 0, '2024-10-13', '2024-10-13', '1'),
+(4, 5, 4, 1, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2024-10-13', NULL, '1'),
+(5, 1, 1, 2, 80, 80, 0, 0, 0, 0, 0, 0, '2024-10-13', '2024-10-13', '1'),
+(6, 1, 3, 2, 80, 100, 0, 0, 0, 0, 0, 0, '2024-10-13', '2024-10-13', '1'),
+(7, 1, 2, 2, 100, 100, 0, 0, 0, 0, 0, 0, '2024-10-13', '2024-10-13', '1');
 
 -- --------------------------------------------------------
 
@@ -172,7 +213,7 @@ INSERT INTO `estudiantes` (`id_estudiante`, `persona_id`, `nivel_id`, `grado_id`
 (1, 11, 1, 1, '476234', 'NO', 'MASCULINO', '2024-09-18', NULL, '1'),
 (2, 12, 1, 1, '456090', 'SI', 'MASCULINO', '2024-09-18', NULL, '1'),
 (3, 13, 1, 1, '568745', 'NO', 'PREFIERO NO DECIRLO', '2024-09-18', NULL, '1'),
-(4, 14, 2, 2, '536985', 'NO', 'FEMENINO', '2024-09-18', '2024-09-18', '1');
+(4, 14, 2, 2, '536985', 'NO', 'FEMENINO', '2024-09-18', '2024-10-12', '1');
 
 -- --------------------------------------------------------
 
@@ -250,31 +291,6 @@ CREATE TABLE IF NOT EXISTS `materias` (
   `estado` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_materia`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
-
-----------------------------------------------------------
-
-CREATE TABLE calificaciones (
-  `id_calificacion` int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `docente_id` int (11) NOT NULL,
-  `estudiante_id` int (11) NOT NULL,
-  `materia_id` int (11) NOT NULL,
-  `nota1` int (10) NULL,
-  `nota2` int (10) NULL,
-  `nota3` int (10) NULL,
-  `nota4` int (10) NULL,
-  `nota5` int (10) NULL,
-  `nota6` int (10) NULL,
-  `nota7` int (10) NULL,
-  `nota8` int (10) NULL,
-
-  `fyh_creacion` date DEFAULT NULL,
-  `fyh_actualizacion` date DEFAULT NULL,
-  `estado` varchar(11),
-
-  FOREIGN KEY (docente_id) REFERENCES docentes (id_docente) on delete no action on update cascade,
-  FOREIGN KEY (estudiante_id) REFERENCES estudiantes (id_estudiante) on delete no action on update cascade,
-  FOREIGN KEY (materia_id) REFERENCES materias (id_materia) on delete no action on update cascade
-) ENGINE=InnoDB;
 
 --
 -- Volcado de datos para la tabla `materias`
@@ -359,7 +375,7 @@ INSERT INTO `personas` (`id_persona`, `usuario_id`, `nombres`, `apellidos`, `dni
 (11, 13, 'Santos', 'Diaz', '50398745', '2018-04-24', 'ESTUDIANTE', 'Juan Lucente 432', '0', '2024-09-12', NULL, '1'),
 (12, 14, 'German', 'Gilla', '49547342', '2017-09-11', 'ESTUDIANTE', 'Av. Colón 1281', '0', '2024-09-13', NULL, '1'),
 (13, 15, 'Adrian', 'Peralta', '45478965', '2006-08-28', 'ESTUDIANTE', 'Jose Calasanz 802', '0', '2024-09-18', NULL, '1'),
-(14, 16, 'Jazmin', 'Torres', '51896635', '2006-08-28', 'ESTUDIANTE', 'Andres Maria Ampere 6050', '0', '2024-09-18', '2024-09-18', '1');
+(14, 16, 'Jazmin', 'Torres', '51896635', '2006-08-28', 'ESTUDIANTE', 'Andres Maria Ampere 6050', '0', '2024-09-18', '2024-10-12', '1');
 
 -- --------------------------------------------------------
 
@@ -393,7 +409,7 @@ INSERT INTO `ppffs` (`id_ppff`, `estudiante_id`, `nombres_apellidos_ppff`, `dni_
 (1, 1, 'Mariano Diaz', '33476345', '3516987656', 'Empleado de comercio', 'Monica Juarez', 'Madre de Santos', '3513765560', '2024-09-18', NULL, '1'),
 (2, 2, 'Ariel Gilla', '38987871', '3516812761', 'Encargado de Sucursal', 'Sandra Lopez', 'Tía', '3517843221', '2024-09-18', NULL, '1'),
 (3, 3, 'Jose Peralta', '27458965', '3513698741', 'Empleado Municipal', 'Luciana Jimenez', 'Madre de Adrian', '3516986353', '2024-09-18', NULL, '1'),
-(4, 4, 'Benjamin Torres', '36896574', '3515214789', 'Autónomo', 'Miriam Bejarano', 'Abuela de Jazmin', '3516896354', '2024-09-18', '2024-09-18', '1');
+(4, 4, 'Benjamin Torres', '36896574', '3515214789', 'Autónomo', 'Miriam Bejarano', 'Abuela de Jazmin', '3516896354', '2024-09-18', '2024-10-12', '1');
 
 -- --------------------------------------------------------
 
@@ -460,7 +476,7 @@ INSERT INTO `usuarios` (`id_usuario`, `rol_id`, `email`, `password`, `fyh_creaci
 (13, 4, 'marianodiaztillard@gmail.com', '$2y$10$SvnT7ZH10o/iyIJsRDW9s.plfmb2FE2Fy3AQE1xrbn6.TzrOG.woq', '2024-09-12', NULL, '1'),
 (14, 4, 'agilla@gmail.com', '$2y$10$F9HcXoe77sNJJU7DFyWf5OxNgBSr4LybOTr7OBLnWgJlWB98PTXW6', '2024-09-13', NULL, '1'),
 (15, 4, 'joseperalta24@gmail.com', '$2y$10$sTzEF5MlXbitmoap1T23tOiQvO4COHgitgqthfS722K/yTF4zposS', '2024-09-18', NULL, '1'),
-(16, 4, 'torresbenjamin696@gmail.com', '$2y$10$Ev6hKgUGWwoqid3u4P5MDeEmVx5z0ZbTqFj9riWwkVWah/06jdaOO', '2024-09-18', '2024-09-18', '1');
+(16, 4, 'torresbenjamin696@gmail.com', '$2y$10$9VKK75/s.iNHe6DFeuAkS.9vPy6PPyhGTU/.mCANUl3FHQ6SXzycW', '2024-09-18', '2024-10-12', '1');
 
 --
 -- Restricciones para tablas volcadas
@@ -480,6 +496,14 @@ ALTER TABLE `asignaciones`
   ADD CONSTRAINT `asignaciones_ibfk_2` FOREIGN KEY (`docente_id`) REFERENCES `docentes` (`id_docente`) ON UPDATE CASCADE,
   ADD CONSTRAINT `asignaciones_ibfk_3` FOREIGN KEY (`nivel_id`) REFERENCES `niveles` (`id_nivel`) ON UPDATE CASCADE,
   ADD CONSTRAINT `asignaciones_ibfk_4` FOREIGN KEY (`grado_id`) REFERENCES `grados` (`id_grado`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `calificaciones`
+--
+ALTER TABLE `calificaciones`
+  ADD CONSTRAINT `calificaciones_ibfk_1` FOREIGN KEY (`docente_id`) REFERENCES `docentes` (`id_docente`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `calificaciones_ibfk_2` FOREIGN KEY (`estudiante_id`) REFERENCES `estudiantes` (`id_estudiante`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `calificaciones_ibfk_3` FOREIGN KEY (`materia_id`) REFERENCES `materias` (`id_materia`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `docentes`
