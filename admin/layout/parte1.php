@@ -156,13 +156,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <a href="#" class="nav-link active">
                             <i class="nav-icon fas"><i class="bi bi-graph-up-arrow"></i></i>
                             <p>
-                                Informes
+                                Estadísticas
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="<?=APP_URL;?>/admin/informes/asistencia.php" class="nav-link active">
+                                <a href="<?=APP_URL;?>/admin/estadisticas/asistencia.php" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Asistencia</p>
                                 </a>
@@ -170,7 +170,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="<?=APP_URL;?>/admin/informes/inasistencia.php" class="nav-link active">
+                                <a href="<?=APP_URL;?>/admin/estadisticas/inasistencia.php" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Inasistencia</p>
                                 </a>
@@ -178,7 +178,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="<?=APP_URL;?>/admin/informes/alumnos_integrados.php" class="nav-link active">
+                                <a href="<?=APP_URL;?>/admin/estadisticas/alumnos_integrados.php" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Alumnos integrados</p>
                                 </a>
@@ -186,7 +186,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="<?=APP_URL;?>/admin/informes/gantt.php" class="nav-link active">
+                                <a href="<?=APP_URL;?>/admin/estadisticas/gantt.php" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Diagrama de Gantt</p>
                                 </a>
@@ -194,7 +194,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="<?=APP_URL;?>/admin/informes/spiderchart.php" class="nav-link active">
+                                <a href="<?=APP_URL;?>/admin/estadisticas/spiderchart.php" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Gráfico de Radar</p>
                                 </a>
@@ -202,7 +202,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="<?=APP_URL;?>/admin/informes/scatterplot.php" class="nav-link active">
+                                <a href="<?=APP_URL;?>/admin/estadisticas/scatterplot.php" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Gráfico de Dispersión</p>
                                 </a>
@@ -210,7 +210,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </ul>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="<?=APP_URL;?>/admin/informes/donut3d.php" class="nav-link active">
+                                <a href="<?=APP_URL;?>/admin/estadisticas/donut3d.php" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Gráfico de Donut 3D</p>
                                 </a>
@@ -357,6 +357,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <a href="<?=APP_URL;?>/admin/calificaciones" class="nav-link active">
                                 <i class="far fa-circle nav-icon"></i>
                                     <p>Cargar calificaciones</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">
+                            <i class="nav-icon fas"><i class="bi bi-file-earmark-text"></i></i>
+                            <p>
+                                Informes
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?=APP_URL;?>/admin/informes" class="nav-link active">
+                                <i class="far fa-circle nav-icon"></i>
+                                    <p>Consultar informes</p>
                                 </a>
                             </li>
                         </ul>
