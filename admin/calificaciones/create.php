@@ -9,6 +9,7 @@ include('../../admin/layout/parte1.php');
 include('../../app/controllers/estudiantes/listado_de_estudiantes.php');
 include('../../app/controllers/calificaciones/listado_de_calificaciones.php');
 
+
 $curso = "";
 $paralelo = "";
 
@@ -91,6 +92,13 @@ foreach ($estudiantes as $estudiante) {
                                                 foreach ($calificaciones as $calificacione) {
                                                     if (($calificacione['docente_id'] == $id_docente_get) && ($calificacione['estudiante_id'] == $id_estudiante) && ($calificacione['materia_id'] == $id_materia_get)) {
                                                         $nota1 = $calificacione['nota1'];
+                                                        $nota2 = $calificacione['nota2'];
+                                                        $nota3 = $calificacione['nota3'];
+                                                        $nota4 = $calificacione['nota4'];
+                                                        $nota5 = $calificacione['nota5'];
+                                                        $nota6 = $calificacione['nota6'];
+                                                        $nota7 = $calificacione['nota7'];
+                                                        $nota8 = $calificacione['nota8'];
                                                     }
                                                 }
                                                 ?>
