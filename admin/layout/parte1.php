@@ -220,9 +220,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                     <li class="nav-item">
                         <a href="#" class="nav-link active">
-                            <i class="nav-icon fas"><i class="bi bi-bookshelf"></i></i>
+                            <i class="nav-icon fas"><i class="bi bi-calendar-week"></i></i>
                             <p>
-                                Niveles educativos
+                                Ciclos lectivos
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
@@ -230,7 +230,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <li class="nav-item">
                                 <a href="<?=APP_URL;?>/admin/niveles" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Consultar niveles</p>
+                                    <p>Consultar ciclos lectivos</p>
                                 </a>
                             </li>
                         </ul>
@@ -256,7 +256,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                     <li class="nav-item">
                         <a href="#" class="nav-link active">
-                            <i class="nav-icon fas"><i class="bi bi-book-half"></i></i></i></i>
+                            <i class="nav-icon fas"><i class="bi bi-journal-bookmark"></i></i></i>
                             <p>
                                 Materias
                                 <i class="right fas fa-angle-left"></i>
@@ -318,7 +318,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                     <li class="nav-item">
                         <a href="#" class="nav-link active">
-                            <i class="nav-icon fas"><i class="bi bi-person-lines-fill"></i></i>
+                            <i class="nav-icon fas"><i class="bi bi-person-square"></i></i>
                             <p>
                                 Estudiantes
                                 <i class="right fas fa-angle-left"></i>

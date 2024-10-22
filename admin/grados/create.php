@@ -12,7 +12,7 @@ include ('../../app/controllers/niveles/listado_de_niveles.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Grado <i class="bi bi-chevron-right"></i> Registrar grado</h1>
+            <h2 style="margin-left: 20px;"><i class="bi bi-plus-square"></i>  Registrar grado </h2>
             </div>
             <br>
             <div class="row">
@@ -20,14 +20,14 @@ include ('../../app/controllers/niveles/listado_de_niveles.php');
                 <div class="col-md-12">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Complete los siguientes datos:</h3>
+                        <h3 class="card-title">Complete los siguientes campos:</h3>
                         </div>
                         <div class="card-body">
                             <form action="<?=APP_URL;?>/app/controllers/grados/create.php" method="post">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Nivel<b style="color:red">*</b></label>
+                                            <label for="">Nivel y turno<b style="color:red">*</b></label>
                                             <select name="nivel_id" id="" class="form-control">
                                                 <?php
                                                 foreach ($niveles as $nivele){
@@ -45,7 +45,7 @@ include ('../../app/controllers/niveles/listado_de_niveles.php');
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="">Curso<b style="color:red">*</b></label>
+                                            <label for="">Grado<b style="color:red">*</b></label>
                                             <select name="curso" id="" class="form-control">
                                                 <option value="PRIMER GRADO">PRIMER GRADO</option>
                                                 <option value="SEGUNDO GRADO">SEGUNDO GRADO</option>
@@ -77,11 +77,12 @@ include ('../../app/controllers/niveles/listado_de_niveles.php');
                                         </div>
                                     </div>
                                 </div>
+                                <hr>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-primary">Registrar</button>
-                                            <a href="<?=APP_URL;?>/admin/grados" class="btn btn-secondary">Cancelar</a>
+                                            <a href="<?=APP_URL;?>/admin/grados" class="btn btn-danger">Cancelar</a>
                                         </div>
                                     </div>
                                 </div>

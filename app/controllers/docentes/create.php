@@ -3,16 +3,16 @@
 include ('../../../app/config.php');
 
 $rol_id = $_POST['rol_id'];
-$nombres = $_POST['nombres'];
-$apellidos = $_POST['apellidos'];
+$nombres = strtoupper($_POST['nombres']);
+$apellidos = strtoupper($_POST['apellidos']);
 $dni = $_POST['dni'];
 $fecha_nacimiento = $_POST['fecha_nacimiento'];
-$direccion = $_POST['direccion'];
-$email = $_POST['email'];
+$direccion = strtoupper($_POST['direccion']);
+$email = strtoupper($_POST['email']);
 $celular = $_POST['celular'];
-$profesion = $_POST['profesion'];
-$integrador = $_POST['integrador'];
-$tipo_cargo = $_POST['tipo_cargo'];
+$profesion = strtoupper($_POST['profesion']);
+$integrador = strtoupper($_POST['integrador']);
+$tipo_cargo = strtoupper($_POST['tipo_cargo']);
 
 $pdo->beginTransaction();
 
@@ -71,7 +71,7 @@ if($sentencia->execute()){
 echo 'success';
 $pdo->commit();
 session_start();
-         $_SESSION['mensaje'] = "Se registró correctamente el nuevo docente";
+         $_SESSION['mensaje'] = "Docente registrado!";
          $_SESSION['icono'] = "success";
          $_SESSION['timer'] = 3000;  // Duración del mensaje en milisegundos 
          $_SESSION['timerProgressBar'] = true;
@@ -81,7 +81,7 @@ session_start();
 echo 'error al registrar a la base de datos';
 $pdo->rollBack();
 session_start();
-$_SESSION['mensaje'] = "Error al registrar nuevo docente. Comunicarse con el administrador";
+$_SESSION['mensaje'] = "Error al registrar docente a la base de datos";
 $_SESSION['icono'] = "error";
 $_SESSION['timer'] = 3000;  // Duración del mensaje en milisegundos 
 $_SESSION['timerProgressBar'] = true;

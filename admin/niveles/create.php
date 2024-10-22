@@ -12,7 +12,7 @@ include ('../../app/controllers/configuraciones/gestion/listado_de_gestiones.php
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Niveles educativos <i class="bi bi-chevron-right"></i> Registrar nivel educativo</h1>
+            <h2 style="margin-left: 20px;"><i class="bi bi-plus-square"></i>  Registrar ciclo lectivo  </h2>
             </div>
             <br>
             <div class="row">
@@ -20,7 +20,7 @@ include ('../../app/controllers/configuraciones/gestion/listado_de_gestiones.php
                 <div class="col-md-12">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Complete los siguientes datos:</h3>
+                            <h3 class="card-title">Complete los siguientes campos:</h3>
                         </div>
                         <div class="card-body">
                             <form action="<?=APP_URL;?>/app/controllers/niveles/create.php" method="post">
@@ -70,7 +70,7 @@ include ('../../app/controllers/configuraciones/gestion/listado_de_gestiones.php
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-primary">Registrar</button>
-                                            <a href="<?=APP_URL;?>/admin/niveles" class="btn btn-secondary">Cancelar</a>
+                                            <a href="<?=APP_URL;?>/admin/niveles" class="btn btn-danger">Cancelar</a>
                                         </div>
                                     </div>
                                 </div>

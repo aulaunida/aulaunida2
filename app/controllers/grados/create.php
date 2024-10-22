@@ -19,7 +19,7 @@ $sentencia->bindParam('estado',$estado_de_registro);
 if($sentencia->execute()){
     echo 'success';
     session_start();
-    $_SESSION['mensaje'] = "Grado registrado de manera correcta en la base de datos";
+    $_SESSION['mensaje'] = "Grado registrado!";
     $_SESSION['icono'] = "success";
     $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
     $_SESSION['timerProgressBar'] = true;

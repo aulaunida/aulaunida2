@@ -25,7 +25,7 @@ include('../../app/controllers/docentes/datos_docentes.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Consultar detalles <i class="bi bi-chevron-right"></i> <?= $nombres . ' ' . $apellidos; ?></h1>
+            <h2 style="margin-left: 20px;"><i class="bi bi-eye"></i> Consultar detalles: </i> <b><?= $nombres . ' ' . $apellidos; ?></b></h2>
             </div>
             <br>
             <div class="row">
@@ -36,58 +36,68 @@ include('../../app/controllers/docentes/datos_docentes.php');
                             <h3 class="card-title">Datos registrados</h3>
                         </div>
                         <div class="card-body">
-
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="">DNI</label>
+                                        <label for="">Nro de DNI</label>
                                         <p><?= $dni; ?></p>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="">Apellido</label>
+                                        <label for="">Apellidos</label>
                                         <p class="uppercase"><?= $apellidos; ?></p>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="">Nombre</label>
+                                        <label for="">Nombres</label>
                                         <p class="uppercase"><?= $nombres; ?></p>
                                     </div>
                                 </div>
-
-                                <div class="col-md-3">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="">Fecha de Nacimiento</label>
                                         <p><?= $fecha_nacimiento; ?></p>
                                     </div>
                                 </div>
-
-
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="">Dirección</label>
                                         <p class="uppercase"><?= $direccion; ?></p>
                                     </div>
                                 </div>
-
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="">Correo Electrónico</label>
                                         <p><?= $email; ?></p>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="">Celular</label>
+                                        <label for="">Nro de celular</label>
                                         <p><?= $celular; ?></p>
                                     </div>
                                 </div>
-
-                                <div class="col-md-3">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Profesión</label>
+                                        <p class="uppercase"><?= $profesion; ?></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Nombre del rol</label>
+                                        <p class="uppercase"><?= $nombre_rol; ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="">Estado</label>
                                         <p>
@@ -98,44 +108,24 @@ include('../../app/controllers/docentes/datos_docentes.php');
                                         </p>
                                     </div>
                                 </div>
-
-                            </div>
-                            <div class="row">
-
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label for="">Nombre del rol</label>
-
-                                        <p class="uppercase"><?= $nombre_rol; ?></p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label for="">Profesión</label>
-                                        <p class="uppercase"><?= $profesion; ?></p>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label for="">Integrador</label>
-                                        <p><?= $integrador; ?></p>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="">Tipo de cargo</label>
                                         <p><?= $tipo_cargo; ?></p>
                                     </div>
                                 </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="">Integrador</label>
+                                        <p><?= $integrador; ?></p>
+                                    </div>
+                                </div>
+                                
                             </div>
-
                             <div class="row">
-
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="">Fecha de creación</label>
-
                                         <p><?= $fyh_creacion; ?></p>
                                     </div>
                                 </div>
@@ -144,7 +134,7 @@ include('../../app/controllers/docentes/datos_docentes.php');
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <a href="<?= APP_URL; ?>/admin/docentes" class="btn btn-secondary">Volver</a>
+                                        <a href="<?= APP_URL; ?>/admin/docentes" class="btn btn-danger">Volver</a>
                                     </div>
                                 </div>
                             </div>

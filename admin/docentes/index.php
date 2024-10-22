@@ -22,7 +22,7 @@ include ('../../app/controllers/docentes/listado_de_docentes.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Docentes <i class="bi bi-chevron-right"></i> Consultar docentes</h1>
+            <h2 style="margin-left: 20px;"><i class="bi bi-person-video3"></i> Docentes</h2>
             </div>
             <br>
             <div class="row">
@@ -165,7 +165,7 @@ include ('../../layout/mensajes.php');
             "responsive": true, "lengthChange": true, "autoWidth": false,
             buttons: [{
                 extend: 'collection',
-                text: 'Reportes',
+                text: 'Exportar',
                 orientation: 'landscape',
                 buttons: [{
                     text: 'Copiar Texto',
@@ -187,7 +187,7 @@ include ('../../layout/mensajes.php');
             },
                 {
                     extend: 'colvis',
-                    text: 'Visor de columnas',
+                    text: 'Ver',
                     collectionLayout: 'fixed three-column'
                 }
             ],

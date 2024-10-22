@@ -10,13 +10,12 @@ include ('../app/controllers/docentes/listado_de_docentes.php');
 include ('../app/controllers/estudiantes/listado_de_estudiantes.php');
 ?>
 
-<!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <br>
     <div class="container">
         <div class="container">
             <div class="row">
-                <h1><?=APP_NAME;?>® <i class="bi bi-chevron-right"></i> Menú Principal</h1>
+                <h1 style="margin-left: 20px;"><i class="bi bi-house-fill"></i>  Inicio </h1>
             </div>
             <br>
             <div class="row">
@@ -74,7 +73,7 @@ include ('../app/controllers/estudiantes/listado_de_estudiantes.php');
                             }
                             ?>
                             <h3><?=$contador_niveles;?></h3>
-                            <p>Niveles</p>
+                            <p>Ciclos lectivos</p>
                         </div>
                         <div class="icon">
                             <i class="fas"><i class="bi bi-bookshelf"></i></i></i>
@@ -171,12 +170,10 @@ include ('../app/controllers/estudiantes/listado_de_estudiantes.php');
 
 
             </div>
-            <!-- /.row -->
-        </div><!-- /.container-fluid -->
+        </div>
     </div>
-    <!-- /.content -->
 </div>
-<!-- /.content-wrapper -->
+
 
 <?php
 

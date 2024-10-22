@@ -14,11 +14,10 @@ include ('../../app/controllers/niveles/datos_nivel.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Consultar detalles <i class="bi bi-chevron-right"></i> <?=$nivel;?></h1>
+            <h2 style="margin-left: 20px;"><i class="bi bi-eye"></i> Consultar detalles: </i><b><?=$gestion;?></b>  </h2>
             </div>
             <br>
             <div class="row">
-
                 <div class="col-md-12">
                     <div class="card card-outline card-info">
                         <div class="card-header">
@@ -27,40 +26,33 @@ include ('../../app/controllers/niveles/datos_nivel.php');
                         <div class="card-body">
                             <form action="<?=APP_URL;?>/app/controllers/niveles/create.php" method="post">
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="">Ciclo lectivo</label>
+                                            <label for="">Nombre</label>
                                             <p><?=$gestion;?></p>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="">Niveles</label>
+                                            <label for="">Nivel</label>
                                             <p><?=$nivel;?></p>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="">Turnos</label>
+                                            <label for="">Turno</label>
                                             <p><?=$turno;?></p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="">Fecha de creación</label>
                                             <p><?=$fyh_creacion;?></p>
                                         </div>
                                     </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="">Estado</label>
                                             <p>
@@ -72,14 +64,11 @@ include ('../../app/controllers/niveles/datos_nivel.php');
                                         </div>
                                     </div>
                                 </div>
-
-
-
                                 <hr>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <a href="<?=APP_URL;?>/admin/niveles" class="btn btn-secondary">Volver</a>
+                                            <a href="<?=APP_URL;?>/admin/niveles" class="btn btn-danger">Volver</a>
                                         </div>
                                     </div>
                                 </div>

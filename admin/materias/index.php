@@ -12,7 +12,7 @@ include ('../../app/controllers/materias/listado_de_materias.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Materias <i class="bi bi-chevron-right"></i> Consultar materias</h1>
+            <h2 style="margin-left: 20px;"><i class="bi bi-journal-bookmark"></i> Materias</h2>
             </div>
             <br>
             <div class="row">
@@ -131,7 +131,7 @@ include ('../../layout/mensajes.php');
                 "lengthMenu": "Mostrar _MENU_ Materias",
                 "loadingRecords": "Cargando...",
                 "processing": "Procesando...",
-                "search": "Buscar materia:",
+                "search": "Buscar materias:",
                 "zeroRecords": "Sin resultados encontrados",
                 "paginate": {
                     "first": "Primero",
@@ -143,7 +143,7 @@ include ('../../layout/mensajes.php');
             "responsive": true, "lengthChange": true, "autoWidth": false,
             buttons: [{
                 extend: 'collection',
-                text: 'Reportes',
+                text: 'Exportar',
                 orientation: 'landscape',
                 buttons: [{
                     text: 'Copiar Texto',
@@ -165,7 +165,7 @@ include ('../../layout/mensajes.php');
             },
                 {
                     extend: 'colvis',
-                    text: 'Visor de columnas',
+                    text: 'Ver',
                     collectionLayout: 'fixed three-column'
                 }
             ],

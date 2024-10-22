@@ -12,7 +12,7 @@ $sentencia->bindParam('id_materia',$id_materia);
 
 if($sentencia->execute()){
     session_start();
-    $_SESSION['mensaje'] = "Se eliminó la materia de manera correcta en la base de datos";
+    $_SESSION['mensaje'] = "Materia eliminada!";
     $_SESSION['icono'] = "success";
     $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
     $_SESSION['timerProgressBar'] = true;
@@ -20,7 +20,7 @@ if($sentencia->execute()){
     header('Location:'.APP_URL."/admin/materias");
 }else{
     session_start();
-    $_SESSION['mensaje'] = "Error no se pudo eliminar en la base datos, comuníquese con el administrador";
+    $_SESSION['mensaje'] = "Error no se pudo eliminar la materia, comuníquese con el administrador";
     $_SESSION['icono'] = "warning";
     $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
     $_SESSION['timerProgressBar'] = true;

@@ -7,17 +7,17 @@ $id_usuario = $_POST['id_usuario'];
 $id_persona = $_POST['id_persona'];
 
 $rol_id = $_POST['rol_id'];
-$nombres = $_POST['nombres'];
-$apellidos = $_POST['apellidos'];
-$email = $_POST['email'];
+$nombres = strtoupper($_POST['nombres']);
+$apellidos = strtoupper($_POST['apellidos']);
+$email = strtoupper($_POST['email']);
 $dni = $_POST['dni'];
 $fecha_nacimiento = $_POST['fecha_nacimiento'];
 $celular = $_POST['celular'];
-$profesion = $_POST['profesion'];
-$direccion = $_POST['direccion'];
+$profesion = strtoupper($_POST['profesion']);
+$direccion = strtoupper($_POST['direccion']);
 
-$integrador = $_POST['integrador'];
-$tipo_cargo = $_POST['tipo_cargo'];
+$integrador = strtoupper($_POST['integrador']);
+$tipo_cargo = strtoupper($_POST['tipo_cargo']);
 
 $pdo->beginTransaction();
 

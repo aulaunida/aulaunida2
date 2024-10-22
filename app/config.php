@@ -1,17 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: HILARIWEB
- * Date: 28/12/2023
- * Time: 19:18
- */
+
 define('SERVIDOR','localhost');
 define('USUARIO','root');
 define('PASSWORD','');
-define('BD','dbaulaunida');
+define('BD','dbaulaunida2');
 
 define('APP_NAME','Aula Unida');
-define('APP_URL','http://localhost/aulaunida');
+define('APP_URL','http://localhost/aulaunida2');
 define('KEY_API_MAPS','');
 
 $servidor = "mysql:dbname=".BD.";host=".SERVIDOR;
@@ -21,7 +16,7 @@ try{
     //echo "conexión existosa a la base de datos";
 }catch (PDOException $e){
     print_r($e);
-    echo "error no se pudo conectar a la base de datos";
+    echo "Error no se pudo conectar a la base de datos";
 }
 
 date_default_timezone_set("America/Argentina/Cordoba");

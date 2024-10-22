@@ -12,7 +12,7 @@ include ('../../app/controllers/niveles/listado_de_niveles.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Niveles educativos <i class="bi bi-chevron-right"></i> Consultar niveles</h1>
+            <h2 style="margin-left: 20px;"><i class="bi bi-calendar4-week"></i> Ciclos lectivos </h2>
             </div>
             <br>
             <div class="row">
@@ -20,9 +20,9 @@ include ('../../app/controllers/niveles/listado_de_niveles.php');
                 <div class="col-md-12">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Niveles registrados</h3>
+                            <h3 class="card-title">Ciclos registrados</h3>
                             <div class="card-tools">
-                                <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-square"></i> Registrar nivel educativo</a>
+                                <a href="create.php" class="btn btn-primary"><i class="bi bi-plus-square"></i> Registrar ciclo lectivo</a>
                             </div>
                         </div>
                         <div class="card-body">
@@ -30,7 +30,7 @@ include ('../../app/controllers/niveles/listado_de_niveles.php');
                                 <thead>
                                 <tr>
                                     <!-- <th><center>Nro</center></th> -->
-                                    <th><center>Ciclo lectivo</center></th>
+                                    <th><center>Ciclo</center></th>
                                     <th><center>Nivel</center></th>
                                     <th><center>Turno</center></th>
                                     <th><center>Estado</center></th>
@@ -127,15 +127,15 @@ include ('../../layout/mensajes.php');
             "pageLength": 25,
             "language": {
                 "emptyTable": "No hay información",
-                "info": "Mostrando _START_ - _END_ | _TOTAL_ Niveles",
-                "infoEmpty": "Mostrando 0 - 0 | 0 Niveles",
-                "infoFiltered": "(Filtrado de _MAX_ total Niveles)",
+                "info": "Mostrando _START_ - _END_ | _TOTAL_ Ciclos",
+                "infoEmpty": "Mostrando 0 - 0 | 0 Ciclos",
+                "infoFiltered": "(Filtrado de _MAX_ total Ciclos)",
                 "infoPostFix": "",
                 "thousands": ",",
-                "lengthMenu": "Mostrar _MENU_ Niveles",
+                "lengthMenu": "Mostrar _MENU_ Ciclos",
                 "loadingRecords": "Cargando...",
                 "processing": "Procesando...",
-                "search": "Buscar nivel:",
+                "search": "Buscar ciclos:",
                 "zeroRecords": "Sin resultados encontrados",
                 "paginate": {
                     "first": "Primero",
@@ -147,7 +147,7 @@ include ('../../layout/mensajes.php');
             "responsive": true, "lengthChange": true, "autoWidth": false,
             buttons: [{
                 extend: 'collection',
-                text: 'Reportes',
+                text: 'Exportar',
                 orientation: 'landscape',
                 buttons: [{
                     text: 'Copiar Texto',
@@ -169,7 +169,7 @@ include ('../../layout/mensajes.php');
             },
                 {
                     extend: 'colvis',
-                    text: 'Visor de columnas',
+                    text: 'Ver',
                     collectionLayout: 'fixed three-column'
                 }
             ],

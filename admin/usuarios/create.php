@@ -11,7 +11,7 @@ include ('../../app/controllers/roles/listado_de_roles.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Usuarios <i class="bi bi-chevron-right"></i> Registrar usuario</h1>
+            <h2 style="margin-left: 20px;"> Usuarios<i class="bi bi-chevron-right"></i> Registrar</h1>
             </div>
             <br>
             <div class="row">
@@ -19,12 +19,12 @@ include ('../../app/controllers/roles/listado_de_roles.php');
                 <div class="col-md-12">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
-                        <h3 class="card-title">Complete los siguientes datos</h3>
+                        <h3 class="card-title">Complete los siguientes datos:</h3>
                         </div>
                         <div class="card-body">
                             <form action="<?=APP_URL;?>/app/controllers/usuarios/create.php" method="post">
                                 <div class="row">
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="">Nombre del rol<b style="color:red">*</b></label>
                                             <div class="form-inline">
@@ -40,33 +40,29 @@ include ('../../app/controllers/roles/listado_de_roles.php');
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- <div class="col-md-4">
-                                        <div class="form-group">
-                                        <label for="">Nombre y Apellido</label>
-                                            <input type="text" name="nombres" class="form-control" required>
-                                        </div>
-                                    </div> -->
-
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                         <label for="">Correo Electrónico<b style="color:red">*</b></label>
                                             <input type="email" name="email" class="form-control" required>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
+                                </div>
+                                    <div class="row">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                         <label for="">Contraseña<b style="color:red">*</b></label>
                                             <input type="password" name="password" class="form-control" required>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
+
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                         <label for="">Repetir contraseña<b style="color:red">*</b></label>
                                             <input type="password" name="password_repet" class="form-control" required>
                                         </div>
                                     </div>
                                 </div>
-                                
+                                </div>
                                     
                                 
                                 <hr>

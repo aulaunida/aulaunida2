@@ -12,7 +12,7 @@ include ('../../app/controllers/grados/listado_de_grados.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Grados <i class="bi bi-chevron-right"></i> Consultar grados</h1>
+            <h2 style="margin-left: 20px;"><i class="bi bi-bar-chart-steps"></i> Grados</h2>
             </div>
             <br>
             <div class="row">
@@ -31,7 +31,7 @@ include ('../../app/controllers/grados/listado_de_grados.php');
                                 <tr>
                                     <!-- <th><center>Nro</center></th> -->
                                     <th><center>Nivel</center></th>
-                                    <th><center>Curso</center></th>
+                                    <th><center>Grado</center></th>
                                     <th><center>División</center></th>
                                     <th><center>Turno</center></th>
                                     <th><center>Acciones</center></th>
@@ -125,7 +125,7 @@ include ('../../layout/mensajes.php');
                 "lengthMenu": "Mostrar _MENU_ Grados",
                 "loadingRecords": "Cargando...",
                 "processing": "Procesando...",
-                "search": "Buscar grado:",
+                "search": "Buscar grados:",
                 "zeroRecords": "Sin resultados encontrados",
                 "paginate": {
                     "first": "Primero",
@@ -137,7 +137,7 @@ include ('../../layout/mensajes.php');
             "responsive": true, "lengthChange": true, "autoWidth": false,
             buttons: [{
                 extend: 'collection',
-                text: 'Reportes',
+                text: 'Exportar',
                 orientation: 'landscape',
                 buttons: [{
                     text: 'Copiar Texto',
@@ -159,7 +159,7 @@ include ('../../layout/mensajes.php');
             },
                 {
                     extend: 'colvis',
-                    text: 'Visor de columnas',
+                    text: 'Ver',
                     collectionLayout: 'fixed three-column'
                 }
             ],

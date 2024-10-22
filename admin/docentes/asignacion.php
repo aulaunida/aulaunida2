@@ -26,7 +26,7 @@ include('../../app/controllers/docentes/listado_de_asignaciones.php');
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Asignar materias <i class="bi bi-chevron-right"></i> Consultar docentes asignados</h1>
+                <h2 style="margin-left: 20px;"><i class="bi bi-file-earmark-plus"></i>  Asignar materias </h2>
             </div>
             <br>
             <div class="row">
@@ -34,7 +34,7 @@ include('../../app/controllers/docentes/listado_de_asignaciones.php');
                 <div class="col-md-12">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Docentes asignados</h3>
+                            <h3 class="card-title">Docentes registrados</h3>
                             <div class="card-tools">
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_asignacion"><i class="bi bi-plus-square"></i> Asignar materia</button>
                             </div>
@@ -317,7 +317,7 @@ include('../../layout/mensajes.php');
             "autoWidth": false,
             buttons: [{
                     extend: 'collection',
-                    text: 'Reportes',
+                    text: 'Exportar',
                     orientation: 'landscape',
                     buttons: [{
                         text: 'Copiar Texto',
@@ -338,7 +338,7 @@ include('../../layout/mensajes.php');
                 },
                 {
                     extend: 'colvis',
-                    text: 'Visor de columnas',
+                    text: 'Ver',
                     collectionLayout: 'fixed three-column'
                 }
             ],

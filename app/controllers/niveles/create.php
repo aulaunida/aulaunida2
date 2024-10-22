@@ -25,7 +25,7 @@ $sentencia->bindParam('estado',$estado_de_registro);
 if($sentencia->execute()){
     echo 'success';
     session_start();
-    $_SESSION['mensaje'] = "Nivel registrado de manera correcta en la base de datos";
+    $_SESSION['mensaje'] = "Ciclo lectivo registrado!";
     $_SESSION['icono'] = "success";
     $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
     $_SESSION['timerProgressBar'] = true;
@@ -33,9 +33,9 @@ if($sentencia->execute()){
     header('Location:'.APP_URL."/admin/niveles");
 //header('Location:' .$URL.'/');
 }else{
-    echo 'Error al registrar nivel a la base de datos';
+    echo 'Error al registrar ciclo lectivo a la base de datos';
     session_start();
-    $_SESSION['mensaje'] = "Error al registrar nivel en la base datos, comuníquese con el administrador";
+    $_SESSION['mensaje'] = "Error al registrar ciclo lectivo, comuníquese con el administrador";
     $_SESSION['icono'] = "warning";
     $_SESSION['timer'] = 6000;  // Duración del mensaje en milisegundos (6 segundos)
     $_SESSION['timerProgressBar'] = true;
