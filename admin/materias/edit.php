@@ -22,7 +22,7 @@ include('../../app/controllers/materias/datos_materias.php');
                 <div class="col-md-12">
                     <div class="card card-outline card-success">
                         <div class="card-header">
-                            <h3 class="card-title">Modifique los siguientes campos:</h3>
+                            <h3 class="card-title">Modifique los siguientes campos:</h3> PRUEBA
                         </div>
                         <div class="card-body">
                             <form action="<?=APP_URL;?>/app/controllers/materias/update.php" method="post">
